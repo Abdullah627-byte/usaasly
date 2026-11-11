@@ -1,0 +1,68 @@
+name: Weekly price check
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch: {}
+
+# Needed so the job can push the updated tools.json back to the repo.
+permissions:
+  contents: write
+
+concurrency:
+  group: price-check
+  cancel-in-progress: false
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run price scraper
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/update_prices.py
+
+      - name: Commit changes to tools.json
+        id: commit
+        run: |
+          if git diff --quiet -- src/data/tools.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name  "usassly-bot"
+          git config user.email "usassly-bot@users.noreply.github.com"
+          git add src/data/tools.json
+          # NOTE: do not add "[skip ci]" here - Cloudflare Pages would skip the rebuild too.
+          git commit -m "chore: weekly price update"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Cloudflare Pages (Git-connected) rebuilds automatically on the push above.
+      # This optional step covers the case where you prefer a Deploy Hook:
+      # create one in Cloudflare Pages > Settings > Builds & deployments and store
+      # its URL as the CLOUDFLARE_DEPLOY_HOOK_URL repository secret.
+      - name: Trigger Cloudflare Pages rebuild (deploy hook)
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "CLOUDFLARE_DEPLOY_HOOK_URL not set; relying on Cloudflare's Git integration."
+            exit 0
+          fi
+          curl -fsS -X POST "$HOOK"

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://usassly.com/sitemap-index.xml

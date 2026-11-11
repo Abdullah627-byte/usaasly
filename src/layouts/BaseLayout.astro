@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+import { SITE_NAME, absoluteUrl, jsonLdString, truncate } from '../lib/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path such as `/review/notion/` — used for canonical + og:url. */
+  path: string;
+  /** One or more JSON-LD nodes; wrapped in a single @graph. */
+  schema?: Record<string, unknown>[];
+  noindex?: boolean;
+  ogType?: 'website' | 'article';
+}
+
+const { title, description, path, schema = [], noindex = false, ogType = 'article' } = Astro.props;
+
+const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+const desc = truncate(description);
+const canonical = absoluteUrl(path);
+const graph = schema.length
+  ? jsonLdString({ '@context': 'https://schema.org', '@graph': schema })
+  : null;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={desc} />
+
+    {graph && <script type="application/ld+json" set:html={graph} />}
+  </head>
+  <body class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased">
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-4xl items-center justify-between px-4 py-4">
+        <a href="/" class="text-xl font-bold tracking-tight text-indigo-600">{SITE_NAME}</a>
+        <span class="text-sm text-slate-500">SaaS pricing, compared.</span>
+      </div>
+    </header>
+    <main class="mx-auto max-w-4xl px-4 py-8">
+      <slot />
+    </main>
+    <footer class="mt-12 border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-4xl px-4 py-6 text-sm text-slate-500">
+        © {new Date().getFullYear()} {SITE_NAME}. Prices are checked weekly and may change — always confirm on the vendor's official pricing page.
+      </div>
+    </footer>
+  </body>
+</html>

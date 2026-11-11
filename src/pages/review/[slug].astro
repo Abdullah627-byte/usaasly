@@ -1,0 +1,148 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StatusNotice from '../../components/StatusNotice.astro';
+import { tools, formatPrice, type Tool } from '../../lib/tools';
+import { absoluteUrl, breadcrumbSchema, faqSchema } from '../../lib/seo';
+
+export const getStaticPaths = (() => {
+  return tools.map((tool) => ({ params: { slug: tool.slug }, props: { tool } }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  tool: Tool;
+}
+const { tool } = Astro.props;
+const c = tool.content;
+const year = new Date().getFullYear();
+const path = `/review/${tool.slug}/`;
+const price = formatPrice(tool);
+
+const title = `${tool.name} Review ${year}: Pricing, Features & Verdict`;
+const description = c
+  ? `${tool.name} review: ${c.summary} Pricing from ${price} ${tool.price_unit}.`
+  : `${tool.name} pricing from ${price} ${tool.price_unit}. Plans, features and what you get.`;
+
+const schema: Record<string, unknown>[] = [
+  {
+    '@type': 'Product',
+    '@id': `${absoluteUrl(path)}#product`,
+    name: tool.name,
+    category: tool.category,
+    url: tool.website,
+    description: c?.summary ?? `${tool.name} is a ${tool.category.toLowerCase()} SaaS tool.`,
+    ...(tool.current_price !== null && {
+      offers: {
+        '@type': 'Offer',
+        price: tool.current_price,
+        priceCurrency: tool.currency,
+        url: tool.official_pricing_url,
+        availability: 'https://schema.org/InStock',
+      },
+    }),
+    ...(c && {
+      review: {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: c.rating, bestRating: 5, worstRating: 1 },
+        author: { '@type': 'Organization', name: 'Usassly' },
+        reviewBody: c.verdict,
+      },
+    }),
+  },
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: `${tool.name} Review`, path },
+  ]),
+];
+if (c?.faqs?.length) schema.push(faqSchema(c.faqs));
+---
+
+<BaseLayout {title} {description} {path} {schema} noindex={!c}>
+  <nav class="mb-4 text-sm text-slate-500" aria-label="Breadcrumb">
+    <a href="/" class="hover:underline">Home</a> / <span>{tool.name} review</span>
+  </nav>
+
+  <StatusNotice tools={[tool]} />
+
+  <h1 class="text-3xl font-bold tracking-tight text-slate-900">{tool.name} Review {year}</h1>
+  {c && <p class="mt-2 text-lg text-slate-600">{c.tagline}</p>}
+
+  <section class="mt-6 rounded-xl border border-slate-200 bg-white p-5">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="text-sm text-slate-500">Starting paid price</p>
+        <p class="text-3xl font-bold text-indigo-600">{price}</p>
+        <p class="text-sm text-slate-500">{tool.price_unit}</p>
+      </div>
+      {c && (
+        <div class="text-right">
+          <p class="text-sm text-slate-500">Our rating</p>
+          <p class="text-3xl font-bold">{c.rating.toFixed(1)}<span class="text-base text-slate-400"> / 5</span></p>
+        </div>
+      )}
+    </div>
+    <a
+      href={tool.official_pricing_url}
+      rel="nofollow noopener"
+      target="_blank"
+      class="mt-4 inline-block rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700"
+    >
+      See official pricing →
+    </a>
+  </section>
+
+  {c && (
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold">Summary</h2>
+      <p class="mt-2 leading-relaxed">{c.summary}</p>
+      <p class="mt-2 text-sm text-slate-600"><strong>Best for:</strong> {c.best_for}</p>
+    </section>
+  )}
+
+  <section class="mt-8">
+    <h2 class="text-xl font-semibold">What's included</h2>
+    <ul class="mt-2 list-disc space-y-1 pl-6">
+      {tool.plan_features.map((f) => <li>{f}</li>)}
+    </ul>
+  </section>
+
+  {c && (
+    <section class="mt-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+        <h2 class="font-semibold text-emerald-900">Pros</h2>
+        <ul class="mt-2 list-disc space-y-1 pl-5 text-sm">{c.pros.map((p) => <li>{p}</li>)}</ul>
+      </div>
+      <div class="rounded-xl border border-rose-200 bg-rose-50 p-4">
+        <h2 class="font-semibold text-rose-900">Cons</h2>
+        <ul class="mt-2 list-disc space-y-1 pl-5 text-sm">{c.cons.map((p) => <li>{p}</li>)}</ul>
+      </div>
+    </section>
+  )}
+
+  {c && (
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold">Verdict</h2>
+      <p class="mt-2 leading-relaxed">{c.verdict}</p>
+    </section>
+  )}
+
+  {c?.faqs?.length ? (
+    <section class="mt-8">
+      <h2 class="text-xl font-semibold">FAQ</h2>
+      <div class="mt-2 space-y-4">
+        {c.faqs.map((f) => (
+          <div>
+            <h3 class="font-medium">{f.question}</h3>
+            <p class="text-slate-600">{f.answer}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  ) : null}
+
+  {tool.last_checked && (
+    <p class="mt-8 text-xs text-slate-500">
+      Price last checked: <time datetime={tool.last_checked}>{tool.last_checked.slice(0, 10)}</time>
+    </p>
+  )}
+</BaseLayout>

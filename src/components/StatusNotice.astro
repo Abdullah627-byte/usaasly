@@ -1,0 +1,16 @@
+---
+import type { Tool } from '../lib/tools';
+interface Props {
+  tools: Tool[];
+}
+const flagged = Astro.props.tools.filter((t) => t.status === 'needs_manual_review');
+---
+
+{
+  flagged.length > 0 && (
+    <div class="mb-6 rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900">
+      Heads up: we couldn't automatically verify the latest price for{' '}
+      {flagged.map((t) => t.name).join(' and ')}. Check the official pricing page before buying.
+    </div>
+  )
+}

@@ -1,0 +1,23 @@
+{
+  "name": "usassly",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "prices": "python3 scripts/update_prices.py",
+    "content": "python3 scripts/generate_content.py"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.10",
+    "tailwindcss": "^4.3.5"
+  }
+}
