@@ -1,0 +1,51 @@
+---
+import { money, type CatalogTool } from '../lib/catalog';
+
+interface Props {
+  tool: CatalogTool;
+}
+const { tool } = Astro.props;
+
+const priceNote = tool.starting_price === 0 ? 'Free' : `${money(tool.starting_price)} ${tool.price_per_user ? 'per user / month' : 'per month (flat)'}`;
+const costExamples = [1, 5, 25].map((n) => ({ n, cost: tool.price_per_user ? tool.starting_price * n : tool.starting_price }));
+const dt = 'text-xs font-semibold uppercase tracking-wide text-slate-600';
+---
+
+<section aria-labelledby="breakdown" class="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+  <h2 id="breakdown" class="text-xl font-semibold text-slate-900">Detailed breakdown</h2>
+  <dl class="mt-4 grid gap-4 sm:grid-cols-2">
+    <div><dt class={dt}>Starting price</dt><dd class="mt-1 text-lg font-bold text-slate-900">{priceNote}</dd></div>
+    <div><dt class={dt}>Free option</dt><dd class="mt-1 text-slate-800">{tool.is_open_source ? 'Open source: free to self-host' : tool.has_free_tier ? 'Free plan available' : 'No free plan'}</dd></div>
+    <div class="sm:col-span-2"><dt class={dt}>AI models</dt><dd class="mt-1 text-slate-800">{tool.ai_model}</dd></div>
+    <div class="sm:col-span-2"><dt class={dt}>Best for</dt><dd class="mt-1 text-slate-800">{tool.best_for_usecase}</dd></div>
+  </dl>
+
+  <div class="mt-5 rounded-2xl border border-amber-300 bg-amber-50 p-4">
+    <h3 class="text-sm font-semibold text-amber-950">Hidden limits to know about</h3>
+    <p class="mt-1 text-sm leading-relaxed text-amber-950">{tool.hidden_limits}</p>
+  </div>
+
+  <h3 class="mt-6 text-sm font-semibold text-slate-900">What it really costs</h3>
+  <ul class="mt-2 grid gap-2 sm:grid-cols-3">
+    {
+      costExamples.map((c) => (
+        <li class="rounded-2xl bg-slate-50 p-3 text-sm">
+          <span class="text-slate-600">{c.n} {c.n === 1 ? 'user' : 'users'}</span>
+          <br />
+          <span class="text-lg font-bold text-slate-900">{c.cost === 0 ? 'Free' : `${money(c.cost)}/mo`}</span>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<section aria-label="Pros and cons" class="mt-6 grid gap-4 sm:grid-cols-2">
+  <div class="rounded-3xl border border-emerald-200 bg-emerald-50 p-5">
+    <h2 class="font-semibold text-emerald-950">Pros</h2>
+    <ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm text-emerald-950">{tool.pros.map((p) => <li>{p}</li>)}</ul>
+  </div>
+  <div class="rounded-3xl border border-rose-200 bg-rose-50 p-5">
+    <h2 class="font-semibold text-rose-950">Cons</h2>
+    <ul class="mt-2 list-disc space-y-1.5 pl-5 text-sm text-rose-950">{tool.cons.map((p) => <li>{p}</li>)}</ul>
+  </div>
+</section>

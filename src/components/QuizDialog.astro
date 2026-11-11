@@ -1,0 +1,57 @@
+---
+/** Modal shell for the 3-step wizard. Content is rendered by src/scripts/quiz.ts. */
+---
+
+<dialog
+  id="quiz-dialog"
+  aria-labelledby="quiz-title"
+  class="m-auto max-h-[92dvh] w-[calc(100%-1.5rem)] max-w-2xl overflow-hidden rounded-3xl bg-white p-0 text-slate-800 shadow-2xl backdrop:bg-slate-900/50"
+>
+  <div class="flex max-h-[92dvh] flex-col">
+    <div class="flex items-center justify-between gap-3 border-b border-slate-200 px-5 py-3">
+      <p id="quiz-step-label" class="text-sm font-semibold text-slate-700"></p>
+      <button
+        type="button"
+        data-quiz-close
+        aria-label="Close quiz"
+        class="flex size-11 items-center justify-center rounded-full text-2xl leading-none text-slate-600 hover:bg-slate-100"
+      >
+        ×
+      </button>
+    </div>
+    <div class="h-1 bg-slate-100" aria-hidden="true">
+      <div id="quiz-progress" class="h-1 w-0 bg-indigo-600 transition-all"></div>
+    </div>
+
+    <div id="quiz-body" class="flex-1 overflow-y-auto px-5 py-5"></div>
+
+    <div class="flex items-center justify-between gap-2 border-t border-slate-200 px-5 py-3">
+      <button
+        type="button"
+        id="quiz-back"
+        class="min-h-11 rounded-full px-4 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+      >
+        ← Back
+      </button>
+      <button
+        type="button"
+        id="quiz-next"
+        class="min-h-11 rounded-full bg-indigo-700 px-6 text-sm font-semibold text-white hover:bg-indigo-800 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-700"
+      >
+        Next
+      </button>
+      <button
+        type="button"
+        id="quiz-restart"
+        hidden
+        class="min-h-11 rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-800 hover:bg-slate-50"
+      >
+        Start over
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  import '../scripts/quiz';
+</script>

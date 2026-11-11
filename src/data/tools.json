@@ -1,94 +1,1302 @@
 [
   {
-    "name": "Notion",
-    "slug": "notion",
-    "category": "Productivity & Docs",
-    "website": "https://www.notion.so",
-    "current_price": 10,
-    "currency": "USD",
-    "price_unit": "per user / month (billed annually)",
-    "plan_features": [
-      "Unlimited pages and blocks",
-      "Unlimited file uploads",
-      "Collaborative workspace",
-      "Advanced page analytics",
-      "30-day page history"
+    "id": 1,
+    "name": "ChatGPT",
+    "slug": "chatgpt",
+    "logo": "/logos/chatgpt.svg",
+    "category": "AI Assistants",
+    "best_for_usecase": "General-purpose chat, writing, analysis and brainstorming for individuals and teams",
+    "starting_price": 20,
+    "price_per_user": true,
+    "hidden_limits": "Free tier has message caps and lower-tier models; Plus still throttles heavy use of the newest models and image generation.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.8,
+    "ai_model": "OpenAI GPT-4o and o-series reasoning models",
+    "pros": [
+      "Broadest feature set: voice, images, files, custom GPTs",
+      "Strong at writing, coding and analysis",
+      "Huge plugin and integration ecosystem"
     ],
-    "official_pricing_url": "https://www.notion.so/pricing",
-    "price_selector": null,
-    "price_regex": null,
-    "status": "needs_manual_review",
-    "last_checked": null,
-    "content": null,
-    "comparisons": {}
+    "cons": [
+      "Usage caps even on paid plans",
+      "Team plans cost more per seat",
+      "Data-privacy settings need manual review"
+    ],
+    "website_url": "https://chatgpt.com"
   },
   {
-    "name": "Trello",
-    "slug": "trello",
-    "category": "Project Management",
-    "website": "https://trello.com",
-    "current_price": 5,
-    "currency": "USD",
-    "price_unit": "per user / month (billed annually)",
-    "plan_features": [
-      "Unlimited cards",
-      "Unlimited storage (10MB/file)",
-      "Unlimited boards",
-      "Advanced checklists",
-      "Custom fields"
+    "id": 2,
+    "name": "Claude",
+    "slug": "claude",
+    "logo": "/logos/claude.svg",
+    "category": "AI Assistants",
+    "best_for_usecase": "Long-document analysis, careful writing and coding with large context windows",
+    "starting_price": 20,
+    "price_per_user": true,
+    "hidden_limits": "Usage is metered in rolling windows; heavy users on Pro can hit message limits during peak hours.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.8,
+    "ai_model": "Anthropic Claude (Sonnet, Opus, Haiku)",
+    "pros": [
+      "Excellent long-context reading and summarization",
+      "Natural, less formulaic writing style",
+      "Projects and Artifacts for organized work"
     ],
-    "official_pricing_url": "https://trello.com/pricing",
-    "price_selector": null,
-    "price_regex": null,
-    "status": "needs_manual_review",
-    "last_checked": null,
-    "content": null,
-    "comparisons": {}
+    "cons": [
+      "No native image generation",
+      "Rate limits can interrupt long sessions",
+      "Smaller integration ecosystem than ChatGPT"
+    ],
+    "website_url": "https://claude.ai"
   },
   {
+    "id": 3,
+    "name": "Google Gemini",
+    "slug": "gemini",
+    "logo": "/logos/gemini.svg",
+    "category": "AI Assistants",
+    "best_for_usecase": "Teams living in Google Workspace who want AI in Docs, Gmail and Drive",
+    "starting_price": 19.99,
+    "price_per_user": true,
+    "hidden_limits": "Top-tier model access and Deep Research quotas are capped per day; Workspace AI features need a qualifying plan.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.5,
+    "ai_model": "Google Gemini (Flash and Pro)",
+    "pros": [
+      "Deep integration with Gmail, Docs and Drive",
+      "Very large context window",
+      "Generous free tier"
+    ],
+    "cons": [
+      "Output quality varies by task",
+      "Plan names and bundles change often",
+      "Privacy controls differ between consumer and Workspace"
+    ],
+    "website_url": "https://gemini.google.com"
+  },
+  {
+    "id": 4,
+    "name": "Perplexity",
+    "slug": "perplexity",
+    "logo": "/logos/perplexity.svg",
+    "category": "AI Assistants",
+    "best_for_usecase": "Cited, source-backed web research and fact-finding",
+    "starting_price": 20,
+    "price_per_user": true,
+    "hidden_limits": "Free plan limits Pro searches per day; advanced model choice and file uploads need Pro.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.6,
+    "ai_model": "Sonar plus selectable GPT and Claude models",
+    "pros": [
+      "Answers come with clickable citations",
+      "Fast, search-first interface",
+      "Lets you pick between several frontier models"
+    ],
+    "cons": [
+      "Weaker for creative or long-form writing",
+      "Citations still need verification",
+      "Fewer workspace features than ChatGPT"
+    ],
+    "website_url": "https://www.perplexity.ai"
+  },
+  {
+    "id": 5,
+    "name": "Microsoft Copilot",
+    "slug": "microsoft-copilot",
+    "logo": "/logos/microsoft-copilot.svg",
+    "category": "AI Assistants",
+    "best_for_usecase": "Organizations on Microsoft 365 wanting AI inside Word, Excel, Outlook and Teams",
+    "starting_price": 30,
+    "price_per_user": true,
+    "hidden_limits": "Microsoft 365 Copilot requires an eligible Microsoft 365 base license on top of the add-on fee, often with annual commitment.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.2,
+    "ai_model": "OpenAI GPT models via Microsoft Azure",
+    "pros": [
+      "Works inside the Office apps you already use",
+      "Enterprise-grade security and compliance",
+      "Grounded in your tenant data via Microsoft Graph"
+    ],
+    "cons": [
+      "Expensive add-on per seat",
+      "Value depends on how much you use Office",
+      "Feature rollout differs by license"
+    ],
+    "website_url": "https://copilot.microsoft.com"
+  },
+  {
+    "id": 6,
+    "name": "Ollama",
+    "slug": "ollama",
+    "logo": "/logos/ollama.svg",
+    "category": "AI Assistants",
+    "best_for_usecase": "Running open LLMs locally and privately on your own hardware",
+    "starting_price": 0,
+    "price_per_user": false,
+    "hidden_limits": "Free to run, but model quality and speed depend entirely on your GPU, RAM and the open model you pick; no vendor support.",
+    "has_free_tier": true,
+    "is_open_source": true,
+    "rating": 4.5,
+    "ai_model": "Runs Llama, Mistral, Gemma, Qwen and other open models locally",
+    "pros": [
+      "Fully private: data never leaves your machine",
+      "Free and MIT-licensed",
+      "Simple CLI and local API for developers"
+    ],
+    "cons": [
+      "Needs capable hardware for large models",
+      "Open models trail the best hosted ones",
+      "No built-in team features"
+    ],
+    "website_url": "https://ollama.com"
+  },
+  {
+    "id": 7,
+    "name": "Midjourney",
+    "slug": "midjourney",
+    "logo": "/logos/midjourney.svg",
+    "category": "AI Creative",
+    "best_for_usecase": "High-aesthetic concept art, brand imagery and stylized illustrations",
+    "starting_price": 10,
+    "price_per_user": false,
+    "hidden_limits": "Basic plan includes only about 3.3 fast GPU hours per month; unlimited Relax mode starts at Standard and Stealth mode requires Pro.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 4.7,
+    "ai_model": "Midjourney V7 image models",
+    "pros": [
+      "Best-in-class artistic image quality",
+      "Strong style and character reference tools",
+      "Active community and prompt inspiration"
+    ],
+    "cons": [
+      "No free plan",
+      "Images are public unless you pay for Stealth",
+      "Less precise text rendering and layout control"
+    ],
+    "website_url": "https://www.midjourney.com"
+  },
+  {
+    "id": 8,
+    "name": "Runway",
+    "slug": "runway",
+    "logo": "/logos/runway.svg",
+    "category": "AI Creative",
+    "best_for_usecase": "AI video generation and editing for creators and marketing teams",
+    "starting_price": 15,
+    "price_per_user": false,
+    "hidden_limits": "Everything is credit-based; video generation burns credits per second so the monthly allowance can run out in a few clips.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.4,
+    "ai_model": "Runway Gen-3 Alpha and Gen-4",
+    "pros": [
+      "Leading text-to-video and image-to-video quality",
+      "Editing tools like inpainting and motion brush",
+      "Straightforward browser workflow"
+    ],
+    "cons": [
+      "Credits deplete quickly",
+      "Free plan is a one-time credit grant",
+      "Output length per clip is short"
+    ],
+    "website_url": "https://runwayml.com"
+  },
+  {
+    "id": 9,
+    "name": "ElevenLabs",
+    "slug": "elevenlabs",
+    "logo": "/logos/elevenlabs.svg",
+    "category": "AI Creative",
+    "best_for_usecase": "Realistic text-to-speech, voiceovers and voice cloning",
+    "starting_price": 5,
+    "price_per_user": false,
+    "hidden_limits": "Plans are credit-based by character; commercial licensing starts at the Starter tier and professional voice cloning needs higher plans.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.7,
+    "ai_model": "Eleven Multilingual v2 and Eleven v3",
+    "pros": [
+      "Very natural-sounding voices in many languages",
+      "Voice cloning and dubbing tools",
+      "Developer API for products"
+    ],
+    "cons": [
+      "Free plan has no commercial license",
+      "Credits run out on long-form audio",
+      "Voice cloning requires consent checks"
+    ],
+    "website_url": "https://elevenlabs.io"
+  },
+  {
+    "id": 10,
+    "name": "Leonardo.ai",
+    "slug": "leonardo-ai",
+    "logo": "/logos/leonardo-ai.svg",
+    "category": "AI Creative",
+    "best_for_usecase": "Game assets, product visuals and consistent image styles with fine control",
+    "starting_price": 12,
+    "price_per_user": false,
+    "hidden_limits": "Daily or monthly token allowance governs generations; private generations and faster queues need paid tiers.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.3,
+    "ai_model": "Leonardo Phoenix and Lucid models, plus Flux",
+    "pros": [
+      "Fine-grained controls and custom model training",
+      "Good free daily allowance",
+      "Built-in canvas editing and upscaling"
+    ],
+    "cons": [
+      "Interface can feel busy",
+      "Free images are public",
+      "Token system takes time to understand"
+    ],
+    "website_url": "https://leonardo.ai"
+  },
+  {
+    "id": 11,
+    "name": "Jasper",
+    "slug": "jasper",
+    "logo": "/logos/jasper.svg",
+    "category": "AI Writing",
+    "best_for_usecase": "On-brand marketing copy at scale for content and growth teams",
+    "starting_price": 49,
+    "price_per_user": true,
+    "hidden_limits": "No permanent free plan (trial only); brand voice, knowledge base and collaboration features are gated to higher tiers.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 4.2,
+    "ai_model": "Multi-model (OpenAI, Anthropic, Google)",
+    "pros": [
+      "Brand voice and style guide memory",
+      "Marketing-specific templates and workflows",
+      "Team collaboration features"
+    ],
+    "cons": [
+      "Pricier than general chat assistants",
+      "No free tier",
+      "Overlaps with what ChatGPT or Claude can do"
+    ],
+    "website_url": "https://www.jasper.ai"
+  },
+  {
+    "id": 12,
+    "name": "Grammarly",
+    "slug": "grammarly",
+    "logo": "/logos/grammarly.svg",
+    "category": "AI Writing",
+    "best_for_usecase": "Real-time grammar, tone and clarity fixes across every app you write in",
+    "starting_price": 12,
+    "price_per_user": true,
+    "hidden_limits": "Free tier covers basic spelling and grammar only; AI generation prompts are capped monthly and advanced tone/plagiarism checks need Pro.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.6,
+    "ai_model": "Proprietary models plus partner LLMs",
+    "pros": [
+      "Works in browser, desktop and mobile apps",
+      "Reliable grammar and clarity suggestions",
+      "Team style guides on business plans"
+    ],
+    "cons": [
+      "Aggressive upsell prompts",
+      "Browser extension can slow heavy editors",
+      "Privacy concerns for sensitive text"
+    ],
+    "website_url": "https://www.grammarly.com"
+  },
+  {
+    "id": 13,
+    "name": "Copy.ai",
+    "slug": "copy-ai",
+    "logo": "/logos/copy-ai.svg",
+    "category": "AI Writing",
+    "best_for_usecase": "Go-to-market copy workflows and repeatable sales and marketing automations",
+    "starting_price": 49,
+    "price_per_user": false,
+    "hidden_limits": "Plans bundle a fixed number of seats and workflow credits; extra seats and higher workflow volume cost more.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4,
+    "ai_model": "Multi-model (OpenAI, Anthropic)",
+    "pros": [
+      "Workflow builder for repeatable GTM tasks",
+      "Multiple models in one place",
+      "Free plan to test"
+    ],
+    "cons": [
+      "Product focus has shifted toward enterprise GTM",
+      "Credit limits on lower tiers",
+      "Less polished editor than rivals"
+    ],
+    "website_url": "https://www.copy.ai"
+  },
+  {
+    "id": 14,
+    "name": "GitHub Copilot",
+    "slug": "github-copilot",
+    "logo": "/logos/github-copilot.svg",
+    "category": "AI Coding",
+    "best_for_usecase": "Inline code completion and chat inside VS Code, JetBrains and GitHub",
+    "starting_price": 10,
+    "price_per_user": true,
+    "hidden_limits": "Free plan has monthly completion and chat caps; premium model requests are metered and extra requests are billed on paid plans.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.6,
+    "ai_model": "Selectable GPT, Claude and Gemini models",
+    "pros": [
+      "Works in the editors developers already use",
+      "Deep GitHub integration for PRs and issues",
+      "Low entry price"
+    ],
+    "cons": [
+      "Premium-request limits add up",
+      "Agent features still maturing",
+      "Suggestions need careful review"
+    ],
+    "website_url": "https://github.com/features/copilot"
+  },
+  {
+    "id": 15,
+    "name": "Cursor",
+    "slug": "cursor",
+    "logo": "/logos/cursor.svg",
+    "category": "AI Coding",
+    "best_for_usecase": "AI-first code editor for multi-file edits and agent-driven development",
+    "starting_price": 20,
+    "price_per_user": true,
+    "hidden_limits": "Pro includes a usage allowance for premium models; heavy agent use can exhaust it and require Ultra or usage-based billing.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.7,
+    "ai_model": "Claude, GPT and Gemini plus Cursor in-house models",
+    "pros": [
+      "Strong codebase-aware editing and agent mode",
+      "Familiar VS Code-based interface",
+      "Fast iteration on multi-file changes"
+    ],
+    "cons": [
+      "Usage limits can surprise heavy users",
+      "Pricing model has changed several times",
+      "Not a plugin: requires switching editors"
+    ],
+    "website_url": "https://cursor.com"
+  },
+  {
+    "id": 16,
+    "name": "Replit",
+    "slug": "replit",
+    "logo": "/logos/replit.svg",
+    "category": "AI Coding",
+    "best_for_usecase": "Building and deploying apps from a prompt entirely in the browser",
+    "starting_price": 25,
+    "price_per_user": false,
+    "hidden_limits": "Agent runs, compute and deployments consume credits beyond the monthly allowance; heavy app usage can add usage-based charges.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.2,
+    "ai_model": "Replit Agent (powered by Claude and other LLMs)",
+    "pros": [
+      "Idea-to-deployed app in one place",
+      "No local setup needed",
+      "Great for prototypes and learning"
+    ],
+    "cons": [
+      "Costs can climb with agent usage",
+      "Less control than a local toolchain",
+      "Free plan is limited"
+    ],
+    "website_url": "https://replit.com"
+  },
+  {
+    "id": 17,
+    "name": "Windsurf",
+    "slug": "windsurf",
+    "logo": "/logos/windsurf.svg",
+    "category": "AI Coding",
+    "best_for_usecase": "Agentic AI IDE with fast flow-based coding assistance",
+    "starting_price": 15,
+    "price_per_user": true,
+    "hidden_limits": "Monthly prompt credits are capped; premium models consume more credits and extra credits are purchased separately.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.4,
+    "ai_model": "SWE-1 plus Claude and GPT models",
+    "pros": [
+      "Capable agent that edits across files",
+      "Competitive price",
+      "Generous free allowance"
+    ],
+    "cons": [
+      "Credit system can be confusing",
+      "Ownership and roadmap have shifted recently",
+      "Smaller community than Cursor"
+    ],
+    "website_url": "https://windsurf.com"
+  },
+  {
+    "id": 18,
     "name": "Asana",
     "slug": "asana",
+    "logo": "/logos/asana.svg",
     "category": "Project Management",
-    "website": "https://asana.com",
-    "current_price": 10.99,
-    "currency": "USD",
-    "price_unit": "per user / month (billed annually)",
-    "plan_features": [
-      "List, board, calendar and timeline views",
-      "Unlimited file storage",
-      "Forms and custom fields",
-      "Rules-based automation",
-      "Reporting dashboards"
+    "best_for_usecase": "Cross-functional teams that need structured projects, timelines and goals",
+    "starting_price": 10.99,
+    "price_per_user": true,
+    "hidden_limits": "Free plan caps at 10 users; timelines, portfolios and advanced reporting require higher tiers, and annual billing is cheaper than monthly.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.4,
+    "ai_model": "Asana AI Studio (LLM-powered)",
+    "pros": [
+      "Polished list, board and timeline views",
+      "Strong goals and workload features",
+      "Wide integration library"
     ],
-    "official_pricing_url": "https://asana.com/pricing",
-    "price_selector": null,
-    "price_regex": null,
-    "status": "needs_manual_review",
-    "last_checked": null,
-    "content": null,
-    "comparisons": {}
+    "cons": [
+      "Can get expensive as seats grow",
+      "Learning curve for admins",
+      "Best features sit on higher tiers"
+    ],
+    "website_url": "https://asana.com"
   },
   {
+    "id": 19,
+    "name": "Trello",
+    "slug": "trello",
+    "logo": "/logos/trello.svg",
+    "category": "Project Management",
+    "best_for_usecase": "Simple kanban boards for small teams and personal workflows",
+    "starting_price": 5,
+    "price_per_user": true,
+    "hidden_limits": "Free workspaces limit boards and automation runs; calendar and timeline views need Premium.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.3,
+    "ai_model": "Atlassian Intelligence",
+    "pros": [
+      "Extremely easy to learn",
+      "Low price per seat",
+      "Flexible Power-Ups"
+    ],
+    "cons": [
+      "Not built for complex multi-project planning",
+      "Reporting is limited",
+      "Many features depend on Power-Ups"
+    ],
+    "website_url": "https://trello.com"
+  },
+  {
+    "id": 20,
     "name": "ClickUp",
     "slug": "clickup",
+    "logo": "/logos/clickup.svg",
     "category": "Project Management",
-    "website": "https://clickup.com",
-    "current_price": 7,
-    "currency": "USD",
-    "price_unit": "per user / month (billed annually)",
-    "plan_features": [
-      "Unlimited tasks and members",
-      "Unlimited integrations",
-      "Guests with permissions",
-      "Goals and portfolios",
-      "Resource management"
+    "best_for_usecase": "Teams wanting tasks, docs and goals in one highly customizable workspace",
+    "starting_price": 7,
+    "price_per_user": true,
+    "hidden_limits": "Free plan limits storage and uses; ClickUp Brain AI is a paid add-on per user on top of the plan price.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.4,
+    "ai_model": "ClickUp Brain (multi-model)",
+    "pros": [
+      "Very feature-rich for the price",
+      "Many views and automations",
+      "Docs, whiteboards and chat in one app"
     ],
-    "official_pricing_url": "https://clickup.com/pricing",
-    "price_selector": null,
-    "price_regex": null,
-    "status": "needs_manual_review",
-    "last_checked": null,
-    "content": null,
-    "comparisons": {}
+    "cons": [
+      "Overwhelming for new users",
+      "Performance can lag on big workspaces",
+      "AI costs extra"
+    ],
+    "website_url": "https://clickup.com"
+  },
+  {
+    "id": 21,
+    "name": "Monday.com",
+    "slug": "monday-com",
+    "logo": "/logos/monday-com.svg",
+    "category": "Project Management",
+    "best_for_usecase": "Visual work management for operations, marketing and sales teams",
+    "starting_price": 9,
+    "price_per_user": true,
+    "hidden_limits": "Paid plans require a minimum of 3 seats; automations, integrations and dashboards are capped per tier.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.4,
+    "ai_model": "monday AI (OpenAI-based)",
+    "pros": [
+      "Colorful, intuitive boards",
+      "Strong automation recipes",
+      "Dedicated CRM and dev products"
+    ],
+    "cons": [
+      "3-seat minimum on paid plans",
+      "Pricing escalates with tier jumps",
+      "Feature limits on lower plans"
+    ],
+    "website_url": "https://monday.com"
+  },
+  {
+    "id": 22,
+    "name": "Linear",
+    "slug": "linear",
+    "logo": "/logos/linear.svg",
+    "category": "Project Management",
+    "best_for_usecase": "Fast, opinionated issue tracking and sprint planning for software teams",
+    "starting_price": 10,
+    "price_per_user": true,
+    "hidden_limits": "Free plan is limited to a small number of issues and teams; advanced insights, SLAs and unlimited history need higher plans.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.7,
+    "ai_model": "Linear AI triage and summaries",
+    "pros": [
+      "Blazing-fast, keyboard-first interface",
+      "Clean cycles, roadmaps and GitHub sync",
+      "Opinionated workflow reduces setup"
+    ],
+    "cons": [
+      "Built for software teams, less for general work",
+      "Fewer customization options",
+      "Paid tiers add up for large teams"
+    ],
+    "website_url": "https://linear.app"
+  },
+  {
+    "id": 23,
+    "name": "Jira",
+    "slug": "jira",
+    "logo": "/logos/jira.svg",
+    "category": "Project Management",
+    "best_for_usecase": "Agile software teams needing configurable workflows, scrum and kanban",
+    "starting_price": 7.53,
+    "price_per_user": true,
+    "hidden_limits": "Free plan is limited to 10 users; advanced roadmaps, audit logs and automation volume depend on the tier.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.2,
+    "ai_model": "Atlassian Intelligence (Rovo)",
+    "pros": [
+      "Deeply configurable workflows",
+      "Mature agile tooling",
+      "Large Atlassian marketplace"
+    ],
+    "cons": [
+      "Complex setup and admin overhead",
+      "Interface can feel heavy",
+      "Can be overkill for small teams"
+    ],
+    "website_url": "https://www.atlassian.com/software/jira"
+  },
+  {
+    "id": 24,
+    "name": "Plane",
+    "slug": "plane",
+    "logo": "/logos/plane.svg",
+    "category": "Project Management",
+    "best_for_usecase": "Open-source Jira alternative you can self-host or use in the cloud",
+    "starting_price": 6,
+    "price_per_user": true,
+    "hidden_limits": "Self-hosted Community edition is free; hosted Pro and enterprise features (SSO, advanced analytics) are paid and may differ from the open core.",
+    "has_free_tier": true,
+    "is_open_source": true,
+    "rating": 4.2,
+    "ai_model": "Plane AI (LLM-powered, bring-your-own key on self-host)",
+    "pros": [
+      "Open source (AGPL) and self-hostable",
+      "Clean cycles, modules and views",
+      "Low per-seat cloud pricing"
+    ],
+    "cons": [
+      "Younger ecosystem than Jira",
+      "Some features reserved for paid editions",
+      "Self-hosting needs DevOps time"
+    ],
+    "website_url": "https://plane.so"
+  },
+  {
+    "id": 25,
+    "name": "HubSpot",
+    "slug": "hubspot",
+    "logo": "/logos/hubspot.svg",
+    "category": "CRM",
+    "best_for_usecase": "Growing teams unifying CRM, marketing and sales automation",
+    "starting_price": 20,
+    "price_per_user": true,
+    "hidden_limits": "Free CRM is generous but caps marketing contacts and emails; costs rise sharply when you add Professional hubs or onboarding fees.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.6,
+    "ai_model": "HubSpot Breeze AI",
+    "pros": [
+      "Excellent free CRM to start",
+      "All-in-one marketing, sales and service",
+      "Huge ecosystem and training content"
+    ],
+    "cons": [
+      "Costs jump at Professional tier",
+      "Required onboarding fees on higher plans",
+      "Contact-based pricing adds up"
+    ],
+    "website_url": "https://www.hubspot.com"
+  },
+  {
+    "id": 26,
+    "name": "Salesforce",
+    "slug": "salesforce",
+    "logo": "/logos/salesforce.svg",
+    "category": "CRM",
+    "best_for_usecase": "Enterprise sales organizations needing a customizable CRM platform",
+    "starting_price": 25,
+    "price_per_user": true,
+    "hidden_limits": "Entry-level Starter Suite is limited; customization, automation and storage need higher editions, plus implementation and admin costs.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 4.3,
+    "ai_model": "Salesforce Einstein and Agentforce",
+    "pros": [
+      "Most powerful and extensible CRM",
+      "Massive app and consultant ecosystem",
+      "Strong reporting and forecasting"
+    ],
+    "cons": [
+      "Complex and costly to implement",
+      "Needs dedicated admin skills",
+      "Add-ons inflate the real price"
+    ],
+    "website_url": "https://www.salesforce.com"
+  },
+  {
+    "id": 27,
+    "name": "Pipedrive",
+    "slug": "pipedrive",
+    "logo": "/logos/pipedrive.svg",
+    "category": "CRM",
+    "best_for_usecase": "Small sales teams that want a visual, pipeline-first CRM",
+    "starting_price": 14,
+    "price_per_user": true,
+    "hidden_limits": "The lowest tier has limited automation and reporting; the quoted price assumes annual billing and add-ons like LeadBooster cost extra.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 4.4,
+    "ai_model": "Pipedrive AI Sales Assistant",
+    "pros": [
+      "Intuitive drag-and-drop pipeline",
+      "Fast setup for small teams",
+      "Good email and calling integrations"
+    ],
+    "cons": [
+      "No free plan",
+      "Marketing features are add-ons",
+      "Advanced reports need upper tiers"
+    ],
+    "website_url": "https://www.pipedrive.com"
+  },
+  {
+    "id": 28,
+    "name": "Zoho CRM",
+    "slug": "zoho-crm",
+    "logo": "/logos/zoho-crm.svg",
+    "category": "CRM",
+    "best_for_usecase": "Budget-conscious businesses wanting broad CRM features and the Zoho suite",
+    "starting_price": 14,
+    "price_per_user": true,
+    "hidden_limits": "Free edition is limited to a handful of users; workflow rules, custom modules and API calls scale with plan tier.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.2,
+    "ai_model": "Zoho Zia AI",
+    "pros": [
+      "Strong value across the Zoho ecosystem",
+      "Highly customizable",
+      "Free edition for tiny teams"
+    ],
+    "cons": [
+      "Interface can feel dated",
+      "Support quality varies",
+      "Integrations outside Zoho are less polished"
+    ],
+    "website_url": "https://www.zoho.com/crm"
+  },
+  {
+    "id": 29,
+    "name": "Twenty",
+    "slug": "twenty",
+    "logo": "/logos/twenty.svg",
+    "category": "CRM",
+    "best_for_usecase": "Teams wanting an open-source, customizable CRM they can self-host",
+    "starting_price": 9,
+    "price_per_user": true,
+    "hidden_limits": "Self-hosting is free but you manage infra and updates; hosted cloud pricing and some enterprise features are paid.",
+    "has_free_tier": true,
+    "is_open_source": true,
+    "rating": 4,
+    "ai_model": "None built in (API and workflow-first)",
+    "pros": [
+      "Open source (AGPL) with full data ownership",
+      "Modern Notion-like interface",
+      "Custom objects and API-first design"
+    ],
+    "cons": [
+      "Younger, fewer integrations",
+      "Smaller community",
+      "Self-hosting requires maintenance"
+    ],
+    "website_url": "https://twenty.com"
+  },
+  {
+    "id": 30,
+    "name": "Figma",
+    "slug": "figma",
+    "logo": "/logos/figma.svg",
+    "category": "Design",
+    "best_for_usecase": "Collaborative UI/UX design, prototyping and design systems",
+    "starting_price": 16,
+    "price_per_user": true,
+    "hidden_limits": "Free Starter limits files and editing seats; Dev Mode and advanced libraries need paid seat types, and seat types are billed separately.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.8,
+    "ai_model": "Figma AI (Make and design assist features)",
+    "pros": [
+      "Real-time multiplayer design",
+      "Industry-standard with huge plugin library",
+      "Browser-based, no install"
+    ],
+    "cons": [
+      "Seat types complicate pricing",
+      "Needs a decent connection",
+      "Heavy files can slow down"
+    ],
+    "website_url": "https://www.figma.com"
+  },
+  {
+    "id": 31,
+    "name": "Canva",
+    "slug": "canva",
+    "logo": "/logos/canva.svg",
+    "category": "Design",
+    "best_for_usecase": "Non-designers creating social posts, presentations and marketing assets quickly",
+    "starting_price": 15,
+    "price_per_user": true,
+    "hidden_limits": "Premium templates, Brand Kit and Magic Studio AI credits are limited on free and capped on Pro; Teams needs a minimum of 3 seats.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.7,
+    "ai_model": "Canva Magic Studio (Magic Design, Magic Write)",
+    "pros": [
+      "Huge template and asset library",
+      "Very easy for beginners",
+      "Strong collaboration and brand kits"
+    ],
+    "cons": [
+      "Less precise than pro design tools",
+      "Best assets are paywalled",
+      "AI features have usage caps"
+    ],
+    "website_url": "https://www.canva.com"
+  },
+  {
+    "id": 32,
+    "name": "Penpot",
+    "slug": "penpot",
+    "logo": "/logos/penpot.svg",
+    "category": "Design",
+    "best_for_usecase": "Open-source design and prototyping with design-code collaboration",
+    "starting_price": 7,
+    "price_per_user": true,
+    "hidden_limits": "The core app is free and self-hostable; hosted paid plans add storage, history and admin features and may change.",
+    "has_free_tier": true,
+    "is_open_source": true,
+    "rating": 4.2,
+    "ai_model": "None built in",
+    "pros": [
+      "Open source (MPL-2.0) and self-hostable",
+      "Uses open standards like SVG, CSS grid and flex",
+      "Free for individuals and small teams"
+    ],
+    "cons": [
+      "Smaller plugin ecosystem than Figma",
+      "Fewer advanced prototyping features",
+      "Performance on huge files lags"
+    ],
+    "website_url": "https://penpot.app"
+  },
+  {
+    "id": 33,
+    "name": "Framer",
+    "slug": "framer",
+    "logo": "/logos/framer.svg",
+    "category": "Design",
+    "best_for_usecase": "Designing and publishing polished marketing sites without code",
+    "starting_price": 10,
+    "price_per_user": false,
+    "hidden_limits": "Pricing is per published site and tied to page, CMS and bandwidth limits; collaborators on a team are billed separately.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.5,
+    "ai_model": "Framer AI (Wireframer and Workshop)",
+    "pros": [
+      "Design and publish in one tool",
+      "Beautiful animations and interactions",
+      "Built-in hosting, CMS and SEO controls"
+    ],
+    "cons": [
+      "Per-site pricing can add up",
+      "Lock-in to Framer hosting",
+      "Limited back-end logic"
+    ],
+    "website_url": "https://www.framer.com"
+  },
+  {
+    "id": 34,
+    "name": "Notion",
+    "slug": "notion",
+    "logo": "/logos/notion.svg",
+    "category": "Productivity & Docs",
+    "best_for_usecase": "All-in-one docs, wikis and lightweight project tracking for teams",
+    "starting_price": 10,
+    "price_per_user": true,
+    "hidden_limits": "Free plan limits block history and guests; the full Notion AI features moved into higher tiers, so the cheapest paid plan may not include them.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.7,
+    "ai_model": "Notion AI (OpenAI and Anthropic models)",
+    "pros": [
+      "Flexible docs, databases and wikis in one place",
+      "Beautiful, approachable interface",
+      "Large template ecosystem"
+    ],
+    "cons": [
+      "Can get slow on large workspaces",
+      "Offline support is limited",
+      "AI features gated to higher tiers"
+    ],
+    "website_url": "https://www.notion.so"
+  },
+  {
+    "id": 35,
+    "name": "Airtable",
+    "slug": "airtable",
+    "logo": "/logos/airtable.svg",
+    "category": "Productivity & Docs",
+    "best_for_usecase": "Relational databases with views, forms and automations for ops teams",
+    "starting_price": 20,
+    "price_per_user": true,
+    "hidden_limits": "Strict record limits per base (1,000 on Free, 50,000 on Team); automation runs and sync features are capped per plan.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.4,
+    "ai_model": "Airtable AI (Omni)",
+    "pros": [
+      "Spreadsheet-simple, database-powerful",
+      "Great views: grid, kanban, gallery, calendar",
+      "Strong automation and interface builder"
+    ],
+    "cons": [
+      "Record limits force upgrades",
+      "Per-seat price is high",
+      "Complex bases need careful design"
+    ],
+    "website_url": "https://www.airtable.com"
+  },
+  {
+    "id": 36,
+    "name": "Obsidian",
+    "slug": "obsidian",
+    "logo": "/logos/obsidian.svg",
+    "category": "Productivity & Docs",
+    "best_for_usecase": "Private, local-first note-taking and personal knowledge graphs",
+    "starting_price": 0,
+    "price_per_user": false,
+    "hidden_limits": "The app is free; Sync and Publish are optional paid add-ons, and there is no built-in real-time team collaboration.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.7,
+    "ai_model": "None built in (community plugins)",
+    "pros": [
+      "Notes are plain Markdown files you own",
+      "Powerful linking and graph view",
+      "Huge community plugin ecosystem"
+    ],
+    "cons": [
+      "Not open source (source-available app)",
+      "No native real-time collaboration",
+      "Steeper learning curve for beginners"
+    ],
+    "website_url": "https://obsidian.md"
+  },
+  {
+    "id": 37,
+    "name": "Coda",
+    "slug": "coda",
+    "logo": "/logos/coda.svg",
+    "category": "Productivity & Docs",
+    "best_for_usecase": "Interactive docs that blend text, tables and automations into mini apps",
+    "starting_price": 12,
+    "price_per_user": true,
+    "hidden_limits": "Free plan limits doc size and automation runs; only Doc Makers are billed, but editors and viewers have capped permissions.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.3,
+    "ai_model": "Coda AI",
+    "pros": [
+      "Powerful formulas and packs",
+      "Docs that behave like apps",
+      "Only makers are billed on many plans"
+    ],
+    "cons": [
+      "Learning curve for formulas",
+      "Smaller community than Notion",
+      "Pricing model can be confusing"
+    ],
+    "website_url": "https://coda.io"
+  },
+  {
+    "id": 38,
+    "name": "Slack",
+    "slug": "slack",
+    "logo": "/logos/slack.svg",
+    "category": "Communication",
+    "best_for_usecase": "Real-time team messaging with deep app integrations",
+    "starting_price": 8.75,
+    "price_per_user": true,
+    "hidden_limits": "Free workspaces keep only 90 days of message history and limit integrations; Slack AI is only available on higher tiers.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.5,
+    "ai_model": "Slack AI (multi-LLM)",
+    "pros": [
+      "Best-in-class integrations",
+      "Fast, organized channels and threads",
+      "Huddles and workflow builder"
+    ],
+    "cons": [
+      "Message history limited on free",
+      "Notification overload",
+      "Price rises with the AI tier"
+    ],
+    "website_url": "https://slack.com"
+  },
+  {
+    "id": 39,
+    "name": "Zoom",
+    "slug": "zoom",
+    "logo": "/logos/zoom.svg",
+    "category": "Communication",
+    "best_for_usecase": "Reliable video meetings and webinars for teams and clients",
+    "starting_price": 13.33,
+    "price_per_user": true,
+    "hidden_limits": "Free meetings are capped at 40 minutes; phone, large-meeting and webinar add-ons are billed separately.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.4,
+    "ai_model": "Zoom AI Companion (multi-LLM)",
+    "pros": [
+      "Dependable video quality",
+      "AI Companion included on paid plans",
+      "Easy for external guests to join"
+    ],
+    "cons": [
+      "40-minute limit on free meetings",
+      "Add-ons increase total cost",
+      "Feature overlap with Teams and Meet"
+    ],
+    "website_url": "https://zoom.com"
+  },
+  {
+    "id": 40,
+    "name": "Loom",
+    "slug": "loom",
+    "logo": "/logos/loom.svg",
+    "category": "Communication",
+    "best_for_usecase": "Async video updates, walkthroughs and product demos",
+    "starting_price": 15,
+    "price_per_user": true,
+    "hidden_limits": "Free Starter plan caps videos at 25 per person and 5 minutes each; AI features and unlimited recording need Business.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.5,
+    "ai_model": "Loom AI (summaries, titles, chapters)",
+    "pros": [
+      "Fastest way to record and share a video",
+      "Auto titles, summaries and transcripts",
+      "Viewer analytics and comments"
+    ],
+    "cons": [
+      "Strict free-plan limits",
+      "Creators are billed per seat",
+      "Storage and branding tied to tiers"
+    ],
+    "website_url": "https://www.loom.com"
+  },
+  {
+    "id": 41,
+    "name": "Zapier",
+    "slug": "zapier",
+    "logo": "/logos/zapier.svg",
+    "category": "Automation",
+    "best_for_usecase": "No-code automation between thousands of apps",
+    "starting_price": 19.99,
+    "price_per_user": false,
+    "hidden_limits": "Pricing is by monthly task count; multi-step Zaps, premium apps and higher task volumes require paid tiers and overages are charged.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.5,
+    "ai_model": "Zapier Agents and AI actions (OpenAI-powered)",
+    "pros": [
+      "Largest app integration library",
+      "Very approachable no-code builder",
+      "Reliable and well documented"
+    ],
+    "cons": [
+      "Task-based pricing scales fast",
+      "Complex logic is clunky",
+      "Costs more than Make or n8n at volume"
+    ],
+    "website_url": "https://zapier.com"
+  },
+  {
+    "id": 42,
+    "name": "Make",
+    "slug": "make",
+    "logo": "/logos/make.svg",
+    "category": "Automation",
+    "best_for_usecase": "Visual, multi-branch automation scenarios at lower per-operation cost",
+    "starting_price": 9,
+    "price_per_user": false,
+    "hidden_limits": "Plans are metered by operations; each module run counts, so complex scenarios can burn through the monthly allowance.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.6,
+    "ai_model": "Make AI Agents (bring your own model)",
+    "pros": [
+      "Powerful visual scenario builder",
+      "Cheaper per operation than Zapier",
+      "Strong data transformation tools"
+    ],
+    "cons": [
+      "Steeper learning curve",
+      "Operation counting is easy to misjudge",
+      "Fewer native integrations than Zapier"
+    ],
+    "website_url": "https://www.make.com"
+  },
+  {
+    "id": 43,
+    "name": "n8n",
+    "slug": "n8n",
+    "logo": "/logos/n8n.svg",
+    "category": "Automation",
+    "best_for_usecase": "Technical teams building self-hostable workflow and AI-agent automations",
+    "starting_price": 24,
+    "price_per_user": false,
+    "hidden_limits": "Source-available under the Sustainable Use License (not OSI open source); cloud plans are limited by monthly executions and self-hosting is free for internal use only.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.6,
+    "ai_model": "AI nodes for OpenAI, Anthropic and local LLMs",
+    "pros": [
+      "Self-hostable with full data control",
+      "Powerful code and AI-agent nodes",
+      "Executions-based pricing, not per step"
+    ],
+    "cons": [
+      "Not OSI open source (fair-code)",
+      "More technical than Zapier",
+      "Self-hosting needs maintenance"
+    ],
+    "website_url": "https://n8n.io"
+  },
+  {
+    "id": 44,
+    "name": "Mailchimp",
+    "slug": "mailchimp",
+    "logo": "/logos/mailchimp.svg",
+    "category": "Marketing",
+    "best_for_usecase": "Email newsletters and simple marketing automation for small businesses",
+    "starting_price": 13,
+    "price_per_user": false,
+    "hidden_limits": "Price scales with contact count and the free plan has tight send limits and no automation beyond basics; unsubscribed contacts can still count.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.1,
+    "ai_model": "Intuit Assist",
+    "pros": [
+      "Easy campaign builder and templates",
+      "Handy audience tools and landing pages",
+      "Familiar, widely supported"
+    ],
+    "cons": [
+      "Costs climb as your list grows",
+      "Reporting and segmentation lag niche rivals",
+      "Free plan keeps getting reduced"
+    ],
+    "website_url": "https://mailchimp.com"
+  },
+  {
+    "id": 45,
+    "name": "Semrush",
+    "slug": "semrush",
+    "logo": "/logos/semrush.svg",
+    "category": "Marketing",
+    "best_for_usecase": "SEO, keyword research and competitor analysis for marketing teams",
+    "starting_price": 139.95,
+    "price_per_user": false,
+    "hidden_limits": "Pro plan limits tracked projects, keywords and daily reports; extra users, Local and the AI Toolkit are billed as add-ons.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 4.6,
+    "ai_model": "Semrush AI (ContentShake and AI Toolkit)",
+    "pros": [
+      "Comprehensive SEO and PPC data",
+      "Strong competitor and backlink research",
+      "Many tools under one login"
+    ],
+    "cons": [
+      "Expensive entry price",
+      "Add-ons inflate the bill",
+      "Can overwhelm newcomers"
+    ],
+    "website_url": "https://www.semrush.com"
+  },
+  {
+    "id": 46,
+    "name": "Buffer",
+    "slug": "buffer",
+    "logo": "/logos/buffer.svg",
+    "category": "Marketing",
+    "best_for_usecase": "Simple social media scheduling and publishing for creators and small brands",
+    "starting_price": 6,
+    "price_per_user": false,
+    "hidden_limits": "Pricing is per connected channel; free plan allows only 3 channels and a limited post queue.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 4.4,
+    "ai_model": "Buffer AI Assistant",
+    "pros": [
+      "Clean, quick scheduling workflow",
+      "Transparent per-channel pricing",
+      "Good free plan for beginners"
+    ],
+    "cons": [
+      "Analytics are basic on lower tiers",
+      "Per-channel cost scales with accounts",
+      "Fewer team features than Hootsuite"
+    ],
+    "website_url": "https://buffer.com"
+  },
+  {
+    "id": 47,
+    "name": "PostHog",
+    "slug": "posthog",
+    "logo": "/logos/posthog.svg",
+    "category": "Analytics",
+    "best_for_usecase": "Product analytics, session replay and feature flags in one open-source suite",
+    "starting_price": 0,
+    "price_per_user": false,
+    "hidden_limits": "Usage-based billing with a generous free monthly allowance; costs scale with events, recordings and flag requests beyond free quotas.",
+    "has_free_tier": true,
+    "is_open_source": true,
+    "rating": 4.6,
+    "ai_model": "PostHog AI (LLM-assisted insights)",
+    "pros": [
+      "All-in-one product analytics toolkit",
+      "Open source (MIT core) and self-hostable",
+      "Generous free tier and no per-seat fees"
+    ],
+    "cons": [
+      "Usage costs can spike at scale",
+      "Many products can overwhelm",
+      "Self-hosting only suits smaller volumes"
+    ],
+    "website_url": "https://posthog.com"
+  },
+  {
+    "id": 48,
+    "name": "Plausible",
+    "slug": "plausible",
+    "logo": "/logos/plausible.svg",
+    "category": "Analytics",
+    "best_for_usecase": "Lightweight, privacy-first website analytics without cookie banners",
+    "starting_price": 9,
+    "price_per_user": false,
+    "hidden_limits": "Cloud pricing scales by monthly pageviews; the self-hosted Community Edition is free but lacks some cloud features.",
+    "has_free_tier": true,
+    "is_open_source": true,
+    "rating": 4.6,
+    "ai_model": "None (privacy-first analytics)",
+    "pros": [
+      "Simple, fast dashboard",
+      "Open source (AGPL) and self-hostable",
+      "No cookies, GDPR-friendly"
+    ],
+    "cons": [
+      "Fewer features than Google Analytics",
+      "No permanent free cloud plan",
+      "Limited funnel and segmentation depth"
+    ],
+    "website_url": "https://plausible.io"
+  },
+  {
+    "id": 49,
+    "name": "Intercom",
+    "slug": "intercom",
+    "logo": "/logos/intercom.svg",
+    "category": "Customer Support",
+    "best_for_usecase": "Conversational support, in-app messaging and an AI agent for SaaS companies",
+    "starting_price": 29,
+    "price_per_user": true,
+    "hidden_limits": "The Fin AI agent is billed per resolution on top of seat fees, and advanced features sit on much pricier tiers.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 4.4,
+    "ai_model": "Fin AI Agent (OpenAI and Anthropic models)",
+    "pros": [
+      "Best-in-class in-app messenger",
+      "Fin AI resolves many tickets automatically",
+      "Unified inbox and help center"
+    ],
+    "cons": [
+      "Per-resolution AI fees add up",
+      "Expensive at scale",
+      "Complicated pricing"
+    ],
+    "website_url": "https://www.intercom.com"
+  },
+  {
+    "id": 50,
+    "name": "Zendesk",
+    "slug": "zendesk",
+    "logo": "/logos/zendesk.svg",
+    "category": "Customer Support",
+    "best_for_usecase": "Scalable ticketing, help centers and omnichannel support operations",
+    "starting_price": 19,
+    "price_per_user": true,
+    "hidden_limits": "Entry tier is email and basic ticketing only; messaging, automation, AI agents and advanced analytics require higher plans or add-ons.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 4.3,
+    "ai_model": "Zendesk AI agents",
+    "pros": [
+      "Mature, reliable ticketing",
+      "Broad channel support",
+      "Large app marketplace"
+    ],
+    "cons": [
+      "Costs rise fast with add-ons",
+      "Interface can feel dated",
+      "Setup takes time"
+    ],
+    "website_url": "https://www.zendesk.com"
   }
 ]

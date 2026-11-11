@@ -59,7 +59,7 @@ if (c?.faqs?.length) schema.push(faqSchema(c.faqs));
 
 <BaseLayout {title} {description} {path} {schema} noindex={!c}>
   <nav class="mb-4 text-sm text-slate-500" aria-label="Breadcrumb">
-    <a href="/" class="hover:underline">Home</a> / <span>{tool.name} review</span>
+    <a href="/" class="inline-flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a> / <span>{tool.name} review</span>
   </nav>
 
   <StatusNotice tools={[tool]} />
@@ -85,7 +85,7 @@ if (c?.faqs?.length) schema.push(faqSchema(c.faqs));
       href={tool.official_pricing_url}
       rel="nofollow noopener"
       target="_blank"
-      class="mt-4 inline-block rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700"
+      class="mt-4 inline-flex min-h-11 items-center rounded-lg bg-indigo-700 px-4 text-sm font-semibold text-white hover:bg-indigo-800"
     >
       See official pricing →
     </a>

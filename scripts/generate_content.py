@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Populate src/data/tools.json with SEO content via OpenRouter (Claude 3.5 Sonnet).
+"""Populate src/data/pseo-tools.json with SEO content via OpenRouter (Claude 3.5 Sonnet).
 
 * Review content  -> tool["content"]
 * Comparison data -> tools[a]["comparisons"][b_slug]   (a/b alphabetical by slug)
 
-Only missing entries are generated unless --force is given. tools.json is
+Only missing entries are generated unless --force is given. pseo-tools.json is
 saved after every successful call, so an interrupted run loses nothing.
 
-The model is told to use ONLY the specs in tools.json and never invent prices,
+The model is told to use ONLY the specs in pseo-tools.json and never invent prices,
 which keeps pricing data owned by update_prices.py.
 
 Usage:

@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import { SITE_NAME, SITE_URL, absoluteUrl, jsonLdString, truncate } from '../lib/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path such as `/tool/notion/` — used for canonical + og:url. */
+  path: string;
+  /** Page-level JSON-LD nodes; merged with the site-wide Organization + WebSite nodes. */
+  schema?: Record<string, unknown>[];
+  noindex?: boolean;
+  ogType?: 'website' | 'article';
+  /** Constrain the main column (used by the long-form pSEO pages). */
+  narrow?: boolean;
+}
+
+const { title, description, path, schema = [], noindex = false, ogType = 'website', narrow = false } = Astro.props;
+
+const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+const desc = truncate(description);
+const canonical = absoluteUrl(path);
+
+const siteSchema: Record<string, unknown>[] = [
+  {
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: absoluteUrl('/favicon.svg'),
+  },
+  {
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    name: SITE_NAME,
+    url: SITE_URL,
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: { '@type': 'EntryPoint', urlTemplate: `${SITE_URL}/?q={search_term_string}` },
+      'query-input': 'required name=search_term_string',
+    },
+  },
+];
+const graph = jsonLdString({ '@context': 'https://schema.org', '@graph': [...siteSchema, ...schema] });
+---
+
+<!doctype html>
+<html lang="en" data-free-only="false">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <meta name="theme-color" content="#f8fafc" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={desc} />
+
+    <script type="application/ld+json" set:html={graph} />
+
+    <!-- Restore the Free-Only preference before first paint (prevents a flash of hidden content). -->
+    <script is:inline>
+      try {
+        if (localStorage.getItem('usaasly:free-only') === '1') document.documentElement.dataset.freeOnly = 'true';
+      } catch (e) {}
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-50 font-sans text-slate-800 antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-3 focus:top-3 focus:z-[100] focus:rounded-xl focus:bg-white focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-indigo-700 focus:shadow-lg"
+    >
+      Skip to content
+    </a>
+
+    <SiteHeader />
+
+    <main id="main" class:list={['mx-auto px-4 py-8', narrow ? 'max-w-4xl' : 'max-w-6xl']}>
+      <slot />
+    </main>
+
+    <footer class="mt-12 border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-6xl px-4 py-6 text-sm text-slate-600">
+        © {new Date().getFullYear()}
+        {SITE_NAME}. Prices are starting prices (annual billing where applicable) and change often — always confirm on the vendor's official pricing page.
+      </div>
+    </footer>
+
+    <div
+      id="toast-region"
+      role="status"
+      aria-live="polite"
+      class="pointer-events-none fixed inset-x-4 bottom-4 z-[90] flex flex-col items-center gap-2 sm:items-end"
+    >
+    </div>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Weekly price checker for src/data/tools.json.
+"""Weekly price checker for src/data/pseo-tools.json.
 
 For every tool it fetches `official_pricing_url`, extracts the price using the
 tool's `price_selector` (CSS) and/or `price_regex`, and updates `current_price`.
@@ -212,7 +212,7 @@ def check_tool(tool: dict[str, Any], max_change: float) -> float:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--only", nargs="*", help="only check these slugs")
-    parser.add_argument("--dry-run", action="store_true", help="don't write tools.json or send alerts")
+    parser.add_argument("--dry-run", action="store_true", help="don't write pseo-tools.json or send alerts")
     parser.add_argument("--max-change", type=float, default=0.5,
                         help="flag price changes larger than this fraction (0 disables; default 0.5)")
     parser.add_argument("--delay", type=float, default=2.0, help="seconds between requests")
@@ -266,10 +266,10 @@ def main(argv: list[str] | None = None) -> int:
 
     log.info("Done: %d ok, %d failed", ok, failed)
     if args.dry_run:
-        log.info("Dry run: tools.json not modified.")
+        log.info("Dry run: pseo-tools.json not modified.")
     else:
         save_tools(tools)
-        log.info("Saved %s", ROOT / "src/data/tools.json")
+        log.info("Saved %s", ROOT / "src/data/pseo-tools.json")
 
     return 1 if (args.strict and failed) else 0
 

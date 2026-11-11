@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Notion",
+    "slug": "notion",
+    "category": "Productivity & Docs",
+    "website": "https://www.notion.so",
+    "current_price": 10,
+    "currency": "USD",
+    "price_unit": "per user / month (billed annually)",
+    "plan_features": [
+      "Unlimited pages and blocks",
+      "Unlimited file uploads",
+      "Collaborative workspace",
+      "Advanced page analytics",
+      "30-day page history"
+    ],
+    "official_pricing_url": "https://www.notion.so/pricing",
+    "price_selector": null,
+    "price_regex": null,
+    "status": "needs_manual_review",
+    "last_checked": null,
+    "content": null,
+    "comparisons": {}
+  },
+  {
+    "name": "Trello",
+    "slug": "trello",
+    "category": "Project Management",
+    "website": "https://trello.com",
+    "current_price": 5,
+    "currency": "USD",
+    "price_unit": "per user / month (billed annually)",
+    "plan_features": [
+      "Unlimited cards",
+      "Unlimited storage (10MB/file)",
+      "Unlimited boards",
+      "Advanced checklists",
+      "Custom fields"
+    ],
+    "official_pricing_url": "https://trello.com/pricing",
+    "price_selector": null,
+    "price_regex": null,
+    "status": "needs_manual_review",
+    "last_checked": null,
+    "content": null,
+    "comparisons": {}
+  },
+  {
+    "name": "Asana",
+    "slug": "asana",
+    "category": "Project Management",
+    "website": "https://asana.com",
+    "current_price": 10.99,
+    "currency": "USD",
+    "price_unit": "per user / month (billed annually)",
+    "plan_features": [
+      "List, board, calendar and timeline views",
+      "Unlimited file storage",
+      "Forms and custom fields",
+      "Rules-based automation",
+      "Reporting dashboards"
+    ],
+    "official_pricing_url": "https://asana.com/pricing",
+    "price_selector": null,
+    "price_regex": null,
+    "status": "needs_manual_review",
+    "last_checked": null,
+    "content": null,
+    "comparisons": {}
+  },
+  {
+    "name": "ClickUp",
+    "slug": "clickup",
+    "category": "Project Management",
+    "website": "https://clickup.com",
+    "current_price": 7,
+    "currency": "USD",
+    "price_unit": "per user / month (billed annually)",
+    "plan_features": [
+      "Unlimited tasks and members",
+      "Unlimited integrations",
+      "Guests with permissions",
+      "Goals and portfolios",
+      "Resource management"
+    ],
+    "official_pricing_url": "https://clickup.com/pricing",
+    "price_selector": null,
+    "price_regex": null,
+    "status": "needs_manual_review",
+    "last_checked": null,
+    "content": null,
+    "comparisons": {}
+  }
+]

@@ -8,11 +8,11 @@ const SITE = 'https://usassly.com';
 
 /**
  * Pages without generated content are rendered with `noindex`, so they must
- * also be kept out of the sitemap. We compute that list from tools.json.
+ * also be kept out of the sitemap. We compute that list from pseo-tools.json.
  */
 function noindexPaths() {
   const tools = JSON.parse(
-    readFileSync(new URL('./src/data/tools.json', import.meta.url), 'utf-8'),
+    readFileSync(new URL('./src/data/pseo-tools.json', import.meta.url), 'utf-8'),
   );
   const skip = new Set();
   const sorted = [...tools].sort((x, y) => x.slug.localeCompare(y.slug));

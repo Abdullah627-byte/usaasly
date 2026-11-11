@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { catalog, toLite } from '../lib/catalog';
+import { jsonLdString, breadcrumbSchema } from '../lib/seo';
+
+const schema = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Stack Builder', path: '/stack-builder/' },
+  ]),
+];
+---
+
+<Layout
+  title="SaaS Stack Builder: Calculate the Total Monthly Cost of Your Tool Stack"
+  description="Pick one tool from three categories (CRM + AI + Project Management) and see the total monthly cost of your SaaS stack for your team size."
+  path="/stack-builder/"
+  {schema}
+>
+  <h1 class="text-3xl font-bold tracking-tight text-slate-900">Stack Builder</h1>
+  <p class="mt-1 text-slate-600">Choose one tool from each of three categories and see what your stack really costs per month.</p>
+
+  <div class="mt-6 grid min-h-[90dvh] content-start gap-6 lg:grid-cols-3">
+    <div class="space-y-4 lg:col-span-2">
+      <section aria-labelledby="team-title" class="rounded-3xl border border-slate-200 bg-white p-5">
+        <div class="flex flex-wrap items-end justify-between gap-2">
+          <h2 id="team-title" class="text-lg font-semibold text-slate-900">Team size</h2>
+          <p class="text-sm font-semibold text-indigo-700" data-team-label>5 users</p>
+        </div>
+        <div class="mt-3 flex items-center gap-4">
+          <label for="stack-team" class="sr-only">Team size (1 to 100)</label>
+          <input id="stack-team" type="range" min="1" max="100" step="1" value="5" class="h-11 min-w-0 flex-1 cursor-pointer" />
+          <label for="stack-team-number" class="sr-only">Team size number</label>
+          <input id="stack-team-number" type="number" inputmode="numeric" min="1" max="100" value="5" class="h-11 w-20 rounded-xl border border-slate-300 bg-white px-3 text-center text-base font-semibold text-slate-900" />
+        </div>
+      </section>
+
+      <div id="slots" class="space-y-4"></div>
+    </div>
+
+    <aside class="lg:col-span-1" aria-label="Stack summary">
+      <div class="rounded-3xl border border-slate-200 bg-white p-5 lg:sticky lg:top-4">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-600">Total monthly cost</h2>
+        <p class="mt-1 text-4xl font-bold text-indigo-900" data-total aria-live="polite">$0</p>
+        <p class="text-sm text-slate-700" data-yearly>$0 / year</p>
+        <p class="mt-1 text-xs text-slate-600">for <span data-team-label>5 users</span></p>
+        <ul id="breakdown-list" class="mt-4 divide-y divide-slate-100 border-t border-slate-100"></ul>
+        <button type="button" id="stack-compare" disabled class="mt-4 min-h-11 w-full rounded-full bg-indigo-700 px-5 text-sm font-semibold text-white hover:bg-indigo-800 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-700">
+          Compare these tools →
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <p class="mt-6 text-xs text-slate-600">
+    Per-user tools are multiplied by team size; flat-fee tools are counted once. Prices are starting prices and exclude add-ons, taxes and usage overages.
+  </p>
+
+  <script type="application/json" id="catalog-lite" set:html={jsonLdString(catalog.map(toLite))} />
+  <script>
+    import '../scripts/stack';
+  </script>
+</Layout>

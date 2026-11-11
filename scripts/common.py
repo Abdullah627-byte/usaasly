@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent
-TOOLS_PATH = ROOT / "src" / "data" / "tools.json"
+TOOLS_PATH = ROOT / "src" / "data" / "pseo-tools.json"
 LOG_DIR = ROOT / "logs"
 
 
@@ -33,7 +33,7 @@ def load_tools(path: Path = TOOLS_PATH) -> list[dict[str, Any]]:
 
 
 def save_tools(tools: list[dict[str, Any]], path: Path = TOOLS_PATH) -> None:
-    """Atomic write so a crash mid-save can never corrupt tools.json."""
+    """Atomic write so a crash mid-save can never corrupt pseo-tools.json."""
     fd, tmp = tempfile.mkstemp(dir=path.parent, prefix=".tools-", suffix=".json")
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as fh:

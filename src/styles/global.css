@@ -3,3 +3,97 @@
 @theme {
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  /* WCAG 2.4.7 / 2.4.11: one consistent, high-contrast focus ring everywhere. */
+  :focus-visible {
+    outline: 2px solid var(--color-indigo-600);
+    outline-offset: 2px;
+  }
+
+  /* Bigger thumbs so range sliders are easy to grab on touch screens. */
+  input[type="range"] {
+    accent-color: var(--color-indigo-600);
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+  input[type="range"]::-moz-range-thumb {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+}
+
+/*
+ * Global "Open-Source / Free Only" filter. The header script sets
+ * <html data-free-only="true">; any element tagged data-free="false" disappears
+ * instantly (pure CSS, so there is no flash and no per-element JS work).
+ */
+html[data-free-only="true"] [data-free="false"] {
+  display: none !important;
+}
+
+/* Instagram-style pill rail: hide the scrollbar but keep it scrollable. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Leave room for the fixed comparison dock. */
+body.dock-open {
+  padding-bottom: 8rem;
+}
+
+dialog::backdrop {
+  background: rgb(15 23 42 / 0.55);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.toast {
+  animation: toast-in 180ms ease-out;
+}
+
+@keyframes dock-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.dock-in {
+  animation: dock-in 220ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Toasts sit above the dock when it is open. */
+body.dock-open #toast-region { bottom: 8.5rem; }

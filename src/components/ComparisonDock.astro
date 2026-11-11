@@ -1,0 +1,42 @@
+---
+import { catalog } from '../lib/catalog';
+import { jsonLdString } from '../lib/seo';
+
+const lookup = Object.fromEntries(catalog.map((t) => [t.slug, { name: t.name, logo: t.logo }]));
+---
+
+<section
+  id="compare-dock"
+  aria-label="Comparison dock"
+  hidden
+  class="dock-in fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 shadow-[0_-8px_24px_rgba(15,23,42,0.08)] backdrop-blur"
+>
+  <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-3 sm:flex-row sm:items-center sm:gap-4">
+    <div data-dock-chips class="no-scrollbar flex min-w-0 flex-1 items-center gap-2 overflow-x-auto"></div>
+    <div class="flex items-center justify-between gap-2 sm:justify-end">
+      <p data-dock-count class="text-sm font-medium text-slate-700"></p>
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          data-dock-clear
+          class="min-h-11 rounded-full px-4 text-sm font-semibold text-slate-700 hover:bg-slate-100"
+        >
+          Clear
+        </button>
+        <a
+          href="/compare/"
+          data-dock-link
+          class="flex min-h-11 items-center rounded-full bg-indigo-700 px-5 text-sm font-semibold text-white hover:bg-indigo-800"
+        >
+          Compare now →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/json" id="dock-data" set:html={jsonLdString(lookup)} />
+
+<script>
+  import '../scripts/dock';
+</script>

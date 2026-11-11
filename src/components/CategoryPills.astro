@@ -1,0 +1,25 @@
+---
+interface Props {
+  categories: string[];
+  counts: Record<string, number>;
+  total: number;
+}
+const { categories, counts, total } = Astro.props;
+const pill =
+  'min-h-11 shrink-0 rounded-full border border-slate-300 bg-white px-4 text-sm font-semibold text-slate-800 hover:bg-slate-50 aria-pressed:border-slate-900 aria-pressed:bg-slate-900 aria-pressed:text-white';
+---
+
+<section aria-label="Filter by category" class="-mx-4 px-4">
+  <div role="group" aria-label="Categories" class="no-scrollbar flex gap-2 overflow-x-auto py-2">
+    <button type="button" data-pill="all" aria-pressed="true" class={pill}>
+      All <span class="text-xs opacity-80">{total}</span>
+    </button>
+    {
+      categories.map((c) => (
+        <button type="button" data-pill={c} aria-pressed="false" class={pill}>
+          {c} <span class="text-xs opacity-80">{counts[c]}</span>
+        </button>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,73 @@
+---
+import { SITE_NAME } from '../lib/seo';
+
+const navItems = [
+  { href: '/', label: 'Tools' },
+  { href: '/compare/', label: 'Compare' },
+  { href: '/stack-builder/', label: 'Stack Builder' },
+];
+const current = Astro.url.pathname;
+const isCurrent = (href: string) => (href === '/' ? current === '/' : current.startsWith(href));
+---
+
+<header class="border-b border-slate-200 bg-white">
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-3">
+    <a
+      href="/"
+      class="flex min-h-11 items-center rounded-xl text-xl font-bold tracking-tight text-indigo-700"
+      aria-label={`${SITE_NAME} home`}
+    >
+      {SITE_NAME}
+    </a>
+
+    <nav aria-label="Primary" class="order-3 flex w-full items-center gap-1 overflow-x-auto sm:order-none sm:w-auto">
+      {
+        navItems.map((n) => (
+          <a
+            href={n.href}
+            aria-current={isCurrent(n.href) ? 'page' : undefined}
+            class:list={[
+              'flex min-h-11 shrink-0 items-center rounded-full px-4 text-sm font-medium transition-colors',
+              isCurrent(n.href) ? 'bg-indigo-50 text-indigo-700' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
+            ]}
+          >
+            {n.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <button
+      type="button"
+      id="free-toggle"
+      role="switch"
+      aria-checked="false"
+      class="group flex min-h-11 items-center gap-3 rounded-full border border-slate-300 bg-white py-1 pl-4 pr-2 text-sm font-semibold text-slate-700 hover:border-slate-400 aria-checked:border-emerald-700 aria-checked:bg-emerald-50 aria-checked:text-emerald-900"
+    >
+      <span>Show Open-Source / Free Only</span>
+      <span
+        aria-hidden="true"
+        class="relative inline-block h-7 w-12 shrink-0 rounded-full bg-slate-400 transition-colors group-aria-checked:bg-emerald-700"
+      >
+        <span class="absolute left-0.5 top-0.5 size-6 rounded-full bg-white shadow transition-transform group-aria-checked:translate-x-5"></span>
+      </span>
+    </button>
+  </div>
+</header>
+
+<script>
+  import { isFreeOnly, setFreeOnly, FREE_ONLY_EVENT } from '../scripts/prefs';
+
+  const toggle = document.getElementById('free-toggle');
+  const sync = () => toggle?.setAttribute('aria-checked', String(isFreeOnly()));
+  sync();
+  toggle?.addEventListener('click', () => setFreeOnly(!isFreeOnly()));
+  window.addEventListener(FREE_ONLY_EVENT, sync);
+  // Keep multiple tabs in step.
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'usaasly:free-only') {
+      document.documentElement.dataset.freeOnly = e.newValue === '1' ? 'true' : 'false';
+      window.dispatchEvent(new CustomEvent(FREE_ONLY_EVENT, { detail: e.newValue === '1' }));
+    }
+  });
+</script>

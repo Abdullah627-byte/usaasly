@@ -1,0 +1,89 @@
+---
+interface Props {
+  toolName: string;
+}
+const { toolName } = Astro.props;
+const input =
+  'min-h-11 w-full rounded-xl border border-slate-300 bg-white px-3 text-base text-slate-900 placeholder:text-slate-500';
+---
+
+<form id="review-form" novalidate class="rounded-3xl border border-slate-200 bg-white p-5" aria-labelledby="review-form-title">
+  <h3 id="review-form-title" class="text-lg font-semibold text-slate-900">Leave a review</h3>
+  <p class="text-sm text-slate-600">Share your experience with {toolName}.</p>
+
+  <div class="mt-4">
+    <label for="rv-name" class="block text-sm font-medium text-slate-800">Name</label>
+    <input id="rv-name" name="name" type="text" required maxlength="60" autocomplete="name" placeholder="Jane Doe" class={`mt-1 ${input}`} />
+    <p id="rv-name-err" hidden class="mt-1 text-sm text-rose-700">Please enter your name.</p>
+  </div>
+
+  <fieldset class="mt-4">
+    <legend class="text-sm font-medium text-slate-800">Rating</legend>
+    <div class="mt-1 flex flex-wrap gap-1" role="radiogroup" aria-label="Star rating">
+      {
+        [1, 2, 3, 4, 5].map((n) => (
+          <label class="relative flex size-11 cursor-pointer items-center justify-center rounded-xl hover:bg-slate-100 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-indigo-600">
+            <input type="radio" name="stars" value={n} class="peer sr-only" />
+            <span class="sr-only">{n} {n === 1 ? 'star' : 'stars'}</span>
+            <svg aria-hidden="true" viewBox="0 0 20 20" data-star={n} class="size-8 fill-slate-200 stroke-slate-400 transition-colors" stroke-width="1">
+              <path d="m10 1.5 2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L1.4 7.8l6-.8L10 1.5Z" />
+            </svg>
+          </label>
+        ))
+      }
+    </div>
+    <p id="rv-stars-err" hidden class="mt-1 text-sm text-rose-700">Please choose a rating.</p>
+  </fieldset>
+
+  <div class="mt-4">
+    <label for="rv-comment" class="block text-sm font-medium text-slate-800">Comment</label>
+    <textarea id="rv-comment" name="comment" required rows="4" maxlength="1000" placeholder="What worked well? What would you change?" class="mt-1 w-full rounded-xl border border-slate-300 bg-white p-3 text-base text-slate-900 placeholder:text-slate-500"></textarea>
+    <p id="rv-comment-err" hidden class="mt-1 text-sm text-rose-700">Please write a short comment.</p>
+  </div>
+
+  <button type="submit" class="mt-5 min-h-11 rounded-full bg-indigo-700 px-6 text-sm font-semibold text-white hover:bg-indigo-800">Submit review</button>
+</form>
+
+<script>
+  import { showToast } from '../scripts/toast';
+
+  const form = document.getElementById('review-form') as HTMLFormElement | null;
+  const paint = () => {
+    const picked = Number(form?.querySelector<HTMLInputElement>('input[name="stars"]:checked')?.value ?? 0);
+    form?.querySelectorAll<SVGElement>('[data-star]').forEach((s) => {
+      const on = Number(s.dataset.star) <= picked;
+      s.classList.toggle('fill-amber-400', on);
+      s.classList.toggle('stroke-amber-600', on);
+      s.classList.toggle('fill-slate-200', !on);
+      s.classList.toggle('stroke-slate-400', !on);
+    });
+  };
+  form?.addEventListener('change', paint);
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = (form.elements.namedItem('name') as HTMLInputElement).value.trim();
+    const comment = (form.elements.namedItem('comment') as HTMLTextAreaElement).value.trim();
+    const stars = form.querySelector<HTMLInputElement>('input[name="stars"]:checked');
+
+    const checks: [boolean, string, string][] = [
+      [!name, 'rv-name-err', 'rv-name'],
+      [!stars, 'rv-stars-err', ''],
+      [!comment, 'rv-comment-err', 'rv-comment'],
+    ];
+    let firstBad: HTMLElement | null = null;
+    for (const [bad, errId, fieldId] of checks) {
+      document.getElementById(errId)!.hidden = !bad;
+      if (fieldId) document.getElementById(fieldId)?.setAttribute('aria-invalid', String(bad));
+      if (bad && !firstBad) firstBad = fieldId ? document.getElementById(fieldId) : form.querySelector('input[name="stars"]');
+    }
+    if (firstBad) {
+      (firstBad as HTMLElement).focus();
+      return;
+    }
+
+    form.reset();
+    paint();
+    showToast('Thanks! Your review was submitted and will appear after moderation.');
+  });
+</script>

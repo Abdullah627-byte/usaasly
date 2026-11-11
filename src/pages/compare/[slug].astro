@@ -66,7 +66,7 @@ if (c?.faqs?.length) schema.push(faqSchema(c.faqs));
 
 <BaseLayout {title} {description} {path} {schema} noindex={!c}>
   <nav class="mb-4 text-sm text-slate-500" aria-label="Breadcrumb">
-    <a href="/" class="hover:underline">Home</a> / <span>{a.name} vs {b.name}</span>
+    <a href="/" class="inline-flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a> / <span>{a.name} vs {b.name}</span>
   </nav>
 
   <StatusNotice tools={[a, b]} />

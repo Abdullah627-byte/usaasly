@@ -1,4 +1,4 @@
-import raw from '../data/tools.json';
+import raw from '../data/pseo-tools.json';
 
 export type ToolStatus = 'active' | 'needs_manual_review';
 
