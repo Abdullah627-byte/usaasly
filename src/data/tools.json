@@ -24,7 +24,8 @@
       "Data-privacy settings need manual review"
     ],
     "website_url": "https://chatgpt.com",
-    "pricing_url": "https://chatgpt.com/pricing"
+    "pricing_url": "https://chatgpt.com/pricing",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 2,
@@ -89,7 +90,7 @@
     "logo": "/logos/perplexity.svg",
     "category": "AI Assistants",
     "best_for_usecase": "Cited, source-backed web research and fact-finding",
-    "starting_price": 20,
+    "starting_price": 17,
     "price_per_user": true,
     "hidden_limits": "Free plan limits Pro searches per day; advanced model choice and file uploads need Pro.",
     "has_free_tier": true,
@@ -106,7 +107,9 @@
       "Citations still need verification",
       "Fewer workspace features than ChatGPT"
     ],
-    "website_url": "https://www.perplexity.ai"
+    "website_url": "https://www.perplexity.ai",
+    "pricing_url": "https://www.perplexity.ai/pro",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 5,
@@ -115,9 +118,9 @@
     "logo": "/logos/microsoft-copilot.svg",
     "category": "AI Assistants",
     "best_for_usecase": "Organizations on Microsoft 365 wanting AI inside Word, Excel, Outlook and Teams",
-    "starting_price": 30,
-    "price_per_user": true,
-    "hidden_limits": "Microsoft 365 Copilot requires an eligible Microsoft 365 base license on top of the add-on fee, often with annual commitment.",
+    "starting_price": 19.99,
+    "price_per_user": false,
+    "hidden_limits": "Copilot has a free tier with limits. The cheapest paid plan we list is Microsoft 365 Premium ($19.99/mo per subscription), where AI features work only for the subscription owner. Business use costs more: the Copilot Business add-on is $21 per user per month at list price and needs a qualifying Microsoft 365 business plan.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.2,
@@ -132,7 +135,9 @@
       "Value depends on how much you use Office",
       "Feature rollout differs by license"
     ],
-    "website_url": "https://copilot.microsoft.com"
+    "website_url": "https://copilot.microsoft.com",
+    "pricing_url": "https://www.microsoft.com/en-us/microsoft-365-copilot/pricing",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 6,
@@ -694,7 +699,9 @@
       "Needs dedicated admin skills",
       "Add-ons inflate the real price"
     ],
-    "website_url": "https://www.salesforce.com"
+    "website_url": "https://www.salesforce.com",
+    "pricing_url": "https://www.salesforce.com/crm/pricing/",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 27,
@@ -809,7 +816,7 @@
     "logo": "/logos/canva.svg",
     "category": "Design",
     "best_for_usecase": "Non-designers creating social posts, presentations and marketing assets quickly",
-    "starting_price": 15,
+    "starting_price": 10,
     "price_per_user": true,
     "hidden_limits": "Premium templates, Brand Kit and Magic Studio AI credits are limited on free and capped on Pro; Teams needs a minimum of 3 seats.",
     "has_free_tier": true,
@@ -826,7 +833,9 @@
       "Best assets are paywalled",
       "AI features have usage caps"
     ],
-    "website_url": "https://www.canva.com"
+    "website_url": "https://www.canva.com",
+    "pricing_url": "https://www.canva.com/pricing/",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 32,
