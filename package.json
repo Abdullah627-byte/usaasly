@@ -1,5 +1,5 @@
 {
-  "name": "usassly",
+  "name": "usaasly",
   "type": "module",
   "version": "1.0.0",
   "private": true,
@@ -15,7 +15,6 @@
     "content": "python3 scripts/generate_content.py"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.3.5",
     "astro": "^7.4.10",
     "tailwindcss": "^4.3.5"

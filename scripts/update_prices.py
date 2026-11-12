@@ -248,7 +248,7 @@ def main(argv: list[str] | None = None) -> int:
             if not args.dry_run:
                 log_failed_url(tool, reason)
                 send_alert(
-                    f"⚠️ Usassly price check FAILED\n"
+                    f"⚠️ Usaasly price check FAILED\n"
                     f"Tool: {tool['name']} ({tool['slug']})\n"
                     f"URL: {url}\n"
                     f"Reason: {reason}\n"

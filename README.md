@@ -1,4 +1,4 @@
-# Usassly — zero-cost programmatic SEO
+# Usaasly — zero-cost programmatic SEO
 
 Astro (static) + Tailwind v4 + local JSON "database" + Python automation.
 

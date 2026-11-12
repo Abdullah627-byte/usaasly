@@ -66,7 +66,7 @@ export function softwareSchema(t: CatalogTool): Record<string, unknown> {
     },
     review: {
       '@type': 'Review',
-      author: { '@type': 'Organization', name: 'Usassly' },
+      author: { '@type': 'Organization', name: 'Usaasly' },
       reviewRating: { '@type': 'Rating', ratingValue: t.rating, bestRating: 5, worstRating: 1 },
       reviewBody: `Pros: ${t.pros.join('; ')}. Cons: ${t.cons.join('; ')}.`,
     },

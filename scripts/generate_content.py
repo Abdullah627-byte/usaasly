@@ -87,8 +87,8 @@ def call_openrouter(prompt: str, api_key: str, model: str, retries: int = 3) -> 
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://usassly.com",
-        "X-Title": "Usassly pSEO",
+        "HTTP-Referer": "https://usaasly.com",
+        "X-Title": "Usaasly pSEO",
     }
     body = {
         "model": model,

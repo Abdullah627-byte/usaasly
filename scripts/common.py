@@ -1,4 +1,4 @@
-"""Shared helpers for the Usassly data scripts (stdlib only)."""
+"""Shared helpers for the Usaasly data scripts (stdlib only)."""
 from __future__ import annotations
 
 import json
