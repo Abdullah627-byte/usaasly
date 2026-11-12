@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { alternativesPath, catalog, categoryPairs, toolPath } from '../lib/catalog';
+import { alternativesPath, catalog, categoryPairs, isIndexedTool, toolPath } from '../lib/catalog';
 import { tools as pseoTools } from '../lib/tools';
 import { absoluteUrl } from '../lib/seo';
 
@@ -19,9 +19,11 @@ export const GET: APIRoute = () => {
     '/about/',
     '/methodology/',
     '/contact/',
-    ...catalog.map((t) => toolPath(t)),
-    ...categoryPairs().map((p) => `/compare/${p.slug}/`),
-    ...catalog.map((t) => alternativesPath(t)),
+    ...catalog.filter(isIndexedTool).map((t) => toolPath(t)),
+    ...categoryPairs()
+      .filter((p) => isIndexedTool(p.a) && isIndexedTool(p.b))
+      .map((p) => `/compare/${p.slug}/`),
+    ...catalog.filter(isIndexedTool).map((t) => alternativesPath(t)),
     ...pseoTools.filter((t) => t.content).map((t) => `/review/${t.slug}/`),
   ];
 

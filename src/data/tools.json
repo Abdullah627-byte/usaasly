@@ -67,7 +67,7 @@
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.5,
-    "ai_model": "Google Gemini (Flash and Pro)",
+    "ai_model": "Google Gemini 4 family (Hydrogen, Argon, Carbon)",
     "pros": [
       "Deep integration with Gmail, Docs and Drive",
       "Very large context window",
@@ -78,7 +78,9 @@
       "Plan names and bundles change often",
       "Privacy controls differ between consumer and Workspace"
     ],
-    "website_url": "https://gemini.google.com"
+    "website_url": "https://gemini.google.com",
+    "pricing_url": "https://one.google.com/about/google-ai-plans/",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 4,
@@ -182,7 +184,9 @@
       "Images are public unless you pay for Stealth",
       "Less precise text rendering and layout control"
     ],
-    "website_url": "https://www.midjourney.com"
+    "website_url": "https://www.midjourney.com",
+    "pricing_url": "https://www.midjourney.com/pricing",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 8,
@@ -312,7 +316,9 @@
       "Browser extension can slow heavy editors",
       "Privacy concerns for sensitive text"
     ],
-    "website_url": "https://www.grammarly.com"
+    "website_url": "https://www.grammarly.com",
+    "pricing_url": "https://www.grammarly.com/plans",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 13,
@@ -364,7 +370,9 @@
       "Agent features still maturing",
       "Suggestions need careful review"
     ],
-    "website_url": "https://github.com/features/copilot"
+    "website_url": "https://github.com/features/copilot",
+    "pricing_url": "https://github.com/features/copilot/plans",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 15,
@@ -373,13 +381,13 @@
     "logo": "/logos/cursor.svg",
     "category": "AI Coding",
     "best_for_usecase": "AI-first code editor for multi-file edits and agent-driven development",
-    "starting_price": 20,
+    "starting_price": 8,
     "price_per_user": true,
-    "hidden_limits": "Pro includes a usage allowance for premium models; heavy agent use can exhaust it and require Ultra or usage-based billing.",
+    "hidden_limits": "The $8 Plus plan only includes Grok models; third-party models (Claude, GPT, Gemini) need Premium ($30) or higher and are billed at API list price, so heavy agent use can cost much more than the headline price.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.7,
-    "ai_model": "Claude, GPT and Gemini plus Cursor in-house models",
+    "ai_model": "Grok models on Plus; Claude, GPT and Gemini at API list price on Premium and above",
     "pros": [
       "Strong codebase-aware editing and agent mode",
       "Familiar VS Code-based interface",
@@ -390,7 +398,9 @@
       "Pricing model has changed several times",
       "Not a plugin: requires switching editors"
     ],
-    "website_url": "https://cursor.com"
+    "website_url": "https://cursor.com",
+    "pricing_url": "https://cursor.com/pricing",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 16,
@@ -468,7 +478,9 @@
       "Learning curve for admins",
       "Best features sit on higher tiers"
     ],
-    "website_url": "https://asana.com"
+    "website_url": "https://asana.com",
+    "pricing_url": "https://asana.com/pricing",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 19,
@@ -503,7 +515,7 @@
     "logo": "/logos/clickup.svg",
     "category": "Project Management",
     "best_for_usecase": "Teams wanting tasks, docs and goals in one highly customizable workspace",
-    "starting_price": 7,
+    "starting_price": 9,
     "price_per_user": true,
     "hidden_limits": "Free plan limits storage and uses; ClickUp Brain AI is a paid add-on per user on top of the plan price.",
     "has_free_tier": true,
@@ -520,7 +532,9 @@
       "Performance can lag on big workspaces",
       "AI costs extra"
     ],
-    "website_url": "https://clickup.com"
+    "website_url": "https://clickup.com",
+    "pricing_url": "https://clickup.com/pricing",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 21,
@@ -546,7 +560,9 @@
       "Pricing escalates with tier jumps",
       "Feature limits on lower plans"
     ],
-    "website_url": "https://monday.com"
+    "website_url": "https://monday.com",
+    "pricing_url": "https://monday.com/pricing",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 22,
@@ -994,7 +1010,9 @@
       "Notification overload",
       "Price rises with the AI tier"
     ],
-    "website_url": "https://slack.com"
+    "website_url": "https://slack.com",
+    "pricing_url": "https://slack.com/pricing",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 39,
@@ -1072,7 +1090,9 @@
       "Complex logic is clunky",
       "Costs more than Make or n8n at volume"
     ],
-    "website_url": "https://zapier.com"
+    "website_url": "https://zapier.com",
+    "pricing_url": "https://zapier.com/pricing",
+    "last_verified": "2026-11-13"
   },
   {
     "id": 42,

@@ -3,6 +3,7 @@ import type { GetStaticPaths } from 'astro';
 import Layout from '../../layouts/Layout.astro';
 import AlternativeCard from '../../components/AlternativeCard.astro';
 import { alternativesSlug, catalog, getAlternatives, priceText, toolPath, type CatalogTool } from '../../lib/catalog';
+import { isIndexedTool } from '../../lib/catalog';
 import { absoluteUrl, breadcrumbSchema } from '../../lib/seo';
 import { SHOW_RATINGS } from '../../config/site';
 
@@ -53,7 +54,7 @@ const schema: Record<string, unknown>[] = [
 ];
 ---
 
-<Layout {title} {description} {path} {schema}>
+<Layout {title} {description} {path} {schema} noindex={!isIndexedTool(tool)}>
   <nav class="mb-4 text-sm text-slate-600" aria-label="Breadcrumb">
     <ol class="flex flex-wrap items-center">
       <li><a href="/" class="flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a></li>
