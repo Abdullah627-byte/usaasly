@@ -5,9 +5,9 @@ import CategoryPills from '../components/CategoryPills.astro';
 import ToolCard from '../components/ToolCard.astro';
 import ComparisonDock from '../components/ComparisonDock.astro';
 import QuizDialog from '../components/QuizDialog.astro';
-import { catalog, categories, toLite, toolPath } from '../lib/catalog';
+import { alternativesPath, catalog, categories, categoryPairs, toLite, toolPath } from '../lib/catalog';
 import { jsonLdString, absoluteUrl } from '../lib/seo';
-import { tools as pseoTools, allPairs } from '../lib/tools';
+import { tools as pseoTools } from '../lib/tools';
 
 const lite = catalog.map(toLite);
 const counts = Object.fromEntries(categories.map((c) => [c, catalog.filter((t) => t.category === c).length]));
@@ -32,7 +32,11 @@ const schema = [
 
 // Long-form pSEO pages (only those with generated content are indexable).
 const reviews = pseoTools.filter((t) => t.content);
-const pairs = allPairs().filter((p) => p.content);
+// Popular head-to-heads: the highest-rated same-category pairs.
+const pairs = categoryPairs()
+  .sort((x, y) => y.a.rating + y.b.rating - (x.a.rating + x.b.rating) || x.slug.localeCompare(y.slug))
+  .slice(0, 12);
+const topTools = [...catalog].sort((x, y) => y.rating - x.rating || x.name.localeCompare(y.name)).slice(0, 8);
 ---
 
 <Layout
@@ -59,21 +63,20 @@ const pairs = allPairs().filter((p) => p.content);
     <button type="button" id="reset-filters" class="mt-4 min-h-11 rounded-full border border-slate-300 px-5 text-sm font-semibold text-slate-800 hover:bg-slate-50">Reset search &amp; category</button>
   </div>
 
-  {
-    (reviews.length > 0 || pairs.length > 0) && (
-      <nav aria-label="In-depth guides" class="mt-12 rounded-3xl border border-slate-200 bg-white p-5">
-        <h2 class="text-lg font-semibold text-slate-900">In-depth guides</h2>
-        <ul class="mt-2 flex flex-wrap gap-x-4">
-          {reviews.map((t) => (
-            <li><a href={`/review/${t.slug}/`} class="flex min-h-11 items-center text-sm font-medium text-indigo-700 hover:underline">{t.name} review</a></li>
-          ))}
-          {pairs.map((p) => (
-            <li><a href={`/compare/${p.slug}/`} class="flex min-h-11 items-center text-sm font-medium text-indigo-700 hover:underline">{p.a.name} vs {p.b.name}</a></li>
-          ))}
-        </ul>
-      </nav>
-    )
-  }
+  <nav aria-label="In-depth guides" class="mt-12 rounded-3xl border border-slate-200 bg-white p-5">
+    <h2 class="text-lg font-semibold text-slate-900">Popular comparisons &amp; alternatives</h2>
+    <ul class="mt-2 flex flex-wrap gap-x-4">
+      {topTools.map((t) => (
+        <li><a href={alternativesPath(t)} class="flex min-h-11 items-center text-sm font-medium text-indigo-700 hover:underline">{t.name} alternatives</a></li>
+      ))}
+      {reviews.map((t) => (
+        <li><a href={`/review/${t.slug}/`} class="flex min-h-11 items-center text-sm font-medium text-indigo-700 hover:underline">{t.name} review</a></li>
+      ))}
+      {pairs.map((p) => (
+        <li><a href={`/compare/${p.slug}/`} class="flex min-h-11 items-center text-sm font-medium text-indigo-700 hover:underline">{p.a.name} vs {p.b.name}</a></li>
+      ))}
+    </ul>
+  </nav>
 
   <ComparisonDock />
   <QuizDialog />

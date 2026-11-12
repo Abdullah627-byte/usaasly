@@ -1,43 +1,51 @@
 ---
 import type { GetStaticPaths } from 'astro';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import StatusNotice from '../../components/StatusNotice.astro';
-import { allPairs, formatPrice, type Pair } from '../../lib/tools';
-import { absoluteUrl, breadcrumbSchema, faqSchema } from '../../lib/seo';
+import Layout from '../../layouts/Layout.astro';
+import CompareTable from '../../components/CompareTable.astro';
+import {
+  alternativesPath,
+  categoryPairs,
+  comparePath,
+  getTopCompetitors,
+  priceLabel,
+  priceText,
+  toolPath,
+  type CatalogPair,
+} from '../../lib/catalog';
+import { absoluteUrl, breadcrumbSchema } from '../../lib/seo';
 
 export const getStaticPaths = (() => {
-  return allPairs().map((pair) => ({ params: { slug: pair.slug }, props: { pair } }));
+  return categoryPairs().map((pair) => ({ params: { slug: pair.slug }, props: { pair } }));
 }) satisfies GetStaticPaths;
 
 interface Props {
-  pair: Pair;
+  pair: CatalogPair;
 }
 const { pair } = Astro.props;
-const { a, b, content: c } = pair;
+const { a, b } = pair;
+const tools = [a, b];
 const year = new Date().getFullYear();
 const path = `/compare/${pair.slug}/`;
 
-const title = `${a.name} vs ${b.name} (${year}): Pricing & Features Compared`;
-const description = c
-  ? `${a.name} vs ${b.name}: ${c.intro}`
-  : `${a.name} (${formatPrice(a)}) vs ${b.name} (${formatPrice(b)}) — side-by-side pricing and features.`;
+const title = `${a.name} vs ${b.name} (${year}): Pricing, Features & Which Is Better`;
+const description = `${a.name} vs ${b.name}: ${a.name} is ${priceText(a)}, ${b.name} is ${priceText(b)}. Compare ratings, free plans, AI features, pros and cons side by side.`;
 
-const winnerName = c ? (c.winner === a.slug ? a.name : c.winner === b.slug ? b.name : null) : null;
+// Quick take: derived only from catalog data.
+const higherRated = a.rating === b.rating ? null : a.rating > b.rating ? a : b;
+const lowerRated = higherRated === a ? b : a;
+const cheaper = a.starting_price === b.starting_price ? null : a.starting_price < b.starting_price ? a : b;
+const quickTake = [
+  `${a.name} is ${priceText(a)}; ${b.name} is ${priceText(b)}.`,
+  higherRated
+    ? `${higherRated.name} has the higher rating (${higherRated.rating.toFixed(1)} vs ${lowerRated.rating.toFixed(1)}).`
+    : `Both are rated ${a.rating.toFixed(1)} out of 5.`,
+  cheaper ? `${cheaper.name} has the lower starting price.` : 'Their starting prices are the same.',
+].join(' ');
 
-const itemSchema = (t: typeof a) => ({
-  '@type': 'Product',
-  name: t.name,
-  url: absoluteUrl(`/review/${t.slug}/`),
-  category: t.category,
-  ...(t.current_price !== null && {
-    offers: {
-      '@type': 'Offer',
-      price: t.current_price,
-      priceCurrency: t.currency,
-      url: t.official_pricing_url,
-    },
-  }),
-});
+const lower = (s: string) => s.charAt(0).toLowerCase() + s.slice(1);
+const moreA = getTopCompetitors(a, 4).filter((t) => t.slug !== b.slug).slice(0, 3);
+const moreB = getTopCompetitors(b, 4).filter((t) => t.slug !== a.slug).slice(0, 3);
+const linkClass = 'flex min-h-11 items-center text-sm font-medium text-indigo-700 hover:underline';
 
 const schema: Record<string, unknown>[] = [
   {
@@ -45,104 +53,106 @@ const schema: Record<string, unknown>[] = [
     '@id': `${absoluteUrl(path)}#webpage`,
     name: title,
     url: absoluteUrl(path),
-    about: [itemSchema(a), itemSchema(b)],
+    description,
   },
   {
     '@type': 'ItemList',
     name: `${a.name} vs ${b.name}`,
-    itemListElement: [a, b].map((t, i) => ({
+    itemListElement: tools.map((t, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      item: itemSchema(t),
+      name: t.name,
+      url: absoluteUrl(toolPath(t)),
     })),
   },
   breadcrumbSchema([
     { name: 'Home', path: '/' },
+    { name: 'Compare', path: '/compare/' },
     { name: `${a.name} vs ${b.name}`, path },
   ]),
 ];
-if (c?.faqs?.length) schema.push(faqSchema(c.faqs));
 ---
 
-<BaseLayout {title} {description} {path} {schema} noindex={!c}>
-  <nav class="mb-4 text-sm text-slate-500" aria-label="Breadcrumb">
-    <a href="/" class="inline-flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a> / <span>{a.name} vs {b.name}</span>
+<Layout {title} {description} {path} {schema}>
+  <nav class="mb-4 text-sm text-slate-600" aria-label="Breadcrumb">
+    <ol class="flex flex-wrap items-center">
+      <li><a href="/" class="flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a></li>
+      <li aria-hidden="true" class="px-2">/</li>
+      <li><a href="/compare/" class="flex min-h-11 items-center hover:underline">Compare</a></li>
+      <li aria-hidden="true" class="px-2">/</li>
+      <li aria-current="page" class="flex min-h-11 items-center font-medium text-slate-800">{a.name} vs {b.name}</li>
+    </ol>
   </nav>
 
-  <StatusNotice tools={[a, b]} />
+  <header>
+    <p class="text-sm font-medium text-indigo-700">{a.category}</p>
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900">{a.name} vs {b.name} ({year})</h1>
+    <p class="mt-2 max-w-3xl text-lg text-slate-700">{quickTake}</p>
+  </header>
 
-  <h1 class="text-3xl font-bold tracking-tight text-slate-900">{a.name} vs {b.name} ({year})</h1>
-  {c && <p class="mt-2 text-lg text-slate-600">{c.intro}</p>}
 
-  <section class="mt-6 grid gap-4 sm:grid-cols-2">
-    {[a, b].map((t) => (
-      <div class="rounded-xl border border-slate-200 bg-white p-5">
-        <h2 class="text-lg font-semibold">
-          <a href={`/review/${t.slug}/`} class="hover:underline">{t.name}</a>
-        </h2>
-        <p class="mt-1 text-2xl font-bold text-indigo-600">{formatPrice(t)}</p>
-        <p class="text-sm text-slate-500">{t.price_unit}</p>
-        <ul class="mt-3 list-disc space-y-1 pl-5 text-sm">
-          {t.plan_features.map((f) => <li>{f}</li>)}
-        </ul>
-        <a
-          href={t.official_pricing_url}
-          rel="nofollow noopener"
-          target="_blank"
-          class="mt-4 inline-block text-sm font-semibold text-indigo-600 hover:underline"
-        >
-          Official pricing →
-        </a>
-      </div>
-    ))}
+  <section class="mt-6 grid gap-4 sm:grid-cols-2" aria-label="Tools being compared">
+    {
+      tools.map((t) => (
+        <div class="flex flex-col rounded-3xl border border-slate-200 bg-white p-5">
+          <div class="flex items-start gap-3">
+            <img src={t.logo} alt={`${t.name} logo`} width="48" height="48" class="size-12 shrink-0 rounded-xl" />
+            <div class="min-w-0 flex-1">
+              <h2 class="text-lg font-semibold text-slate-900">
+                <a href={toolPath(t)} class="hover:underline">{t.name}</a>
+              </h2>
+              <p class="text-sm text-slate-600">{priceLabel(t)}</p>
+            </div>
+            <p class="text-sm font-semibold text-slate-800">★ {t.rating.toFixed(1)}</p>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2 pt-4">
+            <a
+              href={t.website_url}
+              target="_blank"
+              rel="noopener nofollow"
+              class="flex min-h-11 items-center rounded-full bg-indigo-700 px-5 text-sm font-semibold text-white hover:bg-indigo-800"
+            >
+              Visit {t.name}<span class="sr-only"> (opens in a new tab)</span> ↗
+            </a>
+            <a href={toolPath(t)} class="flex min-h-11 items-center rounded-full border border-slate-300 bg-white px-5 text-sm font-semibold text-slate-800 hover:bg-slate-50">
+              {t.name} details
+            </a>
+          </div>
+        </div>
+      ))
+    }
   </section>
 
-  {c?.rows?.length ? (
-    <section class="mt-8">
-      <h2 class="text-xl font-semibold">Head-to-head</h2>
-      <div class="mt-3 overflow-x-auto rounded-xl border border-slate-200 bg-white">
-        <table class="w-full text-left text-sm">
-          <thead class="bg-slate-100 text-slate-600">
-            <tr>
-              <th class="p-3">Category</th>
-              <th class="p-3">{a.name}</th>
-              <th class="p-3">{b.name}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {c.rows.map((r) => (
-              <tr class="border-t border-slate-100">
-                <td class="p-3 font-medium">{r.category}</td>
-                <td class:list={['p-3', r.winner === 'a' && 'bg-emerald-50 font-semibold']}>{r.a}</td>
-                <td class:list={['p-3', r.winner === 'b' && 'bg-emerald-50 font-semibold']}>{r.b}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </section>
-  ) : null}
+  <section class="mt-8" aria-labelledby="table-title">
+    <h2 id="table-title" class="text-xl font-semibold text-slate-900">Side-by-side comparison</h2>
+    <div class="mt-3"><CompareTable {a} {b} /></div>
+    <p class="mt-3 text-sm text-slate-600">
+      Prices are starting prices (annual billing where applicable) and change often. Confirm on each vendor's official pricing page.
+    </p>
+  </section>
 
-  {c && (
-    <section class="mt-8">
-      <h2 class="text-xl font-semibold">
-        Verdict{winnerName ? `: ${winnerName} wins` : ': it depends'}
-      </h2>
-      <p class="mt-2 leading-relaxed">{c.verdict}</p>
-    </section>
-  )}
+  <section class="mt-8 grid gap-4 sm:grid-cols-2" aria-labelledby="choose-title">
+    <h2 id="choose-title" class="text-xl font-semibold text-slate-900 sm:col-span-2">Which should you choose?</h2>
+    {
+      tools.map((t) => (
+        <div class="rounded-3xl border border-slate-200 bg-white p-5">
+          <h3 class="text-base font-semibold text-slate-900">Choose {t.name} if…</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-700">
+            You want {lower(t.best_for_usecase)}. Main strength: {lower(t.pros[0])}.
+          </p>
+        </div>
+      ))
+    }
+  </section>
 
-  {c?.faqs?.length ? (
-    <section class="mt-8">
-      <h2 class="text-xl font-semibold">FAQ</h2>
-      <div class="mt-2 space-y-4">
-        {c.faqs.map((f) => (
-          <div>
-            <h3 class="font-medium">{f.question}</h3>
-            <p class="text-slate-600">{f.answer}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  ) : null}
-</BaseLayout>
+  <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-5" aria-labelledby="more-title">
+    <h2 id="more-title" class="text-lg font-semibold text-slate-900">More comparisons &amp; alternatives</h2>
+    <ul class="mt-2 flex flex-wrap gap-x-5">
+      <li><a href={alternativesPath(a)} class={linkClass}>Best {a.name} alternatives</a></li>
+      <li><a href={alternativesPath(b)} class={linkClass}>Best {b.name} alternatives</a></li>
+      {moreA.map((t) => <li><a href={comparePath(a, t)} class={linkClass}>{a.name} vs {t.name}</a></li>)}
+      {moreB.map((t) => <li><a href={comparePath(b, t)} class={linkClass}>{b.name} vs {t.name}</a></li>)}
+    </ul>
+  </section>
+</Layout>
+

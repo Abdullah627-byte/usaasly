@@ -6,7 +6,17 @@ import ToolBreakdown from '../../components/ToolBreakdown.astro';
 import Changelog from '../../components/Changelog.astro';
 import ReviewForm from '../../components/ReviewForm.astro';
 import ComparisonDock from '../../components/ComparisonDock.astro';
-import { catalog, money, priceLabel, softwareSchema, toolPath, type CatalogTool } from '../../lib/catalog';
+import {
+  alternativesPath,
+  catalog,
+  comparePath,
+  getTopCompetitors,
+  money,
+  priceLabel,
+  softwareSchema,
+  toolPath,
+  type CatalogTool,
+} from '../../lib/catalog';
 import { breadcrumbSchema } from '../../lib/seo';
 
 export const getStaticPaths = (() => {
@@ -21,6 +31,8 @@ const path = toolPath(tool);
 const year = new Date().getFullYear();
 
 const alternatives = catalog.filter((t) => t.category === tool.category && t.slug !== tool.slug).slice(0, 3);
+/** Top same-category rivals; each one has a generated `/compare/<a>-vs-<b>/` page. */
+const competitors = getTopCompetitors(tool, 4);
 
 const title = `${tool.name} Pricing, Pros & Cons ${year}: Hidden Limits & Alternatives`;
 const description = `${tool.name}: ${tool.best_for_usecase}. Starting at ${tool.starting_price === 0 ? 'free' : money(tool.starting_price)}. Hidden limits, AI models, pros and cons.`;
@@ -77,6 +89,27 @@ const schema = [
       <a href="/stack-builder/" class="flex min-h-11 items-center justify-center rounded-full border border-slate-300 bg-white px-5 text-sm font-semibold text-slate-800 hover:bg-slate-50">Add to a stack →</a>
     </aside>
   </div>
+
+  <section aria-labelledby="compare-alts" class="mt-8 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+    <h2 id="compare-alts" class="text-xl font-semibold text-slate-900">Compare &amp; alternatives</h2>
+    <p class="mt-1 text-sm text-slate-700">See how {tool.name} stacks up against similar tools.</p>
+    <ul class="mt-3 grid gap-2 sm:grid-cols-2">
+      <li>
+        <a href={alternativesPath(tool)} class="flex min-h-11 items-center justify-between gap-2 rounded-2xl border border-indigo-200 bg-indigo-50 px-4 text-sm font-semibold text-indigo-800 hover:bg-indigo-100">
+          Best {tool.name} alternatives <span aria-hidden="true">→</span>
+        </a>
+      </li>
+      {
+        competitors.map((c) => (
+          <li>
+            <a href={comparePath(tool, c)} class="flex min-h-11 items-center justify-between gap-2 rounded-2xl border border-slate-200 px-4 text-sm font-semibold text-slate-800 hover:bg-slate-50">
+              {tool.name} vs {c.name} <span aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
   <section aria-labelledby="community" class="mt-8">
     <h2 id="community" class="text-xl font-semibold text-slate-900">Community reviews</h2>

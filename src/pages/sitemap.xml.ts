@@ -1,12 +1,15 @@
 import type { APIRoute } from 'astro';
-import { catalog, toolPath } from '../lib/catalog';
-import { allPairs, tools as pseoTools } from '../lib/tools';
+import { alternativesPath, catalog, categoryPairs, toolPath } from '../lib/catalog';
+import { tools as pseoTools } from '../lib/tools';
 import { absoluteUrl } from '../lib/seo';
 
 /**
- * Generates /sitemap.xml at build time.
- * Only indexable pages are listed: review/compare pages without generated
- * content are rendered with `noindex` (see BaseLayout usage), so they are skipped.
+ * Generates /sitemap.xml at build time from the same helpers the pages use,
+ * so every generated route is listed automatically:
+ *   - static pages, /tool/<slug>/
+ *   - /compare/<a>-vs-<b>/      (categoryPairs: same-category, one URL per pair)
+ *   - /alternatives/best-<slug>-alternatives/
+ *   - /review/<slug>/           (only when generated content exists; otherwise the page is noindex)
  */
 export const GET: APIRoute = () => {
   const paths: string[] = [
@@ -14,10 +17,9 @@ export const GET: APIRoute = () => {
     '/compare/',
     '/stack-builder/',
     ...catalog.map((t) => toolPath(t)),
+    ...categoryPairs().map((p) => `/compare/${p.slug}/`),
+    ...catalog.map((t) => alternativesPath(t)),
     ...pseoTools.filter((t) => t.content).map((t) => `/review/${t.slug}/`),
-    ...allPairs()
-      .filter((p) => p.content)
-      .map((p) => `/compare/${p.slug}/`),
   ];
 
   const unique = [...new Set(paths)];

@@ -1,0 +1,93 @@
+---
+import { money, priceLabel, type CatalogTool } from '../lib/catalog';
+
+interface Props {
+  a: CatalogTool;
+  b: CatalogTool;
+}
+const { a, b } = Astro.props;
+const tools = [a, b];
+
+const freePlan = (t: CatalogTool) =>
+  t.is_open_source
+    ? 'Open source: free to self-host'
+    : t.starting_price === 0
+      ? 'Free to use'
+      : t.has_free_tier
+        ? 'Yes, a free tier is available'
+        : 'No free plan';
+
+interface Row {
+  label: string;
+  text?: (t: CatalogTool) => string;
+  list?: (t: CatalogTool) => string[];
+}
+
+const rows: Row[] = [
+  { label: 'Pricing', text: (t) => `${priceLabel(t)} (${t.price_per_user ? 'per-user pricing' : 'flat pricing'})` },
+  { label: 'Free plan', text: freePlan },
+  { label: 'Best for', text: (t) => t.best_for_usecase },
+  {
+    label: 'Key features',
+    list: (t) => [`AI: ${t.ai_model}`, `Our rating: ${t.rating.toFixed(1)} / 5`, ...(t.price_per_user ? [`Cost scales per user (${money(t.starting_price)} each)`] : [])],
+  },
+  { label: 'Pros', list: (t) => t.pros },
+  { label: 'Cons', list: (t) => t.cons },
+  { label: 'Hidden limits', text: (t) => t.hidden_limits },
+];
+---
+
+<div class="overflow-hidden rounded-3xl border border-slate-200 bg-white">
+  <table class="w-full text-left text-sm text-slate-800">
+    <caption class="sr-only">{a.name} compared with {b.name}</caption>
+    <thead class="bg-slate-50">
+      <tr class="grid grid-cols-2 sm:table-row">
+        <th scope="col" class="hidden p-4 sm:table-cell sm:w-40"><span class="sr-only">Feature</span></th>
+        {tools.map((t) => <th scope="col" class="p-4 text-base font-semibold text-slate-900 sm:w-1/2">{t.name}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {
+        rows.map((r) => (
+          <tr class="grid grid-cols-2 border-t border-slate-100 sm:table-row">
+            <th
+              scope="row"
+              class="col-span-2 bg-slate-50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-700 sm:table-cell sm:bg-transparent sm:py-4 sm:align-top sm:text-sm sm:normal-case sm:tracking-normal"
+            >
+              {r.label}
+            </th>
+            {tools.map((t) => (
+              <td class="p-4 align-top leading-relaxed">
+                {r.text && <p>{r.text(t)}</p>}
+                {r.list && (
+                  <ul class="list-disc space-y-1 pl-5">
+                    {r.list(t).map((i) => (
+                      <li>{i}</li>
+                    ))}
+                  </ul>
+                )}
+              </td>
+            ))}
+          </tr>
+        ))
+      }
+      <tr class="grid grid-cols-2 border-t border-slate-100 bg-slate-50 sm:table-row">
+        <th scope="row" class="col-span-2 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-700 sm:table-cell sm:py-4 sm:text-sm sm:normal-case sm:tracking-normal">Try it</th>
+        {
+          tools.map((t) => (
+            <td class="p-4">
+              <a
+                href={t.website_url}
+                target="_blank"
+                rel="noopener nofollow"
+                class="flex min-h-11 items-center justify-center rounded-full bg-indigo-700 px-4 text-center text-sm font-semibold text-white hover:bg-indigo-800"
+              >
+                Visit {t.name}<span class="sr-only"> (opens in a new tab)</span> ↗
+              </a>
+            </td>
+          ))
+        }
+      </tr>
+    </tbody>
+  </table>
+</div>

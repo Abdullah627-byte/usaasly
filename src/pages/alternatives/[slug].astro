@@ -1,0 +1,94 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Layout from '../../layouts/Layout.astro';
+import AlternativeCard from '../../components/AlternativeCard.astro';
+import { alternativesSlug, catalog, getAlternatives, priceText, toolPath, type CatalogTool } from '../../lib/catalog';
+import { absoluteUrl, breadcrumbSchema } from '../../lib/seo';
+
+export const getStaticPaths = (() => {
+  return catalog.map((tool) => ({ params: { slug: alternativesSlug(tool) }, props: { tool } }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  tool: CatalogTool;
+}
+const { tool } = Astro.props;
+const alts = getAlternatives(tool, 6);
+const year = new Date().getFullYear();
+const path = `/alternatives/${alternativesSlug(tool)}/`;
+
+const title = `Best ${tool.name} Alternatives (${year}): ${alts.length} Top Picks Compared`;
+const description = `Looking for ${tool.name} alternatives? Compare ${alts
+  .slice(0, 3)
+  .map((t) => t.name)
+  .join(', ')} and more by pricing, free plans and key strengths.`;
+
+const lower = (s: string) => s.charAt(0).toLowerCase() + s.slice(1);
+const sameCount = alts.filter((t) => t.category === tool.category).length;
+const intro =
+  sameCount === alts.length
+    ? `These ${alts.length} ${tool.category} tools are the closest alternatives to ${tool.name} (${priceText(tool)}), ranked by our editorial rating.`
+    : `${tool.name} (${priceText(tool)}) has ${sameCount} direct ${tool.category} competitor${sameCount === 1 ? '' : 's'} in our directory, so we also include the closest tools from related categories. Ranked by category fit, then rating.`;
+
+const schema: Record<string, unknown>[] = [
+  {
+    '@type': 'ItemList',
+    '@id': `${absoluteUrl(path)}#list`,
+    name: `Best ${tool.name} alternatives`,
+    numberOfItems: alts.length,
+    itemListElement: alts.map((t, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: t.name,
+      url: absoluteUrl(toolPath(t)),
+    })),
+  },
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: tool.name, path: toolPath(tool) },
+    { name: `${tool.name} alternatives`, path },
+  ]),
+];
+---
+
+<Layout {title} {description} {path} {schema}>
+  <nav class="mb-4 text-sm text-slate-600" aria-label="Breadcrumb">
+    <ol class="flex flex-wrap items-center">
+      <li><a href="/" class="flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a></li>
+      <li aria-hidden="true" class="px-2">/</li>
+      <li><a href={toolPath(tool)} class="flex min-h-11 items-center hover:underline">{tool.name}</a></li>
+      <li aria-hidden="true" class="px-2">/</li>
+      <li aria-current="page" class="flex min-h-11 items-center font-medium text-slate-800">Alternatives</li>
+    </ol>
+  </nav>
+
+  <header>
+    <p class="text-sm font-medium text-indigo-700">{tool.category}</p>
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900">Best {tool.name} Alternatives ({year})</h1>
+    <p class="mt-2 max-w-3xl text-lg text-slate-700">{intro}</p>
+  </header>
+
+  <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-5" aria-label={`About ${tool.name}`}>
+    <div class="flex items-start gap-3">
+      <img src={tool.logo} alt={`${tool.name} logo`} width="48" height="48" class="size-12 shrink-0 rounded-xl" />
+      <div class="min-w-0 flex-1">
+        <h2 class="text-base font-semibold text-slate-900">Why look beyond {tool.name}?</h2>
+        <p class="mt-1 text-sm leading-relaxed text-slate-700">
+          {tool.name} is best for {lower(tool.best_for_usecase)}. Common drawbacks: {lower(tool.cons[0])}; {lower(tool.cons[1] ?? tool.cons[0])}.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <ol class="mt-6 grid gap-4 md:grid-cols-2" aria-label={`${tool.name} alternatives`}>
+    {alts.map((t, i) => <AlternativeCard tool={t} base={tool} rank={i + 1} />)}
+  </ol>
+
+  <p class="mt-6 text-sm text-slate-600">
+    Prices are starting prices (annual billing where applicable) and change often. Confirm on each vendor's official pricing page.
+  </p>
+
+  <p class="mt-4">
+    <a href={toolPath(tool)} class="flex min-h-11 items-center text-sm font-medium text-indigo-700 hover:underline">← Back to {tool.name} pricing &amp; details</a>
+  </p>
+</Layout>
