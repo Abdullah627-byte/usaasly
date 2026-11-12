@@ -133,7 +133,7 @@ export function priceText(t: CatalogTool): string {
   return `from ${money(t.starting_price)}${t.price_per_user ? '/user' : ''}/mo`;
 }
 
-/** Schema.org node for a catalog tool (editorial rating, never a fabricated aggregate). */
+/** Schema.org node for a catalog tool. No Review/aggregateRating: ratings are hidden (SHOW_RATINGS=false). */
 export function softwareSchema(t: CatalogTool): Record<string, unknown> {
   return {
     '@type': 'SoftwareApplication',
@@ -150,12 +150,6 @@ export function softwareSchema(t: CatalogTool): Record<string, unknown> {
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
       url: t.website_url,
-    },
-    review: {
-      '@type': 'Review',
-      author: { '@type': 'Organization', name: 'Usaasly' },
-      reviewRating: { '@type': 'Rating', ratingValue: t.rating, bestRating: 5, worstRating: 1 },
-      reviewBody: `Pros: ${t.pros.join('; ')}. Cons: ${t.cons.join('; ')}.`,
     },
   };
 }
