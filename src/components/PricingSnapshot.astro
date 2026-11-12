@@ -7,8 +7,8 @@ interface Props {
 }
 const { tool } = Astro.props;
 
-const start = tool.starting_price === 0 ? 'Free' : \`\${money(tool.starting_price)}\${tool.price_per_user ? ' per user' : ''} / month\`;
-const verified = tool.last_verified ? new Date(\`\${tool.last_verified}T00:00:00Z\`) : null;
+const start = tool.starting_price === 0 ? 'Free' : `${money(tool.starting_price)}${tool.price_per_user ? ' per user' : ''} / month`;
+const verified = tool.last_verified ? new Date(`${tool.last_verified}T00:00:00Z`) : null;
 const verifiedLabel =
   verified && !Number.isNaN(verified.getTime())
     ? verified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
