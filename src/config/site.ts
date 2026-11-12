@@ -33,5 +33,4 @@ export const INDEXED_TOOL_SLUGS: readonly string[] = [
   'salesforce',
   'slack',
   'zapier',
-  'make',
 ];
