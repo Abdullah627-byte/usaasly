@@ -1,5 +1,6 @@
 ---
 import { money, priceLabel, type CatalogTool } from '../lib/catalog';
+import { SHOW_RATINGS } from '../config/site';
 
 interface Props {
   a: CatalogTool;
@@ -29,7 +30,11 @@ const rows: Row[] = [
   { label: 'Best for', text: (t) => t.best_for_usecase },
   {
     label: 'Key features',
-    list: (t) => [`AI: ${t.ai_model}`, `Our rating: ${t.rating.toFixed(1)} / 5`, ...(t.price_per_user ? [`Cost scales per user (${money(t.starting_price)} each)`] : [])],
+    list: (t) => [
+        `AI: ${t.ai_model}`,
+        ...(SHOW_RATINGS ? [`Our rating: ${t.rating.toFixed(1)} / 5`] : []),
+        ...(t.price_per_user ? [`Cost scales per user (${money(t.starting_price)} each)`] : []),
+      ],
   },
   { label: 'Pros', list: (t) => t.pros },
   { label: 'Cons', list: (t) => t.cons },

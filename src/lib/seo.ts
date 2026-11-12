@@ -1,5 +1,6 @@
+export { SITE_NAME } from '../config/site';
+
 export const SITE_URL = 'https://usaasly.com';
-export const SITE_NAME = 'Usaasly';
 
 /** Trim to a search-snippet-friendly length without cutting mid-word. */
 export function truncate(text: string, max = 158): string {

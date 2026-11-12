@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
+import Footer from '../components/Footer.astro';
 import { SITE_NAME, SITE_URL, absoluteUrl, jsonLdString, truncate } from '../lib/seo';
 
 interface Props {
@@ -91,12 +92,7 @@ const graph = jsonLdString({ '@context': 'https://schema.org', '@graph': [...sit
       <slot />
     </main>
 
-    <footer class="mt-12 border-t border-slate-200 bg-white">
-      <div class="mx-auto max-w-6xl px-4 py-6 text-sm text-slate-600">
-        © {new Date().getFullYear()}
-        {SITE_NAME}. Prices are starting prices (annual billing where applicable) and change often — always confirm on the vendor's official pricing page.
-      </div>
-    </footer>
+    <Footer />
 
     <div
       id="toast-region"

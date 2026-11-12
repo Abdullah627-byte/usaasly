@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { breadcrumbSchema } from '../lib/seo';
+import { SITE_NAME } from '../config/site';
+
+const path = '/about/';
+const title = `About ${SITE_NAME}`;
+const description = `${SITE_NAME} is an independent SaaS and AI tool directory focused on real pricing and hidden limits — not sponsored rankings.`;
+const schema = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'About', path }])];
+---
+
+<Layout {title} {description} {path} {schema} narrow>
+  <nav class="mb-4 text-sm text-slate-600" aria-label="Breadcrumb">
+    <ol class="flex flex-wrap items-center">
+      <li><a href="/" class="flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a></li>
+      <li aria-hidden="true" class="px-2">/</li>
+      <li aria-current="page" class="flex min-h-11 items-center font-medium text-slate-800">About</li>
+    </ol>
+  </nav>
+
+  <h1 class="text-3xl font-bold tracking-tight text-slate-900">About {SITE_NAME}</h1>
+
+  <div class="mt-6 space-y-6 rounded-3xl border border-slate-200 bg-white p-5 leading-relaxed text-slate-700 sm:p-8">
+    <p>
+      {SITE_NAME} is an independent directory of SaaS and AI tools. We focus on the two things buyers usually have to
+      dig for: what a tool actually costs once you're past the marketing page, and what limits or gotchas show up
+      after you sign up — usage caps, seat minimums, feature gating, and similar fine print.
+    </p>
+
+    <p>
+      Every tool entry links back to the vendor's own pricing page, so you can confirm current numbers yourself
+      before you buy. Our <a href="/methodology/" class="font-medium text-indigo-700 hover:underline">methodology
+      page</a> explains how pricing and comparisons are put together.
+    </p>
+
+    <h2 class="text-xl font-semibold text-slate-900">Who this is for</h2>
+    <p>
+      {SITE_NAME} is built for people comparing software before they buy: founders and operators picking tools for a
+      small team, and anyone trying to work out the real monthly cost of a stack rather than the advertised
+      "starting at" price.
+    </p>
+
+    <h2 class="text-xl font-semibold text-slate-900">What we're not</h2>
+    <p>
+      We're not a review panel with a staff of testers, and we don't run user accounts or a comments system (yet).
+      If something on the site is wrong or out of date, the fastest way to fix it is to
+      <a href="/contact/" class="font-medium text-indigo-700 hover:underline">tell us</a>.
+    </p>
+  </div>
+</Layout>

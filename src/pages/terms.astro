@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { breadcrumbSchema } from '../lib/seo';
+import { SITE_NAME, CONTACT_EMAIL } from '../config/site';
+
+const path = '/terms/';
+const title = 'Terms of Use';
+const description = `The terms for using the ${SITE_NAME} directory.`;
+const schema = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Terms', path }])];
+const lastUpdated = '2026-11-13';
+---
+
+<Layout {title} {description} {path} {schema} narrow>
+  <nav class="mb-4 text-sm text-slate-600" aria-label="Breadcrumb">
+    <ol class="flex flex-wrap items-center">
+      <li><a href="/" class="flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a></li>
+      <li aria-hidden="true" class="px-2">/</li>
+      <li aria-current="page" class="flex min-h-11 items-center font-medium text-slate-800">Terms</li>
+    </ol>
+  </nav>
+
+  <h1 class="text-3xl font-bold tracking-tight text-slate-900">Terms of Use</h1>
+  <p class="mt-2 text-sm text-slate-500">Last updated: <time datetime={lastUpdated}>{lastUpdated}</time></p>
+
+  <div class="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-relaxed text-amber-900">
+    <strong>Draft notice:</strong> this is a plain-language draft and has not yet been reviewed by {SITE_NAME}'s
+    owner or a lawyer. Don't treat it as final legal advice.
+  </div>
+
+  <div class="mt-6 space-y-6 rounded-3xl border border-slate-200 bg-white p-5 leading-relaxed text-slate-700 sm:p-8">
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Using this site</h2>
+      <p class="mt-2">
+        {SITE_NAME} is an informational directory of third-party SaaS and AI tools. You're free to browse, search,
+        and compare tools. Don't scrape, mirror, or republish the site's content at scale without asking first —
+        reach out via the <a href="/contact/" class="font-medium text-indigo-700 hover:underline">contact page</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">No guarantee on accuracy</h2>
+      <p class="mt-2">
+        Pricing, features, and limits shown here are sourced from vendors' own public pages and may be outdated,
+        incomplete, or wrong by the time you read them — see our <a href="/methodology/" class="font-medium text-indigo-700 hover:underline">methodology
+        page</a> for how we source information. Always confirm current pricing and terms directly with the vendor
+        before making a purchasing decision. {SITE_NAME} isn't responsible for decisions made based on information
+        on this site.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Third-party links</h2>
+      <p class="mt-2">
+        This site links to third-party vendor websites. We don't control, and aren't responsible for, the content,
+        pricing, or practices of those sites.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Changes</h2>
+      <p class="mt-2">
+        These terms may be updated as the site evolves. Continued use of the site after a change means you accept
+        the updated terms.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Contact</h2>
+      <p class="mt-2">
+        Questions about these terms can go to <a href={`mailto:${CONTACT_EMAIL}`} class="font-medium text-indigo-700 hover:underline">{CONTACT_EMAIL}</a>.
+      </p>
+    </section>
+  </div>
+</Layout>

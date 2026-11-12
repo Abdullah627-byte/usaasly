@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { breadcrumbSchema } from '../lib/seo';
+import { SITE_NAME, CONTACT_EMAIL } from '../config/site';
+
+const path = '/privacy/';
+const title = 'Privacy Policy';
+const description = `How ${SITE_NAME} handles analytics, data, and links to other sites.`;
+const schema = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Privacy', path }])];
+const lastUpdated = '2026-11-13';
+---
+
+<Layout {title} {description} {path} {schema} narrow>
+  <nav class="mb-4 text-sm text-slate-600" aria-label="Breadcrumb">
+    <ol class="flex flex-wrap items-center">
+      <li><a href="/" class="flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a></li>
+      <li aria-hidden="true" class="px-2">/</li>
+      <li aria-current="page" class="flex min-h-11 items-center font-medium text-slate-800">Privacy</li>
+    </ol>
+  </nav>
+
+  <h1 class="text-3xl font-bold tracking-tight text-slate-900">Privacy Policy</h1>
+  <p class="mt-2 text-sm text-slate-500">Last updated: <time datetime={lastUpdated}>{lastUpdated}</time></p>
+
+  <div class="mt-4 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-relaxed text-amber-900">
+    <strong>Draft notice:</strong> this is a plain-language draft and has not yet been reviewed by {SITE_NAME}'s
+    owner or a lawyer. Don't treat it as final legal advice.
+  </div>
+
+  <div class="mt-6 space-y-6 rounded-3xl border border-slate-200 bg-white p-5 leading-relaxed text-slate-700 sm:p-8">
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">The short version</h2>
+      <p class="mt-2">
+        {SITE_NAME} doesn't require an account and doesn't collect personal data to let you browse the site. We use
+        a cookie-free analytics tool to understand traffic in aggregate, and many of the links on this site go to
+        third-party vendor websites that have their own privacy practices.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Analytics</h2>
+      <p class="mt-2">
+        We use <a href="https://plausible.io" target="_blank" rel="noopener nofollow" class="font-medium text-indigo-700 hover:underline">Plausible</a>,
+        a cookie-free, privacy-focused analytics service. Plausible doesn't use cookies or any persistent identifiers,
+        and it doesn't collect personal data — it reports aggregate numbers like page views and referrers. No
+        cross-site tracking profile is built on visitors to this site.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Accounts</h2>
+      <p class="mt-2">
+        {SITE_NAME} does not currently offer user accounts, logins, or saved profiles. Nothing you do on the site is
+        tied to a personal account.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Outbound links</h2>
+      <p class="mt-2">
+        Tool pages link out to vendors' own websites ("Visit [tool]" links and similar). Once you click through,
+        you're on a third-party site governed by that company's own privacy policy and terms — we don't control
+        what they collect.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Contact</h2>
+      <p class="mt-2">
+        Questions about this policy can go to <a href={`mailto:${CONTACT_EMAIL}`} class="font-medium text-indigo-700 hover:underline">{CONTACT_EMAIL}</a>.
+      </p>
+    </section>
+  </div>
+</Layout>

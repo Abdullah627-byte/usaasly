@@ -4,6 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import StatusNotice from '../../components/StatusNotice.astro';
 import { tools, formatPrice, type Tool } from '../../lib/tools';
 import { absoluteUrl, breadcrumbSchema, faqSchema } from '../../lib/seo';
+import { SHOW_RATINGS } from '../../config/site';
 
 export const getStaticPaths = (() => {
   return tools.map((tool) => ({ params: { slug: tool.slug }, props: { tool } }));
@@ -43,7 +44,7 @@ const schema: Record<string, unknown>[] = [
     ...(c && {
       review: {
         '@type': 'Review',
-        reviewRating: { '@type': 'Rating', ratingValue: c.rating, bestRating: 5, worstRating: 1 },
+        ...(SHOW_RATINGS && { reviewRating: { '@type': 'Rating', ratingValue: c.rating, bestRating: 5, worstRating: 1 } }),
         author: { '@type': 'Organization', name: 'Usaasly' },
         reviewBody: c.verdict,
       },
@@ -74,7 +75,7 @@ if (c?.faqs?.length) schema.push(faqSchema(c.faqs));
         <p class="text-3xl font-bold text-indigo-600">{price}</p>
         <p class="text-sm text-slate-500">{tool.price_unit}</p>
       </div>
-      {c && (
+      {c && SHOW_RATINGS && (
         <div class="text-right">
           <p class="text-sm text-slate-500">Our rating</p>
           <p class="text-3xl font-bold">{c.rating.toFixed(1)}<span class="text-base text-slate-400"> / 5</span></p>

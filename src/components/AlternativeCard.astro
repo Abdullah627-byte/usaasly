@@ -1,5 +1,6 @@
 ---
 import { comparePath, priceLabel, toolPath, type CatalogTool } from '../lib/catalog';
+import { SHOW_RATINGS } from '../config/site';
 
 interface Props {
   tool: CatalogTool;
@@ -20,7 +21,7 @@ const sameCategory = t.category === base.category;
         <a href={toolPath(t)} class="hover:underline">{t.name}</a>
       </h2>
     </div>
-    <p class="text-sm font-semibold text-slate-800">★ {t.rating.toFixed(1)}</p>
+    {SHOW_RATINGS && <p class="text-sm font-semibold text-slate-800">★ {t.rating.toFixed(1)}</p>}
   </div>
 
   <div class="mt-3 flex flex-wrap gap-2">

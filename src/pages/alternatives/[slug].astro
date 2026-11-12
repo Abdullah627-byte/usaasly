@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import AlternativeCard from '../../components/AlternativeCard.astro';
 import { alternativesSlug, catalog, getAlternatives, priceText, toolPath, type CatalogTool } from '../../lib/catalog';
 import { absoluteUrl, breadcrumbSchema } from '../../lib/seo';
+import { SHOW_RATINGS } from '../../config/site';
 
 export const getStaticPaths = (() => {
   return catalog.map((tool) => ({ params: { slug: alternativesSlug(tool) }, props: { tool } }));
@@ -25,10 +26,11 @@ const description = `Looking for ${tool.name} alternatives? Compare ${alts
 
 const lower = (s: string) => s.charAt(0).toLowerCase() + s.slice(1);
 const sameCount = alts.filter((t) => t.category === tool.category).length;
+const rankedBy = SHOW_RATINGS ? 'our editorial rating' : 'category fit';
 const intro =
   sameCount === alts.length
-    ? `These ${alts.length} ${tool.category} tools are the closest alternatives to ${tool.name} (${priceText(tool)}), ranked by our editorial rating.`
-    : `${tool.name} (${priceText(tool)}) has ${sameCount} direct ${tool.category} competitor${sameCount === 1 ? '' : 's'} in our directory, so we also include the closest tools from related categories. Ranked by category fit, then rating.`;
+    ? `These ${alts.length} ${tool.category} tools are the closest alternatives to ${tool.name} (${priceText(tool)}), ranked by ${rankedBy}.`
+    : `${tool.name} (${priceText(tool)}) has ${sameCount} direct ${tool.category} competitor${sameCount === 1 ? '' : 's'} in our directory, so we also include the closest tools from related categories, ranked by ${rankedBy}.`;
 
 const schema: Record<string, unknown>[] = [
   {

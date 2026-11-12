@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { breadcrumbSchema } from '../lib/seo';
+import { SITE_NAME, SHOW_RATINGS, REVIEWS_ENABLED, AFFILIATE_LINKS } from '../config/site';
+
+const path = '/methodology/';
+const title = `Methodology`;
+const description = `How ${SITE_NAME} sources pricing, handles ratings and reviews, and keeps listings independent.`;
+const schema = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Methodology', path }])];
+---
+
+<Layout {title} {description} {path} {schema} narrow>
+  <nav class="mb-4 text-sm text-slate-600" aria-label="Breadcrumb">
+    <ol class="flex flex-wrap items-center">
+      <li><a href="/" class="flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a></li>
+      <li aria-hidden="true" class="px-2">/</li>
+      <li aria-current="page" class="flex min-h-11 items-center font-medium text-slate-800">Methodology</li>
+    </ol>
+  </nav>
+
+  <h1 class="text-3xl font-bold tracking-tight text-slate-900">Methodology</h1>
+  <p class="mt-2 text-slate-600">How listings on {SITE_NAME} are put together, and where they fall short today.</p>
+
+  <div class="mt-6 space-y-6 rounded-3xl border border-slate-200 bg-white p-5 leading-relaxed text-slate-700 sm:p-8">
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Pricing</h2>
+      <p class="mt-2">
+        Starting prices come from each vendor's own pricing page, using annual billing when a vendor states that as
+        its lowest tier. Vendors change prices and plans often, and we don't always catch a change the moment it
+        happens — treat every price on this site as a starting point, and confirm the current number on the
+        vendor's official pricing page before you buy.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Last verified dates</h2>
+      <p class="mt-2">
+        Where we have a confirmed check date for a tool's pricing, it's shown as a "Last verified" date on that
+        tool's page. Not every tool has one yet — the absence of a date means we haven't recorded a specific check,
+        not that the price is necessarily wrong.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Ratings</h2>
+      <p class="mt-2">
+        {
+          SHOW_RATINGS
+            ? "Star ratings reflect our editorial scoring system."
+            : "Star ratings are currently hidden across the site. We'd rather show nothing than show a number we can't yet stand behind — we're building an editorial scoring system before ratings come back."
+        }
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Reviews</h2>
+      <p class="mt-2">
+        {
+          REVIEWS_ENABLED
+            ? 'User-submitted reviews are moderated before they appear on a tool’s page.'
+            : "User-submitted reviews aren't live yet. Tool pages note this rather than showing an empty or fake review section."
+        }
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Corrections</h2>
+      <p class="mt-2">
+        If a price, limit, or any other detail is wrong or out of date, tell us on the
+        <a href="/contact/" class="font-medium text-indigo-700 hover:underline">contact page</a> — pick "Report a
+        wrong price" and name the tool. We'd rather fix it than leave it.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Independence</h2>
+      <p class="mt-2">
+        {
+          AFFILIATE_LINKS
+            ? 'Some links on this site are affiliate links, which may earn us a commission at no extra cost to you. This does not affect how a tool is ranked or described.'
+            : 'There are no paid placements and no affiliate links on this site at this time. If that changes, this page and the footer will disclose it.'
+        }
+        No vendor can pay to change its ranking or its listed pricing.
+      </p>
+    </section>
+  </div>
+</Layout>

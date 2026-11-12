@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { breadcrumbSchema } from '../lib/seo';
+import { SITE_NAME, CONTACT_EMAIL } from '../config/site';
+
+const path = '/contact/';
+const title = `Contact ${SITE_NAME}`;
+const description = `Get in touch with ${SITE_NAME}: report a wrong price, submit a tool, or ask a general question.`;
+const schema = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Contact', path }])];
+
+const mailto = (subject: string) => `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}`;
+
+const links = [
+  {
+    title: 'Report a wrong price',
+    body: 'Spotted a price, plan, or limit that no longer matches the vendor’s page? Let us know which tool and what changed.',
+    label: `Email: ${CONTACT_EMAIL}`,
+    href: mailto('Wrong price: '),
+  },
+  {
+    title: 'Submit a tool',
+    body: 'Think a tool belongs in the directory? Send the name and website and we’ll take a look.',
+    label: `Email: ${CONTACT_EMAIL}`,
+    href: mailto('Submit a tool: '),
+  },
+  {
+    title: 'Everything else',
+    body: 'Questions, feedback, or anything that doesn’t fit above.',
+    label: `Email: ${CONTACT_EMAIL}`,
+    href: mailto(`${SITE_NAME} contact`),
+  },
+];
+---
+
+<Layout {title} {description} {path} {schema} narrow>
+  <nav class="mb-4 text-sm text-slate-600" aria-label="Breadcrumb">
+    <ol class="flex flex-wrap items-center">
+      <li><a href="/" class="flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a></li>
+      <li aria-hidden="true" class="px-2">/</li>
+      <li aria-current="page" class="flex min-h-11 items-center font-medium text-slate-800">Contact</li>
+    </ol>
+  </nav>
+
+  <h1 class="text-3xl font-bold tracking-tight text-slate-900">Contact</h1>
+  <p class="mt-2 text-slate-600">No contact form — just email. Pick the one that fits.</p>
+
+  <div class="mt-6 grid gap-4 sm:grid-cols-3">
+    {
+      links.map((l) => (
+        <div class="flex flex-col rounded-3xl border border-slate-200 bg-white p-5">
+          <h2 class="text-base font-semibold text-slate-900">{l.title}</h2>
+          <p class="mt-1 flex-1 text-sm leading-relaxed text-slate-700">{l.body}</p>
+          <a
+            href={l.href}
+            class="mt-4 flex min-h-11 items-center justify-center rounded-full bg-indigo-700 px-4 text-center text-sm font-semibold text-white hover:bg-indigo-800"
+          >
+            {l.title}
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</Layout>
