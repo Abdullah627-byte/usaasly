@@ -16,6 +16,10 @@ export interface CatalogTool {
   pros: string[];
   cons: string[];
   website_url: string;
+  /** ISO date (YYYY-MM-DD) of a confirmed pricing check; only set after a real manual check. */
+  last_verified?: string | null;
+  /** Vendor's official pricing page; only set when the URL is known to be correct. */
+  pricing_url?: string | null;
 }
 
 /** Compact projection embedded in pages that only need a few fields client-side. */
