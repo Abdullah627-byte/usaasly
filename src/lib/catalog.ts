@@ -2,6 +2,7 @@ import raw from '../data/tools.json';
 import { money } from '../scripts/util';
 import type { CatalogTool, ToolLite } from '../scripts/types';
 import { absoluteUrl } from './seo';
+import { INDEXED_TOOL_SLUGS } from '../config/site';
 
 export { money };
 export type { CatalogTool, ToolLite };
@@ -27,6 +28,11 @@ export function toLite(t: CatalogTool): ToolLite {
 
 /** Categories in order of first appearance in the catalog. */
 export const categories: string[] = [...new Set(catalog.map((t) => t.category))];
+
+/** True when a tool is in the set we actively target for Google (see INDEXED_TOOL_SLUGS). */
+export function isIndexedTool(t: Pick<CatalogTool, 'slug'>): boolean {
+  return INDEXED_TOOL_SLUGS.includes(t.slug);
+}
 
 export function getCatalogTool(slug: string): CatalogTool | undefined {
   return catalog.find((t) => t.slug === slug);
