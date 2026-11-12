@@ -23,7 +23,8 @@
       "Team plans cost more per seat",
       "Data-privacy settings need manual review"
     ],
-    "website_url": "https://chatgpt.com"
+    "website_url": "https://chatgpt.com",
+    "pricing_url": "https://chatgpt.com/pricing"
   },
   {
     "id": 2,
@@ -49,7 +50,8 @@
       "Rate limits can interrupt long sessions",
       "Smaller integration ecosystem than ChatGPT"
     ],
-    "website_url": "https://claude.ai"
+    "website_url": "https://claude.ai",
+    "pricing_url": "https://claude.com/pricing"
   },
   {
     "id": 3,
@@ -647,7 +649,8 @@
       "Required onboarding fees on higher plans",
       "Contact-based pricing adds up"
     ],
-    "website_url": "https://www.hubspot.com"
+    "website_url": "https://www.hubspot.com",
+    "pricing_url": "https://www.hubspot.com/pricing"
   },
   {
     "id": 26,
@@ -777,7 +780,8 @@
       "Needs a decent connection",
       "Heavy files can slow down"
     ],
-    "website_url": "https://www.figma.com"
+    "website_url": "https://www.figma.com",
+    "pricing_url": "https://www.figma.com/pricing/"
   },
   {
     "id": 31,
@@ -881,7 +885,8 @@
       "Offline support is limited",
       "AI features gated to higher tiers"
     ],
-    "website_url": "https://www.notion.so"
+    "website_url": "https://www.notion.so",
+    "pricing_url": "https://www.notion.so/pricing"
   },
   {
     "id": 35,

@@ -1,0 +1,52 @@
+---
+import { money, priceLabel } from '../lib/catalog';
+import type { CatalogTool } from '../lib/catalog';
+
+interface Props {
+  tool: CatalogTool;
+}
+const { tool } = Astro.props;
+
+const start = tool.starting_price === 0 ? 'Free' : `${money(tool.starting_price)}${tool.price_per_user ? ' per user' : ''} / month`;
+const verified = tool.last_verified ? new Date(`${tool.last_verified}T00:00:00Z`) : null;
+const verifiedLabel =
+  verified && !Number.isNaN(verified.getTime())
+    ? verified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
+    : null;
+---
+
+<section aria-labelledby="pricing-snapshot" class="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+  <h2 id="pricing-snapshot" class="text-xl font-semibold text-slate-900">Pricing &amp; plan snapshot</h2>
+  <dl class="mt-4 grid gap-4 sm:grid-cols-2">
+    <div>
+      <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Starting price</dt>
+      <dd class="mt-1 text-sm font-semibold text-slate-900">{start}</dd>
+      <dd class="text-xs text-slate-600">{priceLabel(tool)} — lowest paid tier we list; confirm before buying.</dd>
+    </div>
+    <div>
+      <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Free tier</dt>
+      <dd class="mt-1 text-sm font-semibold text-slate-900">
+        {tool.is_open_source ? 'Open source (free to self-host)' : tool.has_free_tier ? 'Yes' : 'No'}
+      </dd>
+    </div>
+    <div class="sm:col-span-2">
+      <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Hidden limits to watch</dt>
+      <dd class="mt-1 text-sm text-slate-700">{tool.hidden_limits}</dd>
+    </div>
+  </dl>
+  <div class="mt-4 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-4 text-sm">
+    {verifiedLabel && <span class="text-slate-700">Last verified: <time datetime={tool.last_verified ?? ''}>{verifiedLabel}</time></span>}
+    {
+      tool.pricing_url && (
+        <a
+          href={tool.pricing_url}
+          rel="noopener nofollow"
+          target="_blank"
+          class="inline-flex min-h-11 items-center rounded-full border border-slate-300 px-4 font-semibold text-slate-800 hover:bg-slate-50"
+        >
+          Check official pricing ↗
+        </a>
+      )
+    }
+  </div>
+</section>
