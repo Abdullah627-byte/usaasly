@@ -17,6 +17,7 @@ import {
   toolPath,
   type CatalogTool,
 } from '../../lib/catalog';
+import { isIndexedTool } from '../../lib/catalog';
 import { breadcrumbSchema } from '../../lib/seo';
 import { REVIEWS_ENABLED, CONTACT_EMAIL } from '../../config/site';
 
@@ -47,7 +48,7 @@ const schema = [
 ];
 ---
 
-<Layout {title} {description} {path} {schema}>
+<Layout {title} {description} {path} {schema} noindex={!isIndexedTool(tool)}>
   <nav class="mb-4 text-sm text-slate-600" aria-label="Breadcrumb">
     <ol class="flex flex-wrap items-center">
       <li><a href="/" class="flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a></li>
