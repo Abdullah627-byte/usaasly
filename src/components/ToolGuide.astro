@@ -1,0 +1,32 @@
+---
+import type { CatalogTool } from '../lib/catalog';
+
+interface Props {
+  tool: CatalogTool;
+}
+const { tool } = Astro.props;
+const guide = tool.guide;
+---
+
+{
+  guide && (
+    <section aria-labelledby="guide-title" class="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+      <h2 id="guide-title" class="text-xl font-semibold text-slate-900">{tool.name} at a glance</h2>
+      <p class="mt-2 text-sm leading-relaxed text-slate-700">{guide.intro}</p>
+      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+        <div>
+          <h3 class="text-base font-semibold text-slate-900">Good fit if</h3>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-700">
+            {guide.good_for.map((g) => <li>{g}</li>)}
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-base font-semibold text-slate-900">Think twice if</h3>
+          <ul class="mt-2 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-700">
+            {guide.skip_if.map((g) => <li>{g}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+  )
+}
