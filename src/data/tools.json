@@ -136,7 +136,23 @@
     ],
     "website_url": "https://www.perplexity.ai",
     "pricing_url": "https://www.perplexity.ai/pro",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "per_user": true,
+        "yearly": 17,
+        "note": "Billed annually. Monthly price not verified yet. Personal use only."
+      },
+      {
+        "name": "Max",
+        "audience": "individual",
+        "per_user": true,
+        "yearly": 167,
+        "note": "Billed annually. Monthly price not verified yet. Personal use only."
+      }
+    ]
   },
   {
     "id": 5,
@@ -1275,7 +1291,7 @@
     "best_for_usecase": "Real-time team messaging with deep app integrations",
     "starting_price": 7.25,
     "price_per_user": true,
-    "hidden_limits": "Free workspaces keep only 90 days of message history and limit integrations; Slack AI is only available on higher tiers.",
+    "hidden_limits": "Free workspaces keep only 90 days of message history and are limited to 10 app integrations. Free and Pro include basic AI only; advanced AI starts on Business+.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.5,
