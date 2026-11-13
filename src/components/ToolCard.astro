@@ -1,11 +1,12 @@
 ---
-import { priceLabel, toolPath, type CatalogTool } from '../lib/catalog';
+import { isIndexedTool, priceLabel, toolPath, type CatalogTool } from '../lib/catalog';
 import { SHOW_RATINGS } from '../config/site';
 
 interface Props {
   tool: CatalogTool;
 }
 const { tool } = Astro.props;
+const verified = isIndexedTool(tool);
 const free = tool.is_open_source || tool.starting_price === 0;
 const searchText = [tool.name, tool.category, tool.best_for_usecase, tool.ai_model, tool.is_open_source ? 'open source' : '', tool.has_free_tier ? 'free' : '']
   .join(' ')
@@ -41,7 +42,7 @@ const searchText = [tool.name, tool.category, tool.best_for_usecase, tool.ai_mod
   <p class="mt-3 line-clamp-2 text-sm leading-relaxed text-slate-700">{tool.best_for_usecase}</p>
 
   <div class="mt-3 flex flex-wrap gap-2">
-    <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-800">{priceLabel(tool)}</span>
+    <span class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-800">{verified ? priceLabel(tool) : `${priceLabel(tool)} (unverified)`}</span>
     {tool.is_open_source && <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-800">Open source</span>}
     {tool.has_free_tier && !tool.is_open_source && <span class="rounded-full bg-sky-50 px-2.5 py-1 text-xs font-medium text-sky-800">Free tier</span>}
   </div>
