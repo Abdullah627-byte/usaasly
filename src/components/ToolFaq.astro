@@ -1,0 +1,104 @@
+---
+import { alternativesPath, comparePath, getTopCompetitors, money, type CatalogTool } from '../lib/catalog';
+
+interface Props {
+  tool: CatalogTool;
+}
+const { tool } = Astro.props;
+
+/** Every answer below is derived from the verified fields in tools.json. Nothing is invented per tool. */
+const plans = tool.plans ?? [];
+const perUserText = (n: number, perUser: boolean) => `${money(n)}${perUser ? ' per user' : ''} per month`;
+const list = (items: string[]) => items.join(', ').replace(/, ([^,]*)$/, ' and $1');
+
+const planLines = plans
+  .map((p) => {
+    const parts: string[] = [];
+    if (typeof p.monthly === 'number') parts.push(`${perUserText(p.monthly, p.per_user)} billed monthly`);
+    if (typeof p.yearly === 'number') parts.push(`${perUserText(p.yearly, p.per_user)} billed yearly`);
+    return parts.length ? `${p.name} (${p.audience === 'team' ? 'teams' : 'one person'}): ${parts.join(' or ')}` : null;
+  })
+  .filter((x): x is string => x !== null);
+
+const lowestStart = tool.starting_price === 0 ? 'The lowest tier we list is free.' : `The lowest paid tier we list is ${perUserText(tool.starting_price, tool.price_per_user)}.`;
+
+const saving = plans.find((p) => typeof p.monthly === 'number' && typeof p.yearly === 'number' && p.yearly < p.monthly);
+const yearlyOnly = plans.filter((p) => p.monthly === null && typeof p.yearly === 'number');
+let billing: string | null = null;
+if (saving) {
+  const m = saving.monthly as number;
+  const y = saving.yearly as number;
+  billing = `Yes. On ${saving.name}, paying monthly is ${money(m)}${saving.per_user ? ' per user' : ''} per month, while the yearly rate works out to ${money(y)}, which is ${money(Math.round((m - y) * 12 * 100) / 100)} less over twelve months${saving.per_user ? ' per user' : ''}. Yearly billing commits you for the full year.`;
+} else if (yearlyOnly.length) {
+  billing = `${list(yearlyOnly.map((p) => p.name))} ${yearlyOnly.length > 1 ? 'are' : 'is'} sold on yearly billing only, so there is no month-to-month price for ${yearlyOnly.length > 1 ? 'them' : 'it'}.`;
+} else if (plans.length) {
+  billing = `We have only verified the monthly prices for ${tool.name}. Check the vendor's pricing page to see whether a yearly option exists for your plan and region.`;
+}
+
+const competitors = getTopCompetitors(tool, 3);
+const cons = tool.cons.slice(0, 3);
+
+const faqs: { q: string; a: string }[] = [
+  {
+    q: `How much does ${tool.name} cost?`,
+    a:
+      planLines.length > 0
+        ? `${lowestStart} Verified plan prices in USD, before tax: ${planLines.join('; ')}.`
+        : `${lowestStart} We have not confirmed a full plan-by-plan price list yet, so use the official pricing page for the exact tier you need.`,
+  },
+  {
+    q: `Is there a free plan for ${tool.name}?`,
+    a: tool.is_open_source
+      ? `${tool.name} is open source, so you can self-host it for free. Hosted plans, if any, are priced separately.`
+      : tool.has_free_tier
+        ? `Yes, ${tool.name} has a free plan. Free plans are capped and leave out paid features, so see the hidden limits below for what to expect.`
+        : `No. ${tool.name} does not offer a free plan at the moment, so you need a paid plan or a trial to use it.`,
+  },
+  {
+    q: `Is ${tool.name} priced per user?`,
+    a: tool.price_per_user
+      ? `Yes. At the starting price of ${money(tool.starting_price)} per user, a team of 5 would pay ${money(Math.round(tool.starting_price * 5 * 100) / 100)} per month if every person needs that plan. Higher tiers usually cost more per person.`
+      : `No. The plan we list is a flat price of ${money(tool.starting_price)} per month, not a per-seat charge, so it does not grow with each extra person on that plan. Usage limits can still push you to a higher tier.`,
+  },
+  ...(billing ? [{ q: `Is ${tool.name} cheaper if you pay yearly?`, a: billing }] : []),
+  {
+    q: `What are the hidden limits of ${tool.name}?`,
+    a: tool.hidden_limits,
+  },
+  {
+    q: `Which AI models does ${tool.name} use?`,
+    a: `${tool.name} uses ${tool.ai_model}. Model availability changes by plan, so confirm what your tier includes before you rely on a specific model.`,
+  },
+  {
+    q: `What are the main strengths and weaknesses of ${tool.name}?`,
+    a: `Strengths: ${list(tool.pros.map((p) => p.charAt(0).toLowerCase() + p.slice(1)))}. Weaknesses: ${list(cons.map((p) => p.charAt(0).toLowerCase() + p.slice(1)))}.`,
+  },
+];
+---
+
+<section aria-labelledby="faq-title" class="mt-8 rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+  <h2 id="faq-title" class="text-xl font-semibold text-slate-900">{tool.name} pricing questions answered</h2>
+  <div class="mt-4 space-y-5">
+    {
+      faqs.map((f) => (
+        <div>
+          <h3 class="text-base font-semibold text-slate-900">{f.q}</h3>
+          <p class="mt-1 text-sm leading-relaxed text-slate-700">{f.a}</p>
+        </div>
+      ))
+    }
+    <div>
+      <h3 class="text-base font-semibold text-slate-900">Who should look at other tools instead?</h3>
+      <p class="mt-1 text-sm leading-relaxed text-slate-700">
+        {tool.name} is best for {tool.best_for_usecase.charAt(0).toLowerCase() + tool.best_for_usecase.slice(1)}. If that is not your situation, look at the
+        <a href={alternativesPath(tool)} class="font-medium text-indigo-700 hover:underline">best {tool.name} alternatives</a>
+        {competitors.length > 0 && ' or compare it directly with '}
+        {competitors.map((c, i) => (
+          <>
+            <a href={comparePath(tool, c)} class="font-medium text-indigo-700 hover:underline">{c.name}</a>{i < competitors.length - 1 ? (i === competitors.length - 2 ? ' and ' : ', ') : ''}
+          </>
+        ))}.
+      </p>
+    </div>
+  </div>
+</section>
