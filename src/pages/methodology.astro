@@ -33,6 +33,37 @@ const schema = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Methodol
     </section>
 
     <section>
+      <h2 class="text-xl font-semibold text-slate-900">How we verify a price</h2>
+      <p class="mt-2">
+        For each tool we open the vendor's official pricing page in a browser, switch between monthly and yearly
+        billing where the page offers it, and record the US dollar price for every plan we list. We note whether a
+        plan is meant for one person or for a team, and whether the price is charged per user or as a flat fee.
+        Yearly prices are shown as the effective monthly amount. If a page shows prices in another currency or hides
+        one of the billing options, we leave that cell as "Not verified yet" rather than convert or estimate.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">How starting price is chosen</h2>
+      <p class="mt-2">
+        The starting price is the cheapest paid plan on the vendor's page, on annual billing when the vendor states
+        that as its lowest rate. A free plan is shown separately and is not counted as the starting price. Costs for
+        different team sizes multiply a per-user price by the number of people and leave flat prices unchanged, and
+        they assume every person needs that plan. Taxes, add-ons, usage overages and promotional discounts are not
+        included.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Verified and unverified tools</h2>
+      <p class="mt-2">
+        Only tools whose pricing we have checked are submitted to search engines. Other tools stay visible on the
+        site and are labelled "unverified" until we have checked them. We add newly verified tools gradually, and we
+        recheck existing ones when vendors change their pricing or when we are told about a change.
+      </p>
+    </section>
+
+    <section>
       <h2 class="text-xl font-semibold text-slate-900">Last verified dates</h2>
       <p class="mt-2">
         Where we have a confirmed check date for a tool's pricing, it's shown as a "Last verified" date on that
