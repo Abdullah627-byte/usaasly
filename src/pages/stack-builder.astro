@@ -12,7 +12,7 @@ const schema = [
 ---
 
 <Layout
-  title="SaaS Stack Builder: Calculate the Total Monthly Cost of Your Tool Stack"
+  title="SaaS Stack Builder: Total Monthly Cost of Your Stack"
   description="Pick one tool from three categories (CRM + AI + Project Management) and see the total monthly cost of your SaaS stack for your team size."
   path="/stack-builder/"
   {schema}
@@ -53,7 +53,7 @@ const schema = [
   </div>
 
   <p class="mt-6 text-xs text-slate-600">
-    Per-user tools are multiplied by team size; flat-fee tools are counted once. Prices are starting prices and exclude add-ons, taxes and usage overages.
+    Per-user tools are multiplied by team size; flat-fee tools are counted once. Prices are starting prices and exclude add-ons, taxes and usage overages. Only tools whose tool page shows a "Last verified" date have prices we have checked on the vendor's site; for the others the price may be out of date.
   </p>
 
   <script type="application/json" id="catalog-lite" set:html={jsonLdString(catalog.map(toLite))} />
