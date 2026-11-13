@@ -25,7 +25,15 @@
     ],
     "website_url": "https://chatgpt.com",
     "pricing_url": "https://chatgpt.com/pricing",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Plus",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 20
+      }
+    ]
   },
   {
     "id": 2,
@@ -71,7 +79,7 @@
     "logo": "/logos/gemini.svg",
     "category": "AI Assistants",
     "best_for_usecase": "Teams living in Google Workspace who want AI in Docs, Gmail and Drive",
-    "starting_price": 19.99,
+    "starting_price": 16.67,
     "price_per_user": true,
     "hidden_limits": "Top-tier model access and Deep Research quotas are capped per day; Workspace AI features need a qualifying plan.",
     "has_free_tier": true,
@@ -90,7 +98,17 @@
     ],
     "website_url": "https://gemini.google.com",
     "pricing_url": "https://one.google.com/about/google-ai-plans/",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Google AI Pro",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 19.99,
+        "yearly": 16.67,
+        "note": "Yearly option is $199.99 billed once a year"
+      }
+    ]
   },
   {
     "id": 4,
@@ -985,7 +1003,39 @@
     ],
     "website_url": "https://www.figma.com",
     "pricing_url": "https://www.figma.com/pricing/",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Professional: Full seat",
+        "audience": "individual",
+        "per_user": true,
+        "monthly": 20,
+        "yearly": 16
+      },
+      {
+        "name": "Professional: Dev seat",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 15,
+        "yearly": 12
+      },
+      {
+        "name": "Organization: Full seat",
+        "audience": "team",
+        "per_user": true,
+        "monthly": null,
+        "yearly": 55,
+        "note": "Billed annually only"
+      },
+      {
+        "name": "Organization: Dev seat",
+        "audience": "team",
+        "per_user": true,
+        "monthly": null,
+        "yearly": 25,
+        "note": "Billed annually only"
+      }
+    ]
   },
   {
     "id": 31,
@@ -1103,7 +1153,24 @@
     ],
     "website_url": "https://www.notion.so",
     "pricing_url": "https://www.notion.so/pricing",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Plus",
+        "audience": "individual",
+        "per_user": true,
+        "monthly": 12,
+        "yearly": 10,
+        "note": "Per seat; for one person or a small team"
+      },
+      {
+        "name": "Business",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 24,
+        "yearly": 20
+      }
+    ]
   },
   {
     "id": 35,
@@ -1323,7 +1390,25 @@
     ],
     "website_url": "https://zapier.com",
     "pricing_url": "https://zapier.com/pricing",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Professional",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 29.99,
+        "yearly": 19.99,
+        "note": "Starting price at the lowest task tier; price rises with task volume"
+      },
+      {
+        "name": "Team",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 103.5,
+        "yearly": 69,
+        "note": "Starting price at the lowest task tier; price rises with task volume"
+      }
+    ]
   },
   {
     "id": 42,
