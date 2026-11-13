@@ -152,7 +152,19 @@
         "yearly": 167,
         "note": "Billed annually. Monthly price not verified yet. Personal use only."
       }
-    ]
+    ],
+    "guide": {
+      "intro": "Perplexity is an answer engine that cites its sources. Pro is listed at $17 a month on yearly billing and Max at $167 a month on yearly billing, both for personal use only. Pro adds deep research, the choice between several AI models, and higher usage limits than Free.",
+      "good_for": [
+        "Research and fact-finding where you want to see the sources behind each answer",
+        "People who want to switch between models from OpenAI, Google, Anthropic and others in one place",
+        "Individuals: both Pro and Max are sold for personal use"
+      ],
+      "skip_if": [
+        "You need seats for a team, because Pro and Max are personal plans and Perplexity lists a separate Enterprise plan",
+        "You want a month-to-month price confirmed before you buy, as we have only verified the yearly rate"
+      ]
+    }
   },
   {
     "id": 5,
@@ -217,7 +229,7 @@
     "best_for_usecase": "High-aesthetic concept art, brand imagery and stylized illustrations",
     "starting_price": 10,
     "price_per_user": false,
-    "hidden_limits": "Basic plan includes only about 3.3 fast GPU hours per month; unlimited Relax mode starts at Standard and Stealth mode requires Pro.",
+    "hidden_limits": "No free plan. Basic includes about 3.3 fast GPU hours a month, and extra GPU time costs $4 per hour. Unlimited Relax images start on Standard, unlimited Relax video and Stealth mode (private images) need Pro or Mega, and companies earning more than $1,000,000 a year must be on Pro or Mega.",
     "has_free_tier": false,
     "is_open_source": false,
     "rating": 4.7,
@@ -234,7 +246,53 @@
     ],
     "website_url": "https://www.midjourney.com",
     "pricing_url": "https://www.midjourney.com/pricing",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Basic",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 10,
+        "yearly": 8,
+        "note": "Yearly is paid upfront ($96)."
+      },
+      {
+        "name": "Standard",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 30,
+        "yearly": 24,
+        "note": "Yearly is paid upfront ($288)."
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 60,
+        "yearly": 48,
+        "note": "Yearly is paid upfront ($576). Stealth mode included."
+      },
+      {
+        "name": "Mega",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 120,
+        "yearly": 96,
+        "note": "Yearly is paid upfront ($1,152). Stealth mode included."
+      }
+    ],
+    "guide": {
+      "intro": "Midjourney is an image and video generator sold only as a subscription. Plans differ mainly by fast GPU hours (3.3, 15, 30 and 60 a month), whether Relax mode is unlimited, how many jobs run at once, and whether your work can stay private.",
+      "good_for": [
+        "Designers and creators who want stylized concept art and are happy to pay a flat monthly fee",
+        "Heavy users, who should look at Standard or above for unlimited Relax image generations",
+        "Anyone who needs privacy: Stealth mode is on Pro and Mega only"
+      ],
+      "skip_if": [
+        "You want a free plan to test with, because there is none",
+        "You run a company with more than $1,000,000 in yearly revenue and plan to use Basic or Standard, because the terms require Pro or Mega"
+      ]
+    }
   },
   {
     "id": 8,
@@ -349,7 +407,7 @@
     "best_for_usecase": "Real-time grammar, tone and clarity fixes across every app you write in",
     "starting_price": 12,
     "price_per_user": true,
-    "hidden_limits": "Free tier covers basic spelling and grammar only; AI generation prompts are capped monthly and advanced tone/plagiarism checks need Pro.",
+    "hidden_limits": "Free includes 100 AI prompts a month and covers mistake checks and tone view. Pro is listed at $12 and includes 2,000 AI prompts per member per month, tone adjustment, full-sentence rewrites, plagiarism and AI-text detection. The page does not say whether the $12 is monthly or yearly.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.6,
@@ -366,7 +424,19 @@
     ],
     "website_url": "https://www.grammarly.com",
     "pricing_url": "https://www.grammarly.com/plans",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "guide": {
+      "intro": "Grammarly checks writing as you type. The Free plan gives mistake checks, a tone view and 100 AI prompts a month. Pro lifts that to 2,000 prompts per member a month and adds tone adjustment, full-sentence rewrites, citation consistency and AI-text and plagiarism detection. Enterprise adds unlimited prompts and security controls such as SAML single sign-on.",
+      "good_for": [
+        "Writers who want consistent spelling, grammar and tone checks across the apps they already use",
+        "Students and professionals who need plagiarism or AI-text detection (Pro)",
+        "Organizations that need single sign-on and custom roles (Enterprise)"
+      ],
+      "skip_if": [
+        "You only need spelling and basic grammar, as the Free plan already covers that",
+        "You want a clear monthly price before you start: the plans page lists Pro at $12 without stating the billing period, so confirm it at checkout"
+      ]
+    }
   },
   {
     "id": 13,
@@ -840,7 +910,7 @@
     "best_for_usecase": "Growing teams unifying CRM, marketing and sales automation",
     "starting_price": 20,
     "price_per_user": true,
-    "hidden_limits": "Free CRM is generous but caps marketing contacts and emails; costs rise sharply when you add Professional hubs or onboarding fees.",
+    "hidden_limits": "Free CRM is limited to 2 users and 1,000 contacts, and shows HubSpot branding. Starter is listed at $20 per seat per month at the regular rate (new customers may see discounts) and removes branding and adds automation, AI agents, meeting scheduling, e-signatures and multi-currency. Starter limits include 15 pipelines, 50 workflows and 500 calling minutes.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.6,
@@ -857,7 +927,19 @@
     ],
     "website_url": "https://www.hubspot.com",
     "pricing_url": "https://www.hubspot.com/pricing",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "guide": {
+      "intro": "HubSpot Smart CRM starts free for up to two users and 1,000 contacts. Starter is the first paid step and unlocks the features most small teams reach for first: no HubSpot branding, automation, meeting scheduling, e-signatures, payments and email or chat support.",
+      "good_for": [
+        "Very small teams that want a free CRM with no time limit",
+        "Teams that want to add automation and remove branding without a big jump in cost",
+        "Sales teams that value built-in meeting scheduling and e-signatures"
+      ],
+      "skip_if": [
+        "You have more than two users and need to stay free, because the free plan stops at two",
+        "You need Professional or Enterprise features: we have not verified those prices, so check HubSpot's pricing page first"
+      ]
+    }
   },
   {
     "id": 26,
@@ -868,7 +950,7 @@
     "best_for_usecase": "Enterprise sales organizations needing a customizable CRM platform",
     "starting_price": 25,
     "price_per_user": true,
-    "hidden_limits": "Entry-level Starter Suite is limited; customization, automation and storage need higher editions, plus implementation and admin costs.",
+    "hidden_limits": "Sales Cloud now has five editions: Starter Suite ($25), Pro Suite ($100), Core ($195), Advanced ($395) and Max ($550) per user per month. Only Starter Suite is priced monthly or annually; the others are billed annually. Premier Support is an add-on on Pro Suite, and set-up and admin work are costs the list price does not include.",
     "has_free_tier": false,
     "is_open_source": false,
     "rating": 4.3,
@@ -885,7 +967,61 @@
     ],
     "website_url": "https://www.salesforce.com",
     "pricing_url": "https://www.salesforce.com/crm/pricing/",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Starter Suite",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 25,
+        "yearly": 25,
+        "note": "Vendor lists one price, billed monthly or annually."
+      },
+      {
+        "name": "Pro Suite",
+        "audience": "team",
+        "per_user": true,
+        "monthly": null,
+        "yearly": 100,
+        "note": "Billed annually only."
+      },
+      {
+        "name": "Core",
+        "audience": "team",
+        "per_user": true,
+        "monthly": null,
+        "yearly": 195,
+        "note": "Billed annually only."
+      },
+      {
+        "name": "Advanced",
+        "audience": "team",
+        "per_user": true,
+        "monthly": null,
+        "yearly": 395,
+        "note": "Billed annually only."
+      },
+      {
+        "name": "Max",
+        "audience": "team",
+        "per_user": true,
+        "monthly": null,
+        "yearly": 550,
+        "note": "Billed annually only."
+      }
+    ],
+    "guide": {
+      "intro": "Salesforce Sales Cloud is sold as a ladder of editions. Starter Suite covers lead, account, contact and opportunity management with built-in sales flows, lead routing, email and calendar sync and email marketing. Each step up adds more automation, security and AI.",
+      "good_for": [
+        "Teams that expect to outgrow a simple CRM and want one platform with a clear upgrade path",
+        "Starter Suite buyers who want a low monthly commitment at $25 per user",
+        "Larger sales organizations that need quoting and forecasting (Pro Suite), Slack Business+ and Tableau Next (Core), extra security (Advanced) or Agentforce (Max)"
+      ],
+      "skip_if": [
+        "You want a simple CRM with no jump in price: the next edition after Starter Suite is four times the cost per user",
+        "You cannot commit to annual billing, since every edition above Starter Suite is billed annually"
+      ]
+    }
   },
   {
     "id": 27,
@@ -1435,7 +1571,7 @@
     "best_for_usecase": "Visual, multi-branch automation scenarios at lower per-operation cost",
     "starting_price": 9,
     "price_per_user": false,
-    "hidden_limits": "Plans are metered by operations; each module run counts, so complex scenarios can burn through the monthly allowance.",
+    "hidden_limits": "Make bills in credits (most actions use 1 credit, some AI features use more). When credits run out, scenarios stop until you add credits or upgrade. Extra credits expire one month after purchase on monthly plans, and unused credits expire at the end of the term.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.6,
@@ -1452,7 +1588,45 @@
     ],
     "website_url": "https://www.make.com",
     "pricing_url": "https://www.make.com/en/pricing",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Core",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 10.59,
+        "yearly": 9,
+        "note": "Shown for 10,000 credits per month. The price rises with credit volume."
+      },
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 18.82,
+        "yearly": 16,
+        "note": "Shown for 10,000 credits per month. The price rises with credit volume."
+      },
+      {
+        "name": "Teams",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 34.12,
+        "yearly": 29,
+        "note": "Shown for 10,000 credits per month. The price rises with credit volume."
+      }
+    ],
+    "guide": {
+      "intro": "Make is a visual automation builder. You connect apps in a scenario, and each action the scenario performs uses credits. Since August 27 credits are the billing unit, so older write-ups that talk about operations are out of date. The Free plan includes 1,000 credits a month.",
+      "good_for": [
+        "People who want to see and branch a multi-step automation on a canvas instead of writing code",
+        "Small teams that want a low entry price: Core is $9 a month on yearly billing at 10,000 credits",
+        "Companies with fewer than 20 employees, which can ask about the Start-up Plan (50% off Business)"
+      ],
+      "skip_if": [
+        "You need a fixed bill: usage is metered, so a busy scenario can use up the month's credits and stop",
+        "Your volume is hard to predict, because extra credits expire and unused credits do not carry over past the term"
+      ]
+    }
   },
   {
     "id": 43,

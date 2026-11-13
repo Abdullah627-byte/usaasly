@@ -14,6 +14,13 @@ export interface PlanPrice {
   note?: string;
 }
 
+/** Short hand-written guide for a tool page. */
+export interface ToolGuide {
+  intro: string;
+  good_for: string[];
+  skip_if: string[];
+}
+
 /** One entry in the master 50-tool catalog (`src/data/tools.json`). */
 export interface CatalogTool {
   id: number;
@@ -38,6 +45,8 @@ export interface CatalogTool {
   pricing_url?: string | null;
   /** Plan-by-plan prices (individual and team, monthly and yearly); only verified numbers. */
   plans?: PlanPrice[];
+  /** Hand-written summary shown on the tool page; every claim must come from the vendor's own pages. */
+  guide?: ToolGuide;
 }
 
 /** Compact projection embedded in pages that only need a few fields client-side. */

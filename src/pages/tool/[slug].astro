@@ -5,6 +5,7 @@ import ToolHeader from '../../components/ToolHeader.astro';
 import ToolBreakdown from '../../components/ToolBreakdown.astro';
 import PricingSnapshot from '../../components/PricingSnapshot.astro';
 import ToolFaq from '../../components/ToolFaq.astro';
+import ToolGuide from '../../components/ToolGuide.astro';
 import ReviewForm from '../../components/ReviewForm.astro';
 import ComparisonDock from '../../components/ComparisonDock.astro';
 import {
@@ -64,6 +65,7 @@ const schema = [
 
   <div class="mt-6 grid gap-6 lg:grid-cols-3">
     <div class="space-y-6 lg:col-span-2">
+      <ToolGuide {tool} />
       <ToolBreakdown {tool} />
       <PricingSnapshot {tool} />
       <ToolFaq {tool} />
