@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from 'astro';
 import Layout from '../../layouts/Layout.astro';
 import CompareTable from '../../components/CompareTable.astro';
+import CompareVerdict from '../../components/CompareVerdict.astro';
 import {
   alternativesPath,
   categoryPairs,
@@ -29,7 +30,7 @@ const tools = [a, b];
 const year = new Date().getFullYear();
 const path = `/compare/${pair.slug}/`;
 
-const title = `${a.name} vs ${b.name} (${year}): Pricing, Features & Which Is Better`;
+const title = `${a.name} vs ${b.name} (${year}): Pricing Compared`;
 const description = `${a.name} vs ${b.name}: ${a.name} is ${priceText(a)}, ${b.name} is ${priceText(b)}. Compare ${SHOW_RATINGS ? 'ratings, ' : ''}free plans, AI features, pros and cons side by side.`;
 
 // Quick take: derived only from catalog data.
@@ -150,6 +151,8 @@ const schema: Record<string, unknown>[] = [
       ))
     }
   </section>
+
+  <CompareVerdict {a} {b} />
 
   <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-5" aria-labelledby="more-title">
     <h2 id="more-title" class="text-lg font-semibold text-slate-900">More comparisons &amp; alternatives</h2>
