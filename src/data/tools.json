@@ -53,7 +53,16 @@
     ],
     "website_url": "https://claude.ai",
     "pricing_url": "https://claude.com/pricing",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 20,
+        "yearly": 17
+      }
+    ]
   },
   {
     "id": 3,
@@ -377,7 +386,21 @@
     ],
     "website_url": "https://github.com/features/copilot",
     "pricing_url": "https://github.com/features/copilot/plans",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 10
+      },
+      {
+        "name": "Pro+",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 39
+      }
+    ]
   },
   {
     "id": 15,
@@ -405,7 +428,29 @@
     ],
     "website_url": "https://cursor.com",
     "pricing_url": "https://cursor.com/pricing",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Plus",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 8,
+        "note": "Grok models only; other models need Premium"
+      },
+      {
+        "name": "Premium",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 30
+      },
+      {
+        "name": "Teams",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 30,
+        "note": "Page shows \"$30+\" per user"
+      }
+    ]
   },
   {
     "id": 16,
@@ -485,7 +530,23 @@
     ],
     "website_url": "https://asana.com",
     "pricing_url": "https://asana.com/pricing",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Starter",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 13.49,
+        "yearly": 10.99
+      },
+      {
+        "name": "Advanced",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 30.49,
+        "yearly": 24.99
+      }
+    ]
   },
   {
     "id": 19,
@@ -496,7 +557,7 @@
     "best_for_usecase": "Simple kanban boards for small teams and personal workflows",
     "starting_price": 5,
     "price_per_user": true,
-    "hidden_limits": "Free workspaces limit boards and automation runs; calendar and timeline views need Premium.",
+    "hidden_limits": "Free plan: up to 10 boards and 10 collaborators per Workspace, 250 Workspace command runs per month. Standard is $5 per user/month billed annually ($6 monthly); Premium is $10 annually ($12.50 monthly).",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.3,
@@ -511,7 +572,25 @@
       "Reporting is limited",
       "Many features depend on Power-Ups"
     ],
-    "website_url": "https://trello.com"
+    "website_url": "https://trello.com",
+    "pricing_url": "https://trello.com/pricing",
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Standard",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 6,
+        "yearly": 5
+      },
+      {
+        "name": "Premium",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 12.5,
+        "yearly": 10
+      }
+    ]
   },
   {
     "id": 20,
@@ -539,7 +618,21 @@
     ],
     "website_url": "https://clickup.com",
     "pricing_url": "https://clickup.com/pricing",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Core",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 9
+      },
+      {
+        "name": "Business",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 17
+      }
+    ]
   },
   {
     "id": 21,
@@ -567,7 +660,30 @@
     ],
     "website_url": "https://monday.com",
     "pricing_url": "https://monday.com/pricing",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Basic",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 9,
+        "note": "Plans start from 3 users"
+      },
+      {
+        "name": "Standard",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 12,
+        "note": "Plans start from 3 users"
+      },
+      {
+        "name": "Pro",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 19,
+        "note": "Plans start from 3 users"
+      }
+    ]
   },
   {
     "id": 22,
@@ -578,7 +694,7 @@
     "best_for_usecase": "Fast, opinionated issue tracking and sprint planning for software teams",
     "starting_price": 10,
     "price_per_user": true,
-    "hidden_limits": "Free plan is limited to a small number of issues and teams; advanced insights, SLAs and unlimited history need higher plans.",
+    "hidden_limits": "Free plan is limited to 250 issues and 2 teams. Basic is $10 per user/month and Business is $16, both billed yearly.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.7,
@@ -593,7 +709,23 @@
       "Fewer customization options",
       "Paid tiers add up for large teams"
     ],
-    "website_url": "https://linear.app"
+    "website_url": "https://linear.app",
+    "pricing_url": "https://linear.app/pricing",
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Basic",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 10
+      },
+      {
+        "name": "Business",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 16
+      }
+    ]
   },
   {
     "id": 23,
@@ -602,9 +734,9 @@
     "logo": "/logos/jira.svg",
     "category": "Project Management",
     "best_for_usecase": "Agile software teams needing configurable workflows, scrum and kanban",
-    "starting_price": 7.53,
+    "starting_price": 8.06,
     "price_per_user": true,
-    "hidden_limits": "Free plan is limited to 10 users; advanced roadmaps, audit logs and automation volume depend on the tier.",
+    "hidden_limits": "Free plan is limited to 10 users and 2 GB storage. Paid pricing is tiered by team size: Standard is $1,450/year for 11-15 users (about $8.06 per user/month on annual billing) and drops per user as the team grows.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.2,
@@ -619,7 +751,25 @@
       "Interface can feel heavy",
       "Can be overkill for small teams"
     ],
-    "website_url": "https://www.atlassian.com/software/jira"
+    "website_url": "https://www.atlassian.com/software/jira",
+    "pricing_url": "https://www.atlassian.com/software/jira/pricing",
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Standard",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 8.06,
+        "note": "Annual price for a 15-user team ($1,450/year); per-user price falls as the team grows"
+      },
+      {
+        "name": "Premium",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 16.39,
+        "note": "Annual price for a 15-user team ($2,950/year)"
+      }
+    ]
   },
   {
     "id": 24,
@@ -712,7 +862,7 @@
     "best_for_usecase": "Small sales teams that want a visual, pipeline-first CRM",
     "starting_price": 14,
     "price_per_user": true,
-    "hidden_limits": "The lowest tier has limited automation and reporting; the quoted price assumes annual billing and add-ons like LeadBooster cost extra.",
+    "hidden_limits": "No free plan, only a 14-day free trial. The quoted Lite price of $14 per seat/month assumes annual billing, and Lite has the lightest automation and reporting.",
     "has_free_tier": false,
     "is_open_source": false,
     "rating": 4.4,
@@ -727,7 +877,35 @@
       "Marketing features are add-ons",
       "Advanced reports need upper tiers"
     ],
-    "website_url": "https://www.pipedrive.com"
+    "website_url": "https://www.pipedrive.com",
+    "pricing_url": "https://www.pipedrive.com/en/pricing",
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Lite",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 14
+      },
+      {
+        "name": "Growth",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 39
+      },
+      {
+        "name": "Premium",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 59
+      },
+      {
+        "name": "Ultimate",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 79
+      }
+    ]
   },
   {
     "id": 28,
@@ -835,7 +1013,17 @@
     ],
     "website_url": "https://www.canva.com",
     "pricing_url": "https://www.canva.com/pricing/",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Pro",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 12.99,
+        "yearly": 10,
+        "note": "About $119.99 per year when billed annually"
+      }
+    ]
   },
   {
     "id": 32,
@@ -926,7 +1114,7 @@
     "best_for_usecase": "Relational databases with views, forms and automations for ops teams",
     "starting_price": 20,
     "price_per_user": true,
-    "hidden_limits": "Strict record limits per base (1,000 on Free, 50,000 on Team); automation runs and sync features are capped per plan.",
+    "hidden_limits": "Free and paid plans cap records per base and automation runs. Team is $20 per seat/month billed annually.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.4,
@@ -941,7 +1129,23 @@
       "Per-seat price is high",
       "Complex bases need careful design"
     ],
-    "website_url": "https://www.airtable.com"
+    "website_url": "https://www.airtable.com",
+    "pricing_url": "https://www.airtable.com/pricing",
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Team",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 20
+      },
+      {
+        "name": "Business",
+        "audience": "team",
+        "per_user": true,
+        "yearly": 45
+      }
+    ]
   },
   {
     "id": 36,
@@ -1002,7 +1206,7 @@
     "logo": "/logos/slack.svg",
     "category": "Communication",
     "best_for_usecase": "Real-time team messaging with deep app integrations",
-    "starting_price": 8.75,
+    "starting_price": 7.25,
     "price_per_user": true,
     "hidden_limits": "Free workspaces keep only 90 days of message history and limit integrations; Slack AI is only available on higher tiers.",
     "has_free_tier": true,
@@ -1021,7 +1225,25 @@
     ],
     "website_url": "https://slack.com",
     "pricing_url": "https://slack.com/pricing",
-    "last_verified": "2026-11-13"
+    "last_verified": "2026-11-13",
+    "plans": [
+      {
+        "name": "Pro",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 8.75,
+        "yearly": 7.25,
+        "note": "Monthly figure is the list price, not the promo price"
+      },
+      {
+        "name": "Business+",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 18,
+        "yearly": 15,
+        "note": "Monthly figure is the list price, not the promo price"
+      }
+    ]
   },
   {
     "id": 39,

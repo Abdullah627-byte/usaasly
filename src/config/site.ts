@@ -34,4 +34,9 @@ export const INDEXED_TOOL_SLUGS: readonly string[] = [
   'slack',
   'zapier',
   'make',
+  'trello',
+  'jira',
+  'airtable',
+  'linear',
+  'pipedrive',
 ];

@@ -13,6 +13,14 @@ const verifiedLabel =
   verified && !Number.isNaN(verified.getTime())
     ? verified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
     : null;
+
+const plans = tool.plans ?? [];
+const cell = (n: number | null | undefined, perUser: boolean) =>
+  n === undefined ? 'Not verified yet' : n === null ? 'Not offered' : `${money(n)}${perUser ? ' / user' : ''} / mo`;
+const groups = [
+  { key: 'individual', label: 'For one person' },
+  { key: 'team', label: 'For teams' },
+] as const;
 ---
 
 <section aria-labelledby="pricing-snapshot" class="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
@@ -34,6 +42,49 @@ const verifiedLabel =
       <dd class="mt-1 text-sm text-slate-700">{tool.hidden_limits}</dd>
     </div>
   </dl>
+  {
+    plans.length > 0 && (
+      <div class="mt-5">
+        <h3 class="text-sm font-semibold text-slate-900">Plan prices (USD, before tax)</h3>
+        <div class="mt-2 overflow-x-auto">
+          <table class="w-full min-w-[30rem] text-left text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 text-xs uppercase tracking-wide text-slate-500">
+                <th scope="col" class="py-2 pr-3 font-semibold">Plan</th>
+                <th scope="col" class="py-2 pr-3 font-semibold">Billed monthly</th>
+                <th scope="col" class="py-2 font-semibold">Billed yearly (per month)</th>
+              </tr>
+            </thead>
+            {groups.map((g) => {
+              const rows = plans.filter((p) => p.audience === g.key);
+              return rows.length > 0 ? (
+                <tbody>
+                  <tr>
+                    <th scope="colgroup" colspan="3" class="bg-slate-50 px-2 py-1.5 text-xs font-semibold uppercase tracking-wide text-slate-600">
+                      {g.label}
+                    </th>
+                  </tr>
+                  {rows.map((p) => (
+                    <tr class="border-b border-slate-100 align-top">
+                      <th scope="row" class="py-2 pr-3 font-medium text-slate-900">
+                        {p.name}
+                        {p.note && <span class="block text-xs font-normal text-slate-600">{p.note}</span>}
+                      </th>
+                      <td class="py-2 pr-3 text-slate-800">{cell(p.monthly, p.per_user)}</td>
+                      <td class="py-2 text-slate-800">{cell(p.yearly, p.per_user)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              ) : null;
+            })}
+          </table>
+        </div>
+        <p class="mt-2 text-xs text-slate-600">
+          "Not verified yet" means we have not confirmed that number on the vendor's pricing page, so check the official page. Promotional discounts, taxes and add-ons are not included.
+        </p>
+      </div>
+    )
+  }
   <div class="mt-4 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-4 text-sm">
     {verifiedLabel && <span class="text-slate-700">Last verified: <time datetime={tool.last_verified ?? ''}>{verifiedLabel}</time></span>}
     {
