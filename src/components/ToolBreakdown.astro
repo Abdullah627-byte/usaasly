@@ -26,6 +26,7 @@ const dt = 'text-xs font-semibold uppercase tracking-wide text-slate-600';
   </div>
 
   <h3 class="mt-6 text-sm font-semibold text-slate-900">What it really costs</h3>
+  <p class="mt-1 text-xs text-slate-600">{tool.price_per_user ? 'If every person buys the starting plan.' : 'Flat price, the same for any team size.'} Excludes taxes and add-ons.</p>
   <ul class="mt-2 grid gap-2 sm:grid-cols-3">
     {
       costExamples.map((c) => (

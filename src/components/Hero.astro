@@ -1,14 +1,15 @@
 ---
 interface Props {
   total: number;
+  verified: number;
 }
-const { total } = Astro.props;
+const { total, verified } = Astro.props;
 ---
 
 <section class="mx-auto max-w-3xl pb-8 pt-4 text-center sm:pt-10" aria-labelledby="hero-title">
   <h1 id="hero-title" class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">Find the right SaaS tool.</h1>
   <p class="mx-auto mt-3 max-w-xl text-lg text-slate-600">
-    {total} SaaS &amp; AI tools with real pricing, hidden limits and honest pros and cons.
+    {total} SaaS &amp; AI tools compared. {verified} have prices checked on the official vendor sites, with hidden limits and honest pros and cons.
   </p>
 
   <form role="search" class="relative mt-8" onsubmit="return false">
