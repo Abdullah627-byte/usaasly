@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import ToolHeader from '../../components/ToolHeader.astro';
 import ToolBreakdown from '../../components/ToolBreakdown.astro';
 import PricingSnapshot from '../../components/PricingSnapshot.astro';
+import ToolFaq from '../../components/ToolFaq.astro';
 import ReviewForm from '../../components/ReviewForm.astro';
 import ComparisonDock from '../../components/ComparisonDock.astro';
 import {
@@ -36,7 +37,7 @@ const alternatives = catalog.filter((t) => t.category === tool.category && t.slu
 /** Top same-category rivals; each one has a generated `/compare/<a>-vs-<b>/` page. */
 const competitors = getTopCompetitors(tool, 4);
 
-const title = `${tool.name} Pricing, Pros & Cons ${year}: Hidden Limits & Alternatives`;
+const title = `${tool.name} Pricing & Hidden Limits (${year})`;
 const description = `${tool.name}: ${tool.best_for_usecase}. Starting at ${tool.starting_price === 0 ? 'free' : money(tool.starting_price)}. Hidden limits, AI models, pros and cons.`;
 
 const schema = [
@@ -65,6 +66,7 @@ const schema = [
     <div class="space-y-6 lg:col-span-2">
       <ToolBreakdown {tool} />
       <PricingSnapshot {tool} />
+      <ToolFaq {tool} />
     </div>
 
     <aside class="space-y-6" aria-label="Related">
