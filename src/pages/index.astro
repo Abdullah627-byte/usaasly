@@ -5,10 +5,11 @@ import CategoryPills from '../components/CategoryPills.astro';
 import ToolCard from '../components/ToolCard.astro';
 import ComparisonDock from '../components/ComparisonDock.astro';
 import QuizDialog from '../components/QuizDialog.astro';
-import { alternativesPath, catalog, categories, categoryPairs, toLite, toolPath } from '../lib/catalog';
+import { alternativesPath, catalog, isIndexedTool, categories, categoryPairs, toLite, toolPath } from '../lib/catalog';
 import { jsonLdString, absoluteUrl } from '../lib/seo';
 import { tools as pseoTools } from '../lib/tools';
 
+const verifiedTools = catalog.filter(isIndexedTool);
 const lite = catalog.map(toLite);
 const counts = Object.fromEntries(categories.map((c) => [c, catalog.filter((t) => t.category === c).length]));
 
@@ -19,8 +20,8 @@ const schema = [
     url: absoluteUrl('/'),
     mainEntity: {
       '@type': 'ItemList',
-      numberOfItems: catalog.length,
-      itemListElement: catalog.map((t, i) => ({
+      numberOfItems: verifiedTools.length,
+      itemListElement: verifiedTools.map((t, i) => ({
         '@type': 'ListItem',
         position: i + 1,
         name: t.name,
@@ -34,18 +35,19 @@ const schema = [
 const reviews = pseoTools.filter((t) => t.content);
 // Popular head-to-heads: the highest-rated same-category pairs.
 const pairs = categoryPairs()
+  .filter((p) => isIndexedTool(p.a) && isIndexedTool(p.b))
   .sort((x, y) => y.a.rating + y.b.rating - (x.a.rating + x.b.rating) || x.slug.localeCompare(y.slug))
   .slice(0, 12);
-const topTools = [...catalog].sort((x, y) => y.rating - x.rating || x.name.localeCompare(y.name)).slice(0, 8);
+const topTools = [...verifiedTools].sort((x, y) => y.rating - x.rating || x.name.localeCompare(y.name)).slice(0, 8);
 ---
 
 <Layout
   title="Best SaaS & AI Tools: Compare Pricing, Limits & Real Costs"
-  description="Compare 50 SaaS and AI tools side by side: real pricing, hidden limits, AI models and open-source options. Find your perfect tool in 30 seconds."
+  description="Compare SaaS and AI tools side by side: prices checked on official vendor sites, hidden limits, AI models and open-source options."
   path="/"
   {schema}
 >
-  <Hero total={catalog.length} />
+  <Hero total={catalog.length} verified={verifiedTools.length} />
   <CategoryPills {categories} {counts} total={catalog.length} />
 
   <div class="mt-4 flex items-center justify-between">
