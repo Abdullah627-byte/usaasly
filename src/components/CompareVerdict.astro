@@ -1,5 +1,5 @@
 ---
-import { money, priceText, toolPath, type CatalogTool } from '../lib/catalog';
+import { aiModelSentence, money, priceText, toolPath, type CatalogTool } from '../lib/catalog';
 
 interface Props {
   a: CatalogTool;
@@ -70,6 +70,6 @@ if (a.has_free_tier !== b.has_free_tier) {
 
   <h3 class="mt-5 text-base font-semibold text-slate-900">AI models</h3>
   <p class="mt-1 text-sm leading-relaxed text-slate-700">
-    {a.name} uses {a.ai_model}. {b.name} uses {b.ai_model}. Which models you get depends on the plan, so check the tier you plan to buy.
+    {aiModelSentence(a)} {aiModelSentence(b)} Which models you get depends on the plan, so check the tier you plan to buy.
   </p>
 </section>

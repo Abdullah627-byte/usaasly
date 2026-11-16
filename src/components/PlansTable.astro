@@ -1,0 +1,59 @@
+---
+import { money, type CatalogTool } from '../lib/catalog';
+
+interface Props {
+  tool: CatalogTool;
+}
+const { tool } = Astro.props;
+const plans = tool.plans ?? [];
+const unit = tool.price_per_user ? ' / user' : '';
+
+const price = (n: number | null | undefined) => {
+  if (n === undefined) return 'Not verified';
+  if (n === null) return 'Not offered';
+  if (n === 0) return 'Free';
+  return `${money(n)}${unit} / mo`;
+};
+---
+
+<section aria-labelledby="plans-title" class="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+  <h2 id="plans-title" class="text-xl font-semibold text-slate-900">{tool.name} plans and prices</h2>
+  <p class="mt-1 text-sm text-slate-700">US dollars, before tax. Annual prices are the monthly equivalent when you pay for the year.</p>
+  <div class="mt-4 overflow-x-auto">
+    <table class="w-full min-w-[46rem] text-left text-sm">
+      <thead>
+        <tr class="border-b border-slate-200 text-xs uppercase tracking-wide text-slate-600">
+          <th scope="col" class="py-2 pr-3 font-semibold">Plan</th>
+          <th scope="col" class="py-2 pr-3 font-semibold">Billed monthly</th>
+          <th scope="col" class="py-2 pr-3 font-semibold">Billed annually (per month)</th>
+          <th scope="col" class="py-2 pr-3 font-semibold">Key limits</th>
+          <th scope="col" class="py-2 font-semibold">Best for</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          plans.map((p) => (
+            <tr class="border-b border-slate-100 align-top">
+              <th scope="row" class="py-3 pr-3 font-medium text-slate-900">
+                {p.name}
+                {p.note && <span class="mt-0.5 block text-xs font-normal text-slate-600">{p.note}</span>}
+              </th>
+              {p.custom ? (
+                <td colspan="2" class="py-3 pr-3 text-slate-800">Custom pricing, not public</td>
+              ) : typeof p.list === 'number' ? (
+                <td colspan="2" class="py-3 pr-3 text-slate-800">{money(p.list)}{unit} / mo (regular rate, billing options not split)</td>
+              ) : (
+                <>
+                  <td class="py-3 pr-3 text-slate-800">{price(p.monthly)}</td>
+                  <td class="py-3 pr-3 text-slate-800">{price(p.yearly)}</td>
+                </>
+              )}
+              <td class="py-3 pr-3 text-slate-700">{p.limits ?? ''}</td>
+              <td class="py-3 text-slate-700">{p.best_for ?? ''}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

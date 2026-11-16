@@ -45,7 +45,8 @@ const schema = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'About', 
       We only show a price as verified after we have opened the vendor's own pricing page and read the number
       there, in US dollars. For the tools where we have done this, the tool page shows a "Last verified" date and a
       plan table that separates plans for one person from plans for teams, and monthly billing from yearly billing.
-      If a number could not be confirmed, we write "Not verified yet" instead of guessing.
+      If a number could not be confirmed, we write "Not verified yet" instead of guessing. We read pages from a US
+      connection because vendors can show different prices in other countries.
     </p>
     <p>
       Tools whose pricing we have not checked yet are still listed, marked as unverified, and are kept out of the

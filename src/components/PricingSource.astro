@@ -1,0 +1,40 @@
+---
+import type { CatalogTool } from '../lib/catalog';
+import type { PricingPageData } from '../lib/pricingPages';
+
+interface Props {
+  tool: CatalogTool;
+  page: PricingPageData;
+}
+const { tool, page } = Astro.props;
+
+const verified = tool.last_verified ? new Date(`${tool.last_verified}T00:00:00Z`) : null;
+const verifiedLabel =
+  verified && !Number.isNaN(verified.getTime())
+    ? verified.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
+    : null;
+---
+
+<section aria-labelledby="source-title" class="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6">
+  <h2 id="source-title" class="text-xl font-semibold text-slate-900">Source and last check</h2>
+  <p class="mt-2 text-sm leading-relaxed text-slate-700">
+    {verifiedLabel && <>Last verified: <time datetime={tool.last_verified ?? ''}>{verifiedLabel}</time>. </>}
+    We read these prices on {tool.name}'s own pricing page{tool.pricing_url && (
+      <>
+        : <a href={tool.pricing_url} rel="noopener nofollow" target="_blank" class="font-medium text-indigo-700 hover:underline">{tool.pricing_url.replace(/^https?:\/\//, '')}<span class="sr-only"> (opens in a new tab)</span></a>
+      </>
+    )}. Vendors change prices often, so confirm the number there before you buy. See our{' '}
+    <a href="/methodology/" class="font-medium text-indigo-700 hover:underline">methodology</a> for how we check prices.
+  </p>
+  {
+    page.unverified.length > 0 && (
+      <>
+        <h3 class="mt-4 text-sm font-semibold text-slate-900">What we could not verify</h3>
+        <ul class="mt-1 list-disc space-y-1 pl-5 text-sm text-slate-700">
+          {page.unverified.map((u) => <li>{u}</li>)}
+        </ul>
+      </>
+    )
+  }
+  <!-- AFFILIATE DISCLOSURE PLACEHOLDER: no affiliate links are used yet (AFFILIATE_LINKS=false). When that changes, add the disclosure line here. -->
+</section>

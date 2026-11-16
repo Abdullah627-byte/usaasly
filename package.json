@@ -10,6 +10,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "check": "node scripts/check-seo.mjs",
     "astro": "astro",
     "prices": "python3 scripts/update_prices.py",
     "content": "python3 scripts/generate_content.py"

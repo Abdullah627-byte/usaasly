@@ -1,3 +1,29 @@
+# usaasly.com robots.txt
+#
+# Search and answer-engine bots: explicitly allowed so the site can be found and cited.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Everyone else, including AI training crawlers (GPTBot, ClaudeBot), falls under this default rule.
+# No separate rule is set for the training bots: that is the site owner's decision.
 User-agent: *
 Allow: /
 

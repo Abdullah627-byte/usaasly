@@ -1,0 +1,24 @@
+---
+import type { CatalogTool } from '../lib/catalog';
+import type { PricingPageData } from '../lib/pricingPages';
+
+interface Props {
+  tool: CatalogTool;
+  page: PricingPageData;
+}
+const { tool, page } = Astro.props;
+---
+
+<section aria-labelledby="hidden-costs" class="rounded-3xl border border-amber-300 bg-amber-50 p-5 sm:p-6">
+  <h2 id="hidden-costs" class="text-xl font-semibold text-amber-950">{tool.name} hidden costs and limits</h2>
+  <dl class="mt-4 space-y-3">
+    {
+      page.hidden.map((h) => (
+        <div>
+          <dt class="text-sm font-semibold text-amber-950">{h.t}</dt>
+          <dd class="mt-0.5 text-sm leading-relaxed text-amber-950">{h.d}</dd>
+        </div>
+      ))
+    }
+  </dl>
+</section>

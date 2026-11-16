@@ -7,7 +7,6 @@ import ComparisonDock from '../components/ComparisonDock.astro';
 import QuizDialog from '../components/QuizDialog.astro';
 import { alternativesPath, catalog, isIndexedTool, categories, categoryPairs, toLite, toolPath } from '../lib/catalog';
 import { jsonLdString, absoluteUrl } from '../lib/seo';
-import { tools as pseoTools } from '../lib/tools';
 
 const verifiedTools = catalog.filter(isIndexedTool);
 const lite = catalog.map(toLite);
@@ -31,8 +30,6 @@ const schema = [
   },
 ];
 
-// Long-form pSEO pages (only those with generated content are indexable).
-const reviews = pseoTools.filter((t) => t.content);
 // Popular head-to-heads: the highest-rated same-category pairs.
 const pairs = categoryPairs()
   .filter((p) => isIndexedTool(p.a) && isIndexedTool(p.b))
@@ -42,7 +39,7 @@ const topTools = [...verifiedTools].sort((x, y) => y.rating - x.rating || x.name
 ---
 
 <Layout
-  title="Best SaaS & AI Tools: Compare Pricing, Limits & Real Costs"
+  title="SaaS & AI Tool Pricing, Limits and Real Costs"
   description="Compare SaaS and AI tools side by side: prices checked on official vendor sites, hidden limits, AI models and open-source options."
   path="/"
   {schema}
@@ -70,9 +67,6 @@ const topTools = [...verifiedTools].sort((x, y) => y.rating - x.rating || x.name
     <ul class="mt-2 flex flex-wrap gap-x-4">
       {topTools.map((t) => (
         <li><a href={alternativesPath(t)} class="flex min-h-11 items-center text-sm font-medium text-indigo-700 hover:underline">{t.name} alternatives</a></li>
-      ))}
-      {reviews.map((t) => (
-        <li><a href={`/review/${t.slug}/`} class="flex min-h-11 items-center text-sm font-medium text-indigo-700 hover:underline">{t.name} review</a></li>
       ))}
       {pairs.map((p) => (
         <li><a href={`/compare/${p.slug}/`} class="flex min-h-11 items-center text-sm font-medium text-indigo-700 hover:underline">{p.a.name} vs {p.b.name}</a></li>

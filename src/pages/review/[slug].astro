@@ -58,7 +58,12 @@ const schema: Record<string, unknown>[] = [
 if (c?.faqs?.length) schema.push(faqSchema(c.faqs));
 ---
 
-<BaseLayout {title} {description} {path} {schema} noindex={!c}>
+{/*
+  Retired: /review/<slug>/ is 301-redirected to /tool/<slug>/ (see public/_redirects) because the verified pricing page
+  replaced it. If a redirect is ever not applied, this page is noindex and its canonical points at the tool page,
+  so the older auto-generated numbers cannot compete with the verified ones.
+*/}
+<BaseLayout {title} {description} {path} {schema} noindex canonicalPath={`/tool/${tool.slug}/`}>
   <nav class="mb-4 text-sm text-slate-500" aria-label="Breadcrumb">
     <a href="/" class="inline-flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a> / <span>{tool.name} review</span>
   </nav>

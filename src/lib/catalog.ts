@@ -2,7 +2,7 @@ import raw from '../data/tools.json';
 import { money } from '../scripts/util';
 import type { CatalogTool, ToolLite } from '../scripts/types';
 import { absoluteUrl } from './seo';
-import { INDEXED_TOOL_SLUGS } from '../config/site';
+import { ALTERNATIVES_INDEX_EXEMPT, INDEXED_TOOL_SLUGS, MIN_SAME_CATEGORY_RIVALS } from '../config/site';
 
 export { money };
 export type { CatalogTool, ToolLite };
@@ -32,6 +32,27 @@ export const categories: string[] = [...new Set(catalog.map((t) => t.category))]
 /** True when a tool is in the set we actively target for Google (see INDEXED_TOOL_SLUGS). */
 export function isIndexedTool(t: Pick<CatalogTool, 'slug'>): boolean {
   return INDEXED_TOOL_SLUGS.includes(t.slug);
+}
+
+/**
+ * Whether the "Best X alternatives" page should be indexed: X must be an indexed tool and have enough
+ * same-category rivals (or be explicitly exempt). Thin pages stay live but noindex and out of the sitemap.
+ */
+export function isIndexedAlternatives(t: Pick<CatalogTool, 'slug' | 'category'>): boolean {
+  if (!isIndexedTool(t)) return false;
+  if (ALTERNATIVES_INDEX_EXEMPT.includes(t.slug)) return true;
+  const rivals = catalog.filter((x) => x.category === t.category && x.slug !== t.slug).length;
+  return rivals >= MIN_SAME_CATEGORY_RIVALS;
+}
+
+/** False when the vendor's pricing page does not name the AI models (ai_model starts with "Not listed"). */
+export function hasAiModel(t: Pick<CatalogTool, 'ai_model'>): boolean {
+  return Boolean(t.ai_model) && !/^not listed/i.test(t.ai_model);
+}
+
+/** Running-text sentence about a tool's AI models that reads correctly when they are not listed. */
+export function aiModelSentence(t: Pick<CatalogTool, 'name' | 'ai_model'>): string {
+  return hasAiModel(t) ? `${t.name} uses ${t.ai_model}.` : `${t.name}'s pricing page does not name the AI models it uses.`;
 }
 
 export function getCatalogTool(slug: string): CatalogTool | undefined {

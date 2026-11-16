@@ -617,7 +617,7 @@
     "best_for_usecase": "Cross-functional teams that need structured projects, timelines and goals",
     "starting_price": 10.99,
     "price_per_user": true,
-    "hidden_limits": "Free plan caps at 10 users; timelines, portfolios and advanced reporting require higher tiers, and annual billing is cheaper than monthly.",
+    "hidden_limits": "Personal is free for up to 2 users. Timeline and Gantt views, dashboards and unlimited automations start on Starter; portfolios, goals and resource management need Advanced. AI requests are capped (5 per user per month, up to 50 per account on Starter and Advanced) unless you buy more.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.4,
@@ -634,21 +634,42 @@
     ],
     "website_url": "https://asana.com",
     "pricing_url": "https://asana.com/pricing",
-    "last_verified": "2026-11-13",
+    "last_verified": "2026-11-16",
     "plans": [
+      {
+        "name": "Personal",
+        "audience": "individual",
+        "per_user": true,
+        "monthly": 0,
+        "yearly": 0,
+        "limits": "2 users, unlimited tasks and projects, unlimited storage with 100 MB per file",
+        "best_for": "One or two people managing personal projects"
+      },
       {
         "name": "Starter",
         "audience": "team",
         "per_user": true,
         "monthly": 13.49,
-        "yearly": 10.99
+        "yearly": 10.99,
+        "limits": "No seat limit, timeline and Gantt, dashboards, unlimited automations, forms, unlimited free guests, AI Studio 50K credits per account per month",
+        "best_for": "Small teams tracking projects and deadlines"
       },
       {
         "name": "Advanced",
         "audience": "team",
         "per_user": true,
         "monthly": 30.49,
-        "yearly": 24.99
+        "yearly": 24.99,
+        "limits": "Portfolios, goals, resource management, approvals and proofing, time tracking, AI Studio 75K credits per account per month",
+        "best_for": "Growing teams planning capacity across projects"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "team",
+        "per_user": true,
+        "custom": true,
+        "limits": "Adds SAML authentication; AI Studio 200K credits per account per month",
+        "best_for": "Organizations scaling work across departments"
       }
     ]
   },
@@ -661,7 +682,7 @@
     "best_for_usecase": "Simple kanban boards for small teams and personal workflows",
     "starting_price": 5,
     "price_per_user": true,
-    "hidden_limits": "Free plan: up to 10 boards and 10 collaborators per Workspace, 250 Workspace command runs per month. Standard is $5 per user/month billed annually ($6 monthly); Premium is $10 annually ($12.50 monthly).",
+    "hidden_limits": "Free is limited to 10 collaborators and 10 boards per Workspace, 10 MB per file and 250 Workspace command runs per month. Calendar, Timeline, Table, Dashboard and Map views and unlimited command runs start on Premium. Enterprise is billed annually only.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.3,
@@ -678,21 +699,44 @@
     ],
     "website_url": "https://trello.com",
     "pricing_url": "https://trello.com/pricing",
-    "last_verified": "2026-11-13",
+    "last_verified": "2026-11-16",
     "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "per_user": true,
+        "monthly": 0,
+        "yearly": 0,
+        "limits": "Up to 10 collaborators and 10 boards per Workspace, unlimited cards, 10 MB per file, 250 Workspace command runs per month",
+        "best_for": "Personal use and small teams"
+      },
       {
         "name": "Standard",
         "audience": "team",
         "per_user": true,
         "monthly": 6,
-        "yearly": 5
+        "yearly": 5,
+        "limits": "Unlimited boards, 250 MB per file, 1,000 command runs per month, custom fields, card mirroring, AI features",
+        "best_for": "Teams that want unlimited boards and automation"
       },
       {
         "name": "Premium",
         "audience": "team",
         "per_user": true,
         "monthly": 12.5,
-        "yearly": 10
+        "yearly": 10,
+        "limits": "Calendar, Timeline, Table, Dashboard and Map views, unlimited command runs, admin and security features",
+        "best_for": "Teams that need views and admin controls"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "team",
+        "per_user": true,
+        "monthly": null,
+        "yearly": 17.5,
+        "note": "Billed annually only ($210 per user per year); estimated cost needs a sales conversation.",
+        "limits": "Unlimited Workspaces, organization-wide permissions, SSO and provisioning with Atlassian Guard",
+        "best_for": "Organizations with security and permission needs"
       }
     ]
   },
@@ -747,7 +791,7 @@
     "best_for_usecase": "Visual work management for operations, marketing and sales teams",
     "starting_price": 9,
     "price_per_user": true,
-    "hidden_limits": "Paid plans require a minimum of 3 seats; automations, integrations and dashboards are capped per tier.",
+    "hidden_limits": "Prices on the page are per seat and depend on the seat count and billing country; the figures here are for 10 seats. Standard and Pro yearly prices show a limited special offer. Automation and integration actions are capped per month (250 on Standard, 25,000 on Pro).",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.4,
@@ -764,28 +808,54 @@
     ],
     "website_url": "https://monday.com",
     "pricing_url": "https://monday.com/pricing",
-    "last_verified": "2026-11-13",
+    "last_verified": "2026-11-16",
     "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "per_user": true,
+        "monthly": 0,
+        "yearly": 0,
+        "limits": "Up to 2 seats, up to 3 boards, up to 3 Docs, 200+ templates",
+        "best_for": "Freelancers and individual professionals"
+      },
       {
         "name": "Basic",
         "audience": "team",
         "per_user": true,
+        "monthly": 12,
         "yearly": 9,
-        "note": "Plans start from 3 users"
+        "note": "Price shown for 10 seats.",
+        "limits": "Unlimited free viewers, unlimited items, 1,000 AI credits per month",
+        "best_for": "Small teams organizing work on boards"
       },
       {
         "name": "Standard",
         "audience": "team",
         "per_user": true,
+        "monthly": 14,
         "yearly": 12,
-        "note": "Plans start from 3 users"
+        "note": "Price shown for 10 seats. The yearly price carried a limited special offer on the page.",
+        "limits": "3 workflows, 250 automation and 250 integration actions per month, timeline and Gantt, calendar view, guest access, 2,000 AI credits per month",
+        "best_for": "Teams that need timelines and basic automation"
       },
       {
         "name": "Pro",
         "audience": "team",
         "per_user": true,
+        "monthly": 24,
         "yearly": 19,
-        "note": "Plans start from 3 users"
+        "note": "Price shown for 10 seats. The yearly price carried a limited special offer on the page.",
+        "limits": "20 workflows, 25,000 automation and 25,000 integration actions per month, private boards and docs, time tracking, 3,000 AI credits per month",
+        "best_for": "Teams running heavier workflows"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "team",
+        "per_user": true,
+        "custom": true,
+        "limits": "250 workflows, enterprise security and governance, portfolio and resource management",
+        "best_for": "Large organizations"
       }
     ]
   },
@@ -910,7 +980,7 @@
     "best_for_usecase": "Growing teams unifying CRM, marketing and sales automation",
     "starting_price": 20,
     "price_per_user": true,
-    "hidden_limits": "Free CRM is limited to 2 users and 1,000 contacts, and shows HubSpot branding. Starter is listed at $20 per seat per month at the regular rate (new customers may see discounts) and removes branding and adds automation, AI agents, meeting scheduling, e-signatures and multi-currency. Starter limits include 15 pipelines, 50 workflows and 500 calling minutes.",
+    "hidden_limits": "Free tools cover up to 2 users. Starter is $20 per seat per month at the regular rate (promos from $7 are for new customers only). Sales Hub Professional and Enterprise each require a one-time onboarding fee, $1,500 and $3,500, that is not included in the seat price.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.6,
@@ -926,20 +996,47 @@
       "Contact-based pricing adds up"
     ],
     "website_url": "https://www.hubspot.com",
-    "pricing_url": "https://www.hubspot.com/pricing",
-    "last_verified": "2026-11-13",
-    "guide": {
-      "intro": "HubSpot Smart CRM starts free for up to two users and 1,000 contacts. Starter is the first paid step and unlocks the features most small teams reach for first: no HubSpot branding, automation, meeting scheduling, e-signatures, payments and email or chat support.",
-      "good_for": [
-        "Very small teams that want a free CRM with no time limit",
-        "Teams that want to add automation and remove branding without a big jump in cost",
-        "Sales teams that value built-in meeting scheduling and e-signatures"
-      ],
-      "skip_if": [
-        "You have more than two users and need to stay free, because the free plan stops at two",
-        "You need Professional or Enterprise features: we have not verified those prices, so check HubSpot's pricing page first"
-      ]
-    }
+    "pricing_url": "https://www.hubspot.com/pricing/crm",
+    "last_verified": "2026-11-16",
+    "plans": [
+      {
+        "name": "Free tools",
+        "audience": "individual",
+        "per_user": true,
+        "monthly": 0,
+        "yearly": 0,
+        "limits": "Free for up to 2 users, no credit card; HubSpot branding on live chat and email",
+        "best_for": "One or two people trying a CRM"
+      },
+      {
+        "name": "Starter (Customer Platform)",
+        "audience": "team",
+        "per_user": true,
+        "list": 20,
+        "note": "Regular rate. New customers may see promo prices from $7 for a limited time.",
+        "limits": "1,000 marketing contacts, 500 HubSpot Credits, removes HubSpot branding on live chat and email",
+        "best_for": "Small teams that outgrow the free tools"
+      },
+      {
+        "name": "Sales Hub Professional",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 100,
+        "yearly": 90,
+        "note": "$90 when paying annually; $100 on the other billing options. Plus a required $1,500 one-time onboarding fee.",
+        "limits": "3,000 HubSpot Credits, forecasting, sequences, conversation intelligence",
+        "best_for": "Sales teams that need forecasting and sequences"
+      },
+      {
+        "name": "Sales Hub Enterprise",
+        "audience": "team",
+        "per_user": true,
+        "list": 150,
+        "note": "Starts at $150 per seat; Talk to Sales. Plus a required $3,500 one-time onboarding fee.",
+        "limits": "5,000 HubSpot Credits, deal splits, pipeline approvals, standard sandbox account",
+        "best_for": "Larger sales organizations needing advanced control"
+      }
+    ]
   },
   {
     "id": 26,
@@ -950,8 +1047,8 @@
     "best_for_usecase": "Enterprise sales organizations needing a customizable CRM platform",
     "starting_price": 25,
     "price_per_user": true,
-    "hidden_limits": "Sales Cloud now has five editions: Starter Suite ($25), Pro Suite ($100), Core ($195), Advanced ($395) and Max ($550) per user per month. Only Starter Suite is priced monthly or annually; the others are billed annually. Premier Support is an add-on on Pro Suite, and set-up and admin work are costs the list price does not include.",
-    "has_free_tier": false,
+    "hidden_limits": "Sales Cloud has six suites: Free Suite ($0), Starter Suite ($25), Pro Suite ($100), Core ($195), Advanced ($395) and Max ($550) per user per month. Only Starter Suite is offered monthly or annually; the rest are billed annually. AI can be added to Core and above, and Premier Support is an add-on on lower suites.",
+    "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.3,
     "ai_model": "Salesforce Einstein and Agentforce",
@@ -966,16 +1063,26 @@
       "Add-ons inflate the real price"
     ],
     "website_url": "https://www.salesforce.com",
-    "pricing_url": "https://www.salesforce.com/crm/pricing/",
-    "last_verified": "2026-11-13",
+    "pricing_url": "https://www.salesforce.com/sales/pricing/",
+    "last_verified": "2026-11-16",
     "plans": [
+      {
+        "name": "Free Suite",
+        "audience": "individual",
+        "per_user": true,
+        "monthly": 0,
+        "yearly": 0,
+        "best_for": "Trying Salesforce at no cost"
+      },
       {
         "name": "Starter Suite",
         "audience": "team",
         "per_user": true,
         "monthly": 25,
         "yearly": 25,
-        "note": "Vendor lists one price, billed monthly or annually."
+        "note": "One price, billed monthly or annually.",
+        "limits": "Lead, account, contact and opportunity management, built-in sales flows, email marketing",
+        "best_for": "Small teams that want a low commitment"
       },
       {
         "name": "Pro Suite",
@@ -983,7 +1090,9 @@
         "per_user": true,
         "monthly": null,
         "yearly": 100,
-        "note": "Billed annually only."
+        "note": "Billed annually only.",
+        "limits": "Quoting and forecasting, AgentExchange access",
+        "best_for": "Teams that need quotes and forecasting"
       },
       {
         "name": "Core",
@@ -991,7 +1100,9 @@
         "per_user": true,
         "monthly": null,
         "yearly": 195,
-        "note": "Billed annually only."
+        "note": "Billed annually only.",
+        "limits": "Everything in Professional Edition plus Premier Success, Slack Business+, Tableau Next",
+        "best_for": "Teams that want Slack and Tableau built in"
       },
       {
         "name": "Advanced",
@@ -999,7 +1110,9 @@
         "per_user": true,
         "monthly": null,
         "yearly": 395,
-        "note": "Billed annually only."
+        "note": "Billed annually only.",
+        "limits": "Enhanced security, Sales Programs, backup and recover",
+        "best_for": "Teams with security and data-capacity needs"
       },
       {
         "name": "Max",
@@ -1007,21 +1120,11 @@
         "per_user": true,
         "monthly": null,
         "yearly": 550,
-        "note": "Billed annually only."
+        "note": "Billed annually only; the page button says Contact us.",
+        "limits": "Agentforce for Sales and Agentforce Coworker, 2.75M Flex Credits per org per year",
+        "best_for": "Large sales organizations using agents heavily"
       }
-    ],
-    "guide": {
-      "intro": "Salesforce Sales Cloud is sold as a ladder of editions. Starter Suite covers lead, account, contact and opportunity management with built-in sales flows, lead routing, email and calendar sync and email marketing. Each step up adds more automation, security and AI.",
-      "good_for": [
-        "Teams that expect to outgrow a simple CRM and want one platform with a clear upgrade path",
-        "Starter Suite buyers who want a low monthly commitment at $25 per user",
-        "Larger sales organizations that need quoting and forecasting (Pro Suite), Slack Business+ and Tableau Next (Core), extra security (Advanced) or Agentforce (Max)"
-      ],
-      "skip_if": [
-        "You want a simple CRM with no jump in price: the next edition after Starter Suite is four times the cost per user",
-        "You cannot commit to annual billing, since every edition above Starter Suite is billed annually"
-      ]
-    }
+    ]
   },
   {
     "id": 27,
@@ -1032,7 +1135,7 @@
     "best_for_usecase": "Small sales teams that want a visual, pipeline-first CRM",
     "starting_price": 14,
     "price_per_user": true,
-    "hidden_limits": "No free plan, only a 14-day free trial. The quoted Lite price of $14 per seat/month assumes annual billing, and Lite has the lightest automation and reporting.",
+    "hidden_limits": "No free plan, only a free 14-day trial with no credit card. Annual prices are one upfront payment per seat for the year. Email sync with tracking and automations start on Growth, lead generation and routing on Premium, and the sandbox account on Ultimate.",
     "has_free_tier": false,
     "is_open_source": false,
     "rating": 4.4,
@@ -1049,31 +1152,47 @@
     ],
     "website_url": "https://www.pipedrive.com",
     "pricing_url": "https://www.pipedrive.com/en/pricing",
-    "last_verified": "2026-11-13",
+    "last_verified": "2026-11-16",
     "plans": [
       {
         "name": "Lite",
         "audience": "team",
         "per_user": true,
-        "yearly": 14
+        "monthly": 24,
+        "yearly": 14,
+        "note": "$168 per seat per year when billed annually.",
+        "limits": "Lead, calendar and pipeline management, AI report creation, 500+ integrations, meeting intelligence",
+        "best_for": "Solo sellers and very small teams"
       },
       {
         "name": "Growth",
         "audience": "team",
         "per_user": true,
-        "yearly": 39
+        "monthly": 49,
+        "yearly": 39,
+        "note": "$468 per seat per year when billed annually.",
+        "limits": "Everything in Lite plus full email sync with tracking, automations and sequences, subscription and forecast reports",
+        "best_for": "Teams that want email tracking and automation"
       },
       {
         "name": "Premium",
         "audience": "team",
         "per_user": true,
-        "yearly": 59
+        "monthly": 79,
+        "yearly": 59,
+        "note": "$708 per seat per year when billed annually.",
+        "limits": "Everything in Growth plus lead generation and routing, custom scoring, AI multi-email tools, contracts and e-signatures",
+        "best_for": "Teams running full-cycle sales"
       },
       {
         "name": "Ultimate",
         "audience": "team",
         "per_user": true,
-        "yearly": 79
+        "monthly": 99,
+        "yearly": 79,
+        "note": "$948 per seat per year when billed annually.",
+        "limits": "Everything in Premium plus account security rules, data enrichment, sandbox account, extended phone support",
+        "best_for": "Teams with security and testing needs"
       }
     ]
   },
@@ -1138,7 +1257,7 @@
     "best_for_usecase": "Collaborative UI/UX design, prototyping and design systems",
     "starting_price": 16,
     "price_per_user": true,
-    "hidden_limits": "Free Starter limits files and editing seats; Dev Mode and advanced libraries need paid seat types, and seat types are billed separately.",
+    "hidden_limits": "Prices depend on seat type: a Full seat is $16 per month on Professional billed annually ($20 monthly), a Dev seat is $12 ($15) and a Collab seat is $3 ($5). Organization and Enterprise are annual only. AI use is capped by monthly credits per seat.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.8,
@@ -1155,21 +1274,43 @@
     ],
     "website_url": "https://www.figma.com",
     "pricing_url": "https://www.figma.com/pricing/",
-    "last_verified": "2026-11-13",
+    "last_verified": "2026-11-16",
     "plans": [
       {
-        "name": "Professional: Full seat",
+        "name": "Starter",
         "audience": "individual",
         "per_user": true,
+        "monthly": 0,
+        "yearly": 0,
+        "limits": "Unlimited drafts, UI kits and templates, 150 AI credits per day up to 500 per month",
+        "best_for": "Learning and personal projects"
+      },
+      {
+        "name": "Professional: Full seat",
+        "audience": "team",
+        "per_user": true,
         "monthly": 20,
-        "yearly": 16
+        "yearly": 16,
+        "limits": "Unlimited files and projects, team libraries, advanced prototyping, 3,000 AI credits per month",
+        "best_for": "Designers working solo or in a team"
       },
       {
         "name": "Professional: Dev seat",
         "audience": "team",
         "per_user": true,
         "monthly": 15,
-        "yearly": 12
+        "yearly": 12,
+        "limits": "500 AI credits per month",
+        "best_for": "Developers working from designs"
+      },
+      {
+        "name": "Professional: Collab seat",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 5,
+        "yearly": 3,
+        "limits": "Collaboration seat, 500 AI credits per month",
+        "best_for": "Stakeholders who comment and collaborate"
       },
       {
         "name": "Organization: Full seat",
@@ -1177,7 +1318,9 @@
         "per_user": true,
         "monthly": null,
         "yearly": 55,
-        "note": "Billed annually only"
+        "note": "Billed annually only.",
+        "limits": "Shared libraries and fonts, centralized admin, 3,500 AI credits per month",
+        "best_for": "Businesses designing across departments"
       },
       {
         "name": "Organization: Dev seat",
@@ -1185,7 +1328,49 @@
         "per_user": true,
         "monthly": null,
         "yearly": 25,
-        "note": "Billed annually only"
+        "note": "Billed annually only.",
+        "limits": "500 AI credits per month",
+        "best_for": "Developers in Organization workspaces"
+      },
+      {
+        "name": "Organization: Collab seat",
+        "audience": "team",
+        "per_user": true,
+        "monthly": null,
+        "yearly": 5,
+        "note": "Billed annually only.",
+        "limits": "500 AI credits per month",
+        "best_for": "Stakeholders in Organization workspaces"
+      },
+      {
+        "name": "Enterprise: Full seat",
+        "audience": "team",
+        "per_user": true,
+        "monthly": null,
+        "yearly": 90,
+        "note": "Billed annually only.",
+        "limits": "Design system theming and APIs, SCIM seat management, 4,250 AI credits per month",
+        "best_for": "Multi-brand and multi-product companies"
+      },
+      {
+        "name": "Enterprise: Dev seat",
+        "audience": "team",
+        "per_user": true,
+        "monthly": null,
+        "yearly": 35,
+        "note": "Billed annually only.",
+        "limits": "500 AI credits per month",
+        "best_for": "Developers in Enterprise workspaces"
+      },
+      {
+        "name": "Enterprise: Collab seat",
+        "audience": "team",
+        "per_user": true,
+        "monthly": null,
+        "yearly": 5,
+        "note": "Billed annually only.",
+        "limits": "500 AI credits per month",
+        "best_for": "Stakeholders in Enterprise workspaces"
       }
     ]
   },
@@ -1196,9 +1381,9 @@
     "logo": "/logos/canva.svg",
     "category": "Design",
     "best_for_usecase": "Non-designers creating social posts, presentations and marketing assets quickly",
-    "starting_price": 10,
+    "starting_price": 12,
     "price_per_user": true,
-    "hidden_limits": "Premium templates, Brand Kit and Magic Studio AI credits are limited on free and capped on Pro; Teams needs a minimum of 3 seats.",
+    "hidden_limits": "Pro is for one person ($144 per year or $18 per month). Business is per person ($250 per year or $25 per month). AI tools share a monthly allowance that varies by plan (Pro 10x Free, Business 20x Free), and AI Pass is an extra-cost add-on.",
     "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.7,
@@ -1215,15 +1400,44 @@
     ],
     "website_url": "https://www.canva.com",
     "pricing_url": "https://www.canva.com/pricing/",
-    "last_verified": "2026-11-13",
+    "last_verified": "2026-11-16",
     "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 0,
+        "yearly": 0,
+        "limits": "1.6M+ templates, 4.7M+ elements, 1 Brand Kit (max 3 colors), limited AI",
+        "best_for": "Occasional designs"
+      },
       {
         "name": "Pro",
         "audience": "individual",
         "per_user": false,
-        "monthly": 12.99,
-        "yearly": 10,
-        "note": "About $119.99 per year when billed annually"
+        "monthly": 18,
+        "yearly": 12,
+        "note": "$144 per year when billed yearly. For one person.",
+        "limits": "3.6M+ templates, 141M+ elements, 5 Brand Kits, 10x more AI than Free, social scheduling",
+        "best_for": "Freelancers and individual creators"
+      },
+      {
+        "name": "Business",
+        "audience": "team",
+        "per_user": true,
+        "monthly": 25,
+        "yearly": 20.83,
+        "note": "$250 per person per year when billed yearly.",
+        "limits": "100 Brand Kits, approvals, 20x more AI than Free, team admin tools, 10% off print orders where offered",
+        "best_for": "Teams producing branded content"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "team",
+        "per_user": true,
+        "custom": true,
+        "limits": "1000 Brand Kits, SSO and SCIM, premium support for 150+ contracted seats",
+        "best_for": "Large organizations"
       }
     ]
   },
@@ -1687,10 +1901,10 @@
     "logo": "/logos/semrush.svg",
     "category": "Marketing",
     "best_for_usecase": "SEO, keyword research and competitor analysis for marketing teams",
-    "starting_price": 139.95,
+    "starting_price": 117.33,
     "price_per_user": false,
-    "hidden_limits": "Pro plan limits tracked projects, keywords and daily reports; extra users, Local and the AI Toolkit are billed as add-ons.",
-    "has_free_tier": false,
+    "hidden_limits": "Plans are flat prices. SEO and Starter both cap at 5 websites and 500 keywords tracked daily; 15 websites and 1,500 keywords need Pro+. Extra users are an add-on starting at $45 per month, and Advanced and Enterprise are custom pricing.",
+    "has_free_tier": true,
     "is_open_source": false,
     "rating": 4.6,
     "ai_model": "Semrush AI (ContentShake and AI Toolkit)",
@@ -1704,7 +1918,55 @@
       "Add-ons inflate the bill",
       "Can overwhelm newcomers"
     ],
-    "website_url": "https://www.semrush.com"
+    "website_url": "https://www.semrush.com",
+    "pricing_url": "https://www.semrush.com/pricing/seo-ai-search/",
+    "plans": [
+      {
+        "name": "Free",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 0,
+        "yearly": 0,
+        "limits": "1 demo project, 10 reports per day, no credit card",
+        "best_for": "Trying the platform"
+      },
+      {
+        "name": "SEO",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 139,
+        "yearly": 117.33,
+        "limits": "5 websites, 500 keywords tracked daily, Position Tracking, Site Audit",
+        "best_for": "Freelancers and small businesses growing organic traffic"
+      },
+      {
+        "name": "Starter (SEO + AI Search)",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 199,
+        "yearly": 165.17,
+        "limits": "5 websites, 500 keywords, 50 AI prompts tracked daily, 1 domain for AI brand performance, 300 AI visibility reports per day",
+        "best_for": "Small teams and agencies that also track AI search visibility"
+      },
+      {
+        "name": "Pro+ (SEO + AI Search)",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 299,
+        "yearly": 248.17,
+        "limits": "15 websites, 1,500 keywords, 100 AI prompts daily, historical SEO data, content optimization",
+        "best_for": "Teams and agencies running several sites or markets"
+      },
+      {
+        "name": "Advanced",
+        "audience": "team",
+        "per_user": false,
+        "custom": true,
+        "limits": "40+ websites, 5,000+ keywords, unlimited AI prompts, share of voice, API, team users",
+        "best_for": "Larger organizations and agencies"
+      }
+    ],
+    "last_verified": "2026-11-16"
   },
   {
     "id": 46,
@@ -1835,5 +2097,347 @@
       "Setup takes time"
     ],
     "website_url": "https://www.zendesk.com"
+  },
+  {
+    "id": 51,
+    "name": "Ahrefs",
+    "slug": "ahrefs",
+    "logo": "/logos/ahrefs.svg",
+    "category": "Marketing",
+    "best_for_usecase": "SEO research, backlink analysis, rank tracking and AI-search visibility for small businesses, freelancers and in-house teams",
+    "starting_price": 107.5,
+    "price_per_user": false,
+    "hidden_limits": "Every plan includes 1 user. Extra users cost $40 per month each on Lite (up to 2 more), $60 on Standard (up to 5 more) and $80 on Advanced (up to 10 more). Lite keeps 6 months of historical data and tracks 750 keywords. Annual billing saves up to 17%.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 0,
+    "ai_model": "Not listed on the pricing page",
+    "pros": [
+      "API and MCP access on every plan",
+      "Unlimited verified projects on all plans",
+      "Annual billing saves up to 17%"
+    ],
+    "cons": [
+      "Only 1 user included; extra users cost $40 to $80 a month each",
+      "No free plan on the pricing page",
+      "Lite keeps only 6 months of historical data"
+    ],
+    "website_url": "https://ahrefs.com",
+    "pricing_url": "https://ahrefs.com/pricing",
+    "last_verified": "2026-11-16",
+    "plans": [
+      {
+        "name": "Lite",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 129,
+        "yearly": 107.5,
+        "note": "$1,290 per year billed annually (the page rounds this to $108/mo). Add up to 2 users at $40/mo each.",
+        "limits": "5 non-verified projects, 6 months of history, 750 tracked keywords, 150 AI prompt checks, 100,000 crawl credits, 1 user",
+        "best_for": "Small businesses and personal projects"
+      },
+      {
+        "name": "Standard",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 249,
+        "yearly": 207.5,
+        "note": "$2,490 per year billed annually. Add up to 5 users at $60/mo each.",
+        "limits": "20 non-verified projects, 2 years of history, 2,000 tracked keywords, 300 AI prompt checks, 500,000 crawl credits, 1 user",
+        "best_for": "Freelance SEOs and marketing consultants"
+      },
+      {
+        "name": "Advanced",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 449,
+        "yearly": 374.17,
+        "note": "$4,490 per year billed annually (the page rounds this to $374/mo). Add up to 10 users at $80/mo each.",
+        "limits": "50 non-verified projects, 5 years of history, 5,000 tracked keywords, 600 AI prompt checks, 1,500,000 crawl credits, 1 user",
+        "best_for": "Lean in-house marketing teams"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "team",
+        "per_user": false,
+        "custom": true,
+        "limits": "Uncapped API access, custom API endpoints, SSO, access management and audit log",
+        "best_for": "Large organizations"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Moz",
+    "slug": "moz",
+    "logo": "/logos/moz.svg",
+    "category": "Marketing",
+    "best_for_usecase": "SEO research, rank tracking and AI-search visibility for small businesses and growing marketing teams",
+    "starting_price": 49,
+    "price_per_user": false,
+    "hidden_limits": "Users are capped per plan (1, 2 or 3) and the pricing page does not list a price for extra seats. The $49 entry plan covers a single website. Extra AI Visibility dashboards cost $20 each and extra tracked prompts $50 per 100. Paying yearly saves 20%.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 0,
+    "ai_model": "Not listed on the pricing page",
+    "pros": [
+      "Entry-level plan at $49 a month for a single website",
+      "Paying yearly saves 20%",
+      "Free Moz Community account with limited tool access"
+    ],
+    "cons": [
+      "Users capped at 1 to 3 depending on plan",
+      "Extra seat pricing not listed",
+      "AI dashboards and prompts beyond the quota cost extra"
+    ],
+    "website_url": "https://moz.com",
+    "pricing_url": "https://moz.com/products/pro/pricing",
+    "last_verified": "2026-11-16",
+    "plans": [
+      {
+        "name": "Free Moz Community account",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 0,
+        "yearly": 0,
+        "limits": "Limited access to MozBar, Keyword Explorer and Link Explorer",
+        "best_for": "Occasional lookups"
+      },
+      {
+        "name": "Starter",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 49,
+        "note": "Entry-level plan for individuals managing a single website. Yearly price not shown.",
+        "limits": "One website",
+        "best_for": "Individuals with one site"
+      },
+      {
+        "name": "Standard",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 99,
+        "yearly": 79,
+        "limits": "1 user, 3 tracked sites, 300 tracked keywords, 400K pages crawled per month, 150 tracked AI prompts",
+        "best_for": "Small businesses that need the basics"
+      },
+      {
+        "name": "Medium",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 179,
+        "yearly": 143,
+        "limits": "2 users, 10 tracked sites, 1,500 tracked keywords, 2M pages crawled per month, 300 tracked AI prompts",
+        "best_for": "Growing businesses doing SEO and AI search"
+      },
+      {
+        "name": "Large",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 299,
+        "yearly": 239,
+        "limits": "3 users, 25 tracked sites, 3,000 tracked keywords, 5M pages crawled per month, 600 tracked AI prompts",
+        "best_for": "Larger businesses needing data at scale"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "team",
+        "per_user": false,
+        "custom": true,
+        "best_for": "Enterprise businesses and agencies"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "SE Ranking",
+    "slug": "se-ranking",
+    "logo": "/logos/se-ranking.svg",
+    "category": "Marketing",
+    "best_for_usecase": "Rank tracking, site audits and keyword and backlink research for SEO teams and agencies",
+    "starting_price": 103.2,
+    "price_per_user": false,
+    "hidden_limits": "No free plan, only a free 14-day trial with no credit card. Core includes 1 manager seat and 10 projects; Growth includes 3 seats and 30 projects. The Agency Pack is +$69 per month on annual billing only, and the API add-on starts at $45 per month on annual billing.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 0,
+    "ai_model": "Not listed on the pricing page",
+    "pros": [
+      "Free 14-day trial with no credit card",
+      "Unlimited keyword, competitor and backlink research on Core",
+      "Annual billing saves 20%"
+    ],
+    "cons": [
+      "No free plan",
+      "Only 1 manager seat on Core",
+      "White-label Agency Pack is an extra $69 a month"
+    ],
+    "website_url": "https://seranking.com",
+    "pricing_url": "https://seranking.com/subscription.html",
+    "last_verified": "2026-11-16",
+    "plans": [
+      {
+        "name": "Core",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 129,
+        "yearly": 103.2,
+        "limits": "10 projects, 1 manager seat, 2,000 keywords tracked daily, 250K pages audited per month, 25K API credits, 25 AI prompts daily",
+        "best_for": "Teams with focused SEO work"
+      },
+      {
+        "name": "Growth",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 279,
+        "yearly": 223.2,
+        "limits": "30 projects, 3 manager seats, 5,000 keywords tracked daily, 2M pages audited per month, 100K API credits, historical data",
+        "best_for": "Teams scaling SEO delivery and collaboration"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "team",
+        "per_user": false,
+        "custom": true,
+        "limits": "Custom limits, full API and advanced integrations",
+        "best_for": "Large teams and complex projects"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Ubersuggest",
+    "slug": "ubersuggest",
+    "logo": "/logos/ubersuggest.svg",
+    "category": "Marketing",
+    "best_for_usecase": "Low-cost keyword research, site audits and rank tracking for solopreneurs and small businesses",
+    "starting_price": 6.67,
+    "price_per_user": false,
+    "hidden_limits": "Monthly plans come with a one-time 7-day free trial. Yearly billing is paid upfront ($80, $125 or $271). Lifetime plans ($120, $200 or $400) are final and non-refundable. The full AI add-on costs an extra $29 per month.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 0,
+    "ai_model": "ChatGPT and Gemini (in keyword research)",
+    "pros": [
+      "Lowest paid price among the SEO tools we have verified",
+      "One-time lifetime option with no monthly fees",
+      "7-day free trial on monthly plans"
+    ],
+    "cons": [
+      "Lifetime purchases are non-refundable",
+      "Individual plan covers 1 project and 1 user",
+      "Full AI add-on costs an extra $29 a month"
+    ],
+    "website_url": "https://ubersuggest.com",
+    "pricing_url": "https://ubersuggest.com/en/pricing",
+    "last_verified": "2026-11-16",
+    "plans": [
+      {
+        "name": "Individual",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 12,
+        "yearly": 6.67,
+        "note": "$80 billed annually, or $120 one-time lifetime.",
+        "limits": "1 user, 1 project, 125 tracked keywords per project, 150 searches per day, 200 monthly credits",
+        "best_for": "Solopreneurs growing one website"
+      },
+      {
+        "name": "Business",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 20,
+        "yearly": 10.42,
+        "note": "$125 billed annually, or $200 one-time lifetime.",
+        "limits": "2 users, 7 projects, 150 tracked keywords per project, 300 searches per day, 500 monthly credits",
+        "best_for": "Small and medium businesses"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 40,
+        "yearly": 22.58,
+        "note": "$271 billed annually, or $400 one-time lifetime.",
+        "limits": "5 users, 15 projects, 300 tracked keywords per project, 900 searches per day, 700 monthly credits",
+        "best_for": "Large businesses and agencies"
+      },
+      {
+        "name": "Custom",
+        "audience": "team",
+        "per_user": false,
+        "custom": true,
+        "best_for": "Agencies and brands with tailored needs"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Mangools",
+    "slug": "mangools",
+    "logo": "/logos/mangools.svg",
+    "category": "Marketing",
+    "best_for_usecase": "Simple keyword research, SERP analysis and rank tracking for solopreneurs, freelancers and small teams",
+    "starting_price": 18.85,
+    "price_per_user": false,
+    "hidden_limits": "Basic has no extra seats; Premium allows 3 extra seats and Agency 5 (the seat price is not listed). Rank updates are weekly on Basic and Premium and daily on Agency. Annual billing is paid upfront. A full refund is offered within 48 hours of payment.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 0,
+    "ai_model": "Not listed on the pricing page",
+    "pros": [
+      "Annual billing saves about 35%",
+      "API and MCP included on every plan",
+      "48-hour money-back guarantee"
+    ],
+    "cons": [
+      "No extra seats on Basic",
+      "Weekly rank updates below the Agency plan",
+      "Extra seat price not listed"
+    ],
+    "website_url": "https://mangools.com",
+    "pricing_url": "https://mangools.com/plans-and-pricing",
+    "last_verified": "2026-11-16",
+    "plans": [
+      {
+        "name": "Free account",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 0,
+        "yearly": 0,
+        "note": "The page offers a free account; its limits are not listed there.",
+        "best_for": "Trying the tools"
+      },
+      {
+        "name": "Basic",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 30.5,
+        "yearly": 18.85,
+        "note": "$226.20 per year billed annually.",
+        "limits": "100 keyword research and 100 SERP requests per 24h, 200 tracked keywords, weekly rank updates, no extra seats",
+        "best_for": "Solopreneurs, freelance SEOs and marketers"
+      },
+      {
+        "name": "Premium",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 40.5,
+        "yearly": 26.35,
+        "note": "$316.20 per year billed annually.",
+        "limits": "500 keyword research and 500 SERP requests per 24h, 700 tracked keywords, weekly rank updates, 3 extra seats available",
+        "best_for": "Marketing teams and specialists"
+      },
+      {
+        "name": "Agency",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 70.5,
+        "yearly": 48.85,
+        "note": "$586.20 per year billed annually.",
+        "limits": "1,200 keyword research and 1,200 SERP requests per 24h, 1,500 tracked keywords, daily rank updates, 5 extra seats available",
+        "best_for": "Professional SEOs and agencies"
+      }
+    ]
   }
 ]
