@@ -15,14 +15,16 @@ interface Props {
   ogType?: 'website' | 'article';
   /** Constrain the main column (used by the long-form pSEO pages). */
   narrow?: boolean;
+  /** Page-specific social image path (1200x630); defaults to the site-wide image. */
+  ogImagePath?: string;
 }
 
-const { title, description, path, schema = [], noindex = false, ogType = 'website', narrow = false } = Astro.props;
+const { title, description, path, schema = [], noindex = false, ogType = 'website', narrow = false, ogImagePath = '/og-default.png' } = Astro.props;
 
 const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
 const desc = truncate(description);
 const canonical = absoluteUrl(path);
-const ogImage = absoluteUrl('/og-default.png');
+const ogImage = absoluteUrl(ogImagePath);
 
 const siteSchema: Record<string, unknown>[] = [
   {
@@ -69,8 +71,10 @@ const graph = jsonLdString({ '@context': 'https://schema.org', '@graph': [...sit
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={fullTitle} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={fullTitle} />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={desc} />
 

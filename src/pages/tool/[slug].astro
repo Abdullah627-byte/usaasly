@@ -21,6 +21,14 @@ import {
 } from '../../lib/catalog';
 import { isIndexedTool } from '../../lib/catalog';
 import { breadcrumbSchema } from '../../lib/seo';
+import { getPricingPage, pricingSchema } from '../../lib/pricingPages';
+import PricingHero from '../../components/PricingHero.astro';
+import PlansTable from '../../components/PlansTable.astro';
+import CostTable from '../../components/CostTable.astro';
+import HiddenCosts from '../../components/HiddenCosts.astro';
+import PricingVerdict from '../../components/PricingVerdict.astro';
+import PricingFaq from '../../components/PricingFaq.astro';
+import PricingSource from '../../components/PricingSource.astro';
 import { REVIEWS_ENABLED, CONTACT_EMAIL } from '../../config/site';
 
 export const getStaticPaths = (() => {
@@ -34,23 +42,31 @@ const { tool } = Astro.props;
 const path = toolPath(tool);
 const year = new Date().getFullYear();
 
-const alternatives = catalog.filter((t) => t.category === tool.category && t.slug !== tool.slug).slice(0, 3);
+/** Rewritten pricing page content (pricing-pages.json). Tools without it keep the older layout. */
+const pp = getPricingPage(tool.slug);
+
+const relatedFromData = (pp?.links.related ?? [])
+  .map((s) => catalog.find((t) => t.slug === s))
+  .filter((t): t is CatalogTool => Boolean(t));
+const alternatives = pp
+  ? relatedFromData.slice(0, 3)
+  : catalog.filter((t) => t.category === tool.category && t.slug !== tool.slug).slice(0, 3);
 /** Top same-category rivals; each one has a generated `/compare/<a>-vs-<b>/` page. */
 const competitors = getTopCompetitors(tool, 4);
 
-const title = `${tool.name} Pricing & Hidden Limits (${year})`;
-const description = `${tool.name}: ${tool.best_for_usecase}. Starting at ${tool.starting_price === 0 ? 'free' : money(tool.starting_price)}. Hidden limits, AI models, pros and cons.`;
+const title = pp?.title ?? `${tool.name} Pricing & Hidden Limits (${year})`;
+const description =
+  pp?.description ??
+  `${tool.name}: ${tool.best_for_usecase}. Starting at ${tool.starting_price === 0 ? 'free' : money(tool.starting_price)}. Hidden limits, AI models, pros and cons.`;
 
-const schema = [
-  softwareSchema(tool),
-  breadcrumbSchema([
-    { name: 'Home', path: '/' },
-    { name: tool.name, path },
-  ]),
-];
+const breadcrumb = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: tool.name, path },
+]);
+const schema = pp ? [...pricingSchema(tool, pp, path), breadcrumb] : [softwareSchema(tool), breadcrumb];
 ---
 
-<Layout {title} {description} {path} {schema} noindex={!isIndexedTool(tool)}>
+<Layout {title} {description} {path} {schema} noindex={!isIndexedTool(tool)} ogImagePath={pp ? `/og/${tool.slug}.png` : undefined}>
   <nav class="mb-4 text-sm text-slate-600" aria-label="Breadcrumb">
     <ol class="flex flex-wrap items-center">
       <li><a href="/" class="flex min-h-11 min-w-11 items-center justify-center hover:underline">Home</a></li>
@@ -61,21 +77,36 @@ const schema = [
     </ol>
   </nav>
 
-  <ToolHeader {tool} />
+  {pp ? <PricingHero {tool} page={pp} /> : <ToolHeader {tool} />}
 
   <div class="mt-6 grid gap-6 lg:grid-cols-3">
     <div class="space-y-6 lg:col-span-2">
-      <ToolGuide {tool} />
-      <ToolBreakdown {tool} />
-      <PricingSnapshot {tool} />
-      <ToolFaq {tool} />
+      {
+        pp ? (
+          <>
+            <PlansTable {tool} />
+            <CostTable {tool} page={pp} />
+            <HiddenCosts {tool} page={pp} />
+            <PricingVerdict {tool} page={pp} />
+            <PricingFaq {tool} page={pp} />
+            <PricingSource {tool} page={pp} />
+          </>
+        ) : (
+          <>
+            <ToolGuide {tool} />
+            <ToolBreakdown {tool} />
+            <PricingSnapshot {tool} />
+            <ToolFaq {tool} />
+          </>
+        )
+      }
     </div>
 
     <aside class="space-y-6" aria-label="Related">
       {
         alternatives.length > 0 && (
           <section class="rounded-3xl border border-slate-200 bg-white p-5" aria-labelledby="alts">
-            <h2 id="alts" class="text-base font-semibold text-slate-900">Alternatives in {tool.category}</h2>
+            <h2 id="alts" class="text-base font-semibold text-slate-900">{pp ? 'Related tools' : `Alternatives in ${tool.category}`}</h2>
             <ul class="mt-2">
               {alternatives.map((a) => (
                 <li>

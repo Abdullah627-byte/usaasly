@@ -12,6 +12,14 @@ export interface PlanPrice {
   per_user: boolean;
   /** Short caveat shown under the table row, e.g. "Price depends on team size". */
   note?: string;
+  /** Single regular price when the vendor does not split monthly and yearly billing for this plan. */
+  list?: number;
+  /** True when the vendor only offers custom pricing (contact sales). No numbers are shown. */
+  custom?: boolean;
+  /** Key limits, taken from the vendor's pricing page. */
+  limits?: string;
+  /** Who the plan suits (our summary of the vendor's own positioning). */
+  best_for?: string;
 }
 
 /** Short hand-written guide for a tool page. */

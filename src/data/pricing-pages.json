@@ -1,0 +1,436 @@
+{
+  "semrush": {
+    "title": "Semrush Pricing 2026: $117.33 to $248.17 per month",
+    "description": "Semrush costs $139 to $299 a month, or $117.33 to $248.17 billed annually. Plan limits, add-on prices and who should skip it. Checked Nov 2026.",
+    "h1": "Semrush pricing (2026)",
+    "answer": [
+      "Semrush starts at $139 per month on the SEO plan, or $117.33 per month if you pay annually. If you also want to track visibility in AI search, Starter is $199 per month ($165.17 annually).",
+      "Pro+ is $299 per month ($248.17 annually). Extra users are an add-on starting at $45 per month, and Advanced is custom pricing, not public."
+    ],
+    "cost": {
+      "intro": "Semrush plans are flat prices, not per-user prices. The pricing page does not say how many users each plan includes, so only a single user is priced below.",
+      "rows": [
+        { "label": "SEO", "per_user": false, "monthly": 139, "annual": 117.33, "users": [1] },
+        { "label": "Starter (SEO + AI Search)", "per_user": false, "monthly": 199, "annual": 165.17, "users": [1] },
+        { "label": "Pro+ (SEO + AI Search)", "per_user": false, "monthly": 299, "annual": 248.17, "users": [1] }
+      ],
+      "extras": [
+        "Additional Users add-on: starting at $45 per month. The page does not say whether that is per user or for a bundle of users, so we cannot price a 3 or 10 person team.",
+        "Annual billing on the SEO plan works out to about $1,408 a year ($117.33 x 12) against $1,668 paying monthly ($139 x 12), a difference of about $260.",
+        "Other add-ons listed on the page: Lead Generation $90 per month, Base Report $10 per month and Pro Report $20 per month."
+      ]
+    },
+    "hidden": [
+      { "t": "Extra users cost extra", "d": "Adding teammates means the Additional Users add-on, starting at $45 per month on top of the plan." },
+      { "t": "Limits only rise at higher tiers", "d": "SEO and Starter both cap at 5 websites and 500 keywords tracked daily. 15 websites and 1,500 keywords need Pro+ at $299 a month. Advanced goes to 40+ websites and 5,000+ keywords, with pricing not public." },
+      { "t": "The cheaper number assumes annual billing", "d": "The page leads with the annual price and shows the monthly price as 'instead of'. Pay month to month and you pay the higher figure." },
+      { "t": "The free plan is a demo", "d": "Free is 1 demo project and 10 reports per day across the vital tools. It is enough to look around, not to run a campaign." },
+      { "t": "Top plans are quote-only", "d": "Advanced and Enterprise are custom pricing, so you cannot budget for them from the pricing page." }
+    ],
+    "verdict": {
+      "worth": "Worth it if search is a main channel and you will use keyword research, competitor analysis, position tracking and site audits in one login, and you also want AI-search visibility tracking from the same plan.",
+      "skip": [
+        "You only need clicks and queries for your own site. Google Search Console is free and covers that.",
+        "You run one small site and do not need 500 keywords tracked daily. $139 a month is a lot for that.",
+        "You need several teammates in the account, because each extra user adds to the bill."
+      ],
+      "cheaper": "Free option: Google Search Console for your own site's search data. For other tools in our directory, see the Semrush alternatives page."
+    },
+    "links": { "compare": [], "related": ["mailchimp", "buffer"] },
+    "faqs": [
+      { "q": "How much does Semrush cost per month?", "a": "$139 for SEO, $199 for Starter and $299 for Pro+ when billed monthly. Billed annually the monthly equivalents are $117.33, $165.17 and $248.17. Advanced and Enterprise are custom pricing." },
+      { "q": "Does Semrush have a free plan?", "a": "Yes. The free plan is $0 per month with 1 demo project and 10 reports per day across all vital tools. No credit card is required." },
+      { "q": "Is there a Semrush free trial?", "a": "Yes. The pricing page says you can try Semrush free for seven days and cancel anytime." },
+      { "q": "Is Semrush priced per user?", "a": "No, the plans are flat prices. Extra users are sold as an add-on starting at $45 per month. The page does not state how many users each plan includes." },
+      { "q": "Is Semrush cheaper if I pay annually?", "a": "Yes. SEO drops from $139 to $117.33 per month, Starter from $199 to $165.17 and Pro+ from $299 to $248.17. The page says you save up to 17%." },
+      { "q": "Can I cancel Semrush at any time?", "a": "The pricing FAQ says you can cancel, downgrade or upgrade at any time, unless you have custom terms and a signed agreement with Semrush." }
+    ],
+    "unverified": ["How many users each plan includes.", "Whether the Additional Users add-on is priced per user."]
+  },
+  "hubspot": {
+    "title": "HubSpot Pricing 2026: $20 to $150 per seat/month",
+    "description": "HubSpot's CRM is free for 2 users. Paid seats cost $20 (Starter), $90 to $100 (Sales Hub Pro) or $150 (Enterprise) a month, plus onboarding. Nov 2026.",
+    "h1": "HubSpot pricing (2026)",
+    "answer": [
+      "HubSpot's free tools cover up to 2 users. After that, Starter is $20 per seat per month at the regular rate, though new customers may see promos from $7.",
+      "Sales Hub Professional is $90 per seat per month billed annually ($100 on other billing options) and Enterprise is $150. Both charge a required one-time onboarding fee, $1,500 and $3,500."
+    ],
+    "cost": {
+      "intro": "HubSpot charges per seat. Starter and Enterprise are shown at one regular rate; Sales Hub Professional is cheaper if you pay annually. Onboarding is a one-time fee on top of the seats.",
+      "rows": [
+        { "label": "Starter (Customer Platform), regular rate", "per_user": true, "list": 20, "users": [1, 3, 10] },
+        { "label": "Sales Hub Professional", "per_user": true, "monthly": 100, "annual": 90, "users": [1, 3, 10], "one_time": 1500, "one_time_label": "onboarding" },
+        { "label": "Sales Hub Enterprise", "per_user": true, "list": 150, "users": [1, 3, 10], "one_time": 3500, "one_time_label": "onboarding" }
+      ],
+      "extras": [
+        "Promotions: the page advertises Starter from $7 per seat per month and says discounts are for new customers only and available for a limited time. Budget for the regular $20.",
+        "The Sales Hub page also shows a banner for new customers: Professional $57 and Enterprise $98 per seat billed annually. Those promo prices do not match the $90 and $150 list prices on the same page, so we use the list prices.",
+        "Marketing Hub, Service Hub and the other hubs are priced separately. We have not recorded those prices."
+      ]
+    },
+    "hidden": [
+      { "t": "Onboarding is required on the higher plans", "d": "The page states that the cost shown does not include a required one-time onboarding fee: $1,500 for Sales Hub Professional and $3,500 for Enterprise." },
+      { "t": "Free stops at 2 users", "d": "The free tools are free for up to 2 users. A third person means a paid seat." },
+      { "t": "Free includes HubSpot branding", "d": "On the free tools, live chat and marketing email carry HubSpot branding. Removing it starts on Starter." },
+      { "t": "Email sends are capped", "d": "Free marketing email is limited to 2,000 sends per calendar month. Starter allows 5x your marketing contact tier per month, and includes 1,000 marketing contacts." },
+      { "t": "HubSpot Credits are metered", "d": "Starter includes 500 HubSpot Credits, Sales Hub Professional 3,000 and Enterprise 5,000. More are sold in packs or pay-as-you-go. We could not confirm what extra credits cost." },
+      { "t": "Billing option changes the price", "d": "Sales Hub Professional shows $90 per seat if you pay annually and $100 on the other billing options, a difference of $120 per seat per year." }
+    ],
+    "verdict": {
+      "worth": "Worth it for a very small team that wants a CRM at no cost for 1 to 2 people, and for teams that want sales, marketing and service tools on one platform and can budget for onboarding on the higher plans.",
+      "skip": [
+        "You have more than 2 users and want to stay on a free plan.",
+        "You cannot absorb a $1,500 or $3,500 onboarding fee on top of seat prices.",
+        "You only need a sales pipeline. Pipedrive Lite is $14 per seat per month billed annually, though it has no free plan."
+      ],
+      "cheaper": "Cheaper paid option: Pipedrive Lite at $14 per seat billed annually. Free option: HubSpot's own free tools, up to 2 users."
+    },
+    "links": { "compare": ["pipedrive", "salesforce"], "related": ["pipedrive", "salesforce"] },
+    "faqs": [
+      { "q": "Is HubSpot CRM really free?", "a": "Yes. HubSpot's free tools are $0 per month for up to 2 users, with no credit card required. Beyond 2 users you need a paid plan." },
+      { "q": "How much does HubSpot Starter cost?", "a": "The regular rate is $20 per seat per month. The page advertises Starter from $7 per seat per month for new customers for a limited time, and a Pay Monthly option showed $10 during our check." },
+      { "q": "Does HubSpot charge an onboarding fee?", "a": "On Sales Hub, yes. Professional has a required one-time onboarding fee of $1,500 and Enterprise has one of $3,500. Both are on top of the per-seat price." },
+      { "q": "Is HubSpot priced per user?", "a": "Yes, per seat. Sales Hub Professional is $90 per seat per month billed annually ($100 on other billing options) and Enterprise starts at $150 per seat." },
+      { "q": "Is HubSpot cheaper if I pay annually?", "a": "On Sales Hub Professional, yes: $90 per seat per month paying annually against $100 on the other billing options. We could not confirm whether Starter's regular $20 changes with the billing option." },
+      { "q": "Does HubSpot have a free trial?", "a": "We could not confirm trial terms on the pricing page we checked. The free tools plan needs no credit card, which is the safest way to try it." }
+    ],
+    "unverified": ["How many users Starter includes and what extra seats cost.", "Trial terms.", "Marketing Hub and Service Hub prices.", "The price of extra HubSpot Credits."]
+  },
+  "asana": {
+    "title": "Asana Pricing 2026: $10.99 to $24.99 per user/mo",
+    "description": "Asana is free for 2 users. Starter is $10.99 and Advanced $24.99 per user a month billed annually ($13.49 and $30.49 monthly). Checked Nov 2026.",
+    "h1": "Asana pricing (2026)",
+    "answer": [
+      "Asana is free for up to 2 users on the Personal plan. Paid plans start at $10.99 per user per month billed annually, or $13.49 billed monthly.",
+      "Advanced is $24.99 per user per month annually ($30.49 monthly). Enterprise and Enterprise+ are custom pricing, not public."
+    ],
+    "cost": {
+      "intro": "Asana charges per user on Starter and Advanced, with no seat limit on Starter. One person can stay on the free Personal plan.",
+      "rows": [
+        { "label": "Starter", "per_user": true, "monthly": 13.49, "annual": 10.99, "users": [1, 3, 10] },
+        { "label": "Advanced", "per_user": true, "monthly": 30.49, "annual": 24.99, "users": [1, 3, 10] }
+      ],
+      "extras": [
+        "Paying annually saves $2.50 per user per month on Starter ($30 a year) and $5.50 on Advanced ($66 a year).",
+        "Starter includes unlimited free guests, so clients and contractors do not add to the seat count.",
+        "Personal is free for up to 2 users, so a team of 1 or 2 does not need a paid plan to start."
+      ]
+    },
+    "hidden": [
+      { "t": "AI use is capped", "d": "AI Teammates and Asana Dash include 5 requests per user per month, up to 50 per account on Starter and Advanced. AI Studio includes 50K credits (Starter) or 75K credits (Advanced) per billing account per month." },
+      { "t": "Extra AI requests are metered", "d": "Prepaid AI requests cost $0.50 each billed upfront, or $0.60 each billed monthly pay-as-you-go." },
+      { "t": "Key planning features sit on Advanced", "d": "Portfolios, goals, resource management, approvals and proofing, and time tracking start on Advanced at $24.99 per user, more than double Starter." },
+      { "t": "The free plan has a hard cap", "d": "Personal is limited to 2 users. A third person means Starter for everyone." },
+      { "t": "Monthly billing costs more", "d": "The $10.99 headline price is the annual one. Month to month, Starter is $13.49." }
+    ],
+    "verdict": {
+      "worth": "Worth it for teams of 3 or more that need timelines, dashboards, forms and unlimited automations across projects, and for one or two people who can live on the free Personal plan.",
+      "skip": [
+        "You only need simple boards. Trello is free for up to 10 collaborators, with Standard at $5 per user billed annually.",
+        "You need portfolios, goals and resource management but want to stay near Starter pricing. Those features start at $24.99 per user.",
+        "You need a firm price for Enterprise. It is contact sales only."
+      ],
+      "cheaper": "Cheaper options: Trello (free, or Standard at $5 per user billed annually) and monday.com Basic at $9 per seat billed yearly."
+    },
+    "links": { "compare": ["trello", "monday-com"], "related": ["trello", "monday-com", "clickup"] },
+    "faqs": [
+      { "q": "Is Asana free?", "a": "Yes. Personal is free for up to 2 users, with unlimited tasks and projects, list, board and calendar views, and unlimited storage with 100 MB per file." },
+      { "q": "How much does Asana cost per user?", "a": "Starter is $10.99 per user per month billed annually or $13.49 billed monthly. Advanced is $24.99 annually or $30.49 monthly." },
+      { "q": "Is Asana cheaper if I pay annually?", "a": "Yes. You save $2.50 per user per month on Starter and $5.50 on Advanced, which is $30 and $66 per user per year." },
+      { "q": "Does Asana have a free trial?", "a": "The pricing page mentions a free trial of Asana, but we could not confirm how long it lasts." },
+      { "q": "Can I cancel Asana at any time?", "a": "Yes. The FAQ says you can cancel at any time, and if you cancel before the next renewal you keep access to paid features through the end of the current subscription period." },
+      { "q": "How much is Asana Enterprise?", "a": "The page says contact sales for pricing. Enterprise+ is also available for higher security and compliance needs and is not priced publicly." }
+    ],
+    "unverified": ["Trial length.", "Enterprise and Enterprise+ prices (contact sales)."]
+  },
+  "trello": {
+    "title": "Trello Pricing 2026: $5 to $17.50 per user/month",
+    "description": "Trello is free for up to 10 collaborators. Standard is $5 and Premium $10 per user a month billed annually ($6 and $12.50 monthly). Checked Nov 2026.",
+    "h1": "Trello pricing (2026)",
+    "answer": [
+      "Trello is free for up to 10 collaborators per Workspace. Paid plans start at $5 per user per month billed annually, or $6 billed monthly.",
+      "Premium is $10 per user per month annually ($12.50 monthly), and Enterprise is $17.50 per user per month billed annually."
+    ],
+    "cost": {
+      "intro": "Trello charges per user. The free plan covers up to 10 collaborators per Workspace, so small teams can start without paying.",
+      "rows": [
+        { "label": "Standard", "per_user": true, "monthly": 6, "annual": 5, "users": [1, 3, 10] },
+        { "label": "Premium", "per_user": true, "monthly": 12.5, "annual": 10, "users": [1, 3, 10] },
+        { "label": "Enterprise", "per_user": true, "annual": 17.5, "users": [1, 3, 10] }
+      ],
+      "extras": [
+        "Paying annually saves $1 per user per month on Standard ($12 a year) and $2.50 on Premium ($30 a year).",
+        "Enterprise is billed annually only, at $210 per user per year. The page shows an estimated cost field that sends you to sales.",
+        "Standard includes single-board guests; Premium adds the multi-view features and admin controls."
+      ]
+    },
+    "hidden": [
+      { "t": "The free plan has hard caps", "d": "Up to 10 collaborators and 10 boards per Workspace, 10 MB per file, and 250 Workspace command runs per month for automation." },
+      { "t": "Views are a Premium feature", "d": "Calendar, Timeline, Table, Dashboard and Map views start on Premium at $10 per user, double the price of Standard." },
+      { "t": "Automation runs are metered", "d": "Standard allows 1,000 Workspace command runs per month. Unlimited runs start on Premium." },
+      { "t": "AI starts on a paid plan", "d": "AI features are not included on Free. The page says AI starts with the paid plans from $5 a month." },
+      { "t": "Enterprise has no monthly option", "d": "Enterprise is $17.50 per user per month, only if you pay for the year ($210 per user)." }
+    ],
+    "verdict": {
+      "worth": "Worth it for simple kanban-style task tracking: the free plan covers up to 10 collaborators, and Standard at $5 per user adds unlimited boards and automation without a large bill.",
+      "skip": [
+        "You need timeline or Gantt-style planning. Trello's Timeline view needs Premium at $10 per user, while Asana Starter at $10.99 lists timeline and Gantt views.",
+        "You have more than 10 people who need to collaborate on the free plan.",
+        "You want a monthly-only Enterprise option. There is none."
+      ],
+      "cheaper": "Free option: Trello Free itself, or Asana Personal for up to 2 users. See the alternatives page for more."
+    },
+    "links": { "compare": ["asana", "monday-com"], "related": ["asana", "monday-com", "clickup"] },
+    "faqs": [
+      { "q": "Is Trello free?", "a": "Yes. The free plan covers up to 10 collaborators per Workspace, with unlimited cards, up to 10 boards per Workspace, 10 MB per file and 250 Workspace command runs per month." },
+      { "q": "How much does Trello cost per user?", "a": "Standard is $5 per user per month billed annually ($6 monthly). Premium is $10 annually ($12.50 monthly). Enterprise is $17.50 per user per month billed annually." },
+      { "q": "Is Trello cheaper if I pay annually?", "a": "Yes. Standard saves $1 per user per month and Premium saves $2.50, which is $12 and $30 per user per year." },
+      { "q": "Does Trello have a free trial?", "a": "Yes. Any Workspace can enroll in a free trial of Trello Premium. The pricing page does not state how long it lasts." },
+      { "q": "What do I get on Premium that Standard does not have?", "a": "Premium adds Calendar, Timeline, Table, Dashboard and Map views, unlimited Workspace command runs, admin and security features, workspace-level templates, collections and simple data export." },
+      { "q": "Is Trello priced per user or flat?", "a": "Per user. Each paid collaborator counts as a seat on the plan." }
+    ],
+    "unverified": ["Length of the Premium trial.", "Enterprise cost for a specific team size (contact sales)."]
+  },
+  "salesforce": {
+    "title": "Salesforce Pricing 2026: $25 to $550 per user/mo",
+    "description": "Salesforce Sales Cloud runs $25 (Starter) to $550 (Max) per user a month. Only Starter is monthly; the rest are annual. 30-day trial. Checked Nov 2026.",
+    "h1": "Salesforce pricing (2026)",
+    "answer": [
+      "Salesforce Sales Cloud starts with a Free Suite, then Starter Suite at $25 per user per month, billed monthly or annually. A 30-day free trial needs no credit card.",
+      "Pro Suite is $100, Core $195, Advanced $395 and Max $550 per user per month, all billed annually."
+    ],
+    "cost": {
+      "intro": "Salesforce charges per user. Starter Suite has one price whether you pay monthly or annually; every suite above it is annual only, so the figures below are the monthly equivalents of an annual commitment.",
+      "rows": [
+        { "label": "Starter Suite", "per_user": true, "monthly": 25, "annual": 25, "users": [1, 3, 10] },
+        { "label": "Pro Suite", "per_user": true, "annual": 100, "users": [1, 3, 10] },
+        { "label": "Core", "per_user": true, "annual": 195, "users": [1, 3, 10] },
+        { "label": "Advanced", "per_user": true, "annual": 395, "users": [1, 3, 10] },
+        { "label": "Max", "per_user": true, "annual": 550, "users": [1, 3, 10] }
+      ],
+      "extras": [
+        "The step from Starter Suite ($25) to Pro Suite ($100) is four times the price per user.",
+        "Agentforce for Sales is an add-on from $125 per user per month. Premier Success is a paid add-on on the lower suites.",
+        "Prices on the page cover licenses. The page lists no setup or admin costs."
+      ]
+    },
+    "hidden": [
+      { "t": "A big price jump after Starter", "d": "Starter Suite is $25 per user. The next suite, Pro Suite, is $100 per user billed annually, which is where quoting and forecasting start." },
+      { "t": "Annual commitment above Starter", "d": "Only Starter Suite is offered monthly or annually. Pro Suite, Core, Advanced and Max are billed annually." },
+      { "t": "AI is an extra", "d": "The page says AI can be added to Core and above, and to contact sales for detailed pricing. Agentforce for Sales starts at $125 per user per month." },
+      { "t": "Support is an add-on on lower suites", "d": "Premier Support is an add-on on Pro Suite and Premier Success is purchasable on lower suites. Core includes Premier Success." },
+      { "t": "The page is indicative", "d": "The page states it is for information only and subject to change, and that detailed pricing needs a sales conversation." }
+    ],
+    "verdict": {
+      "worth": "Worth it if you expect to outgrow a simple CRM and want one platform with a clear path from $25 per user to quoting, Slack, Tableau and agents, and you can commit to annual billing above Starter.",
+      "skip": [
+        "You want a simple CRM and no big price step. The next suite after Starter is four times the cost per user.",
+        "You cannot commit to annual billing. Every suite above Starter Suite is billed annually.",
+        "You have one or two people. HubSpot's free tools cover up to 2 users."
+      ],
+      "cheaper": "Cheaper paid option: Pipedrive Lite at $14 per seat billed annually. Free option: HubSpot's free tools for up to 2 users."
+    },
+    "links": { "compare": ["hubspot", "pipedrive"], "related": ["hubspot", "pipedrive"] },
+    "faqs": [
+      { "q": "How much does Salesforce cost per user?", "a": "Sales Cloud runs from $25 per user per month (Starter Suite) to $550 (Max). Pro Suite is $100, Core $195 and Advanced $395, all billed annually." },
+      { "q": "Is there a free Salesforce plan?", "a": "The Sales Cloud comparison table lists a Free Suite at $0 per user per month. The page also offers a 30-day free trial with no credit card." },
+      { "q": "Can I pay for Salesforce monthly?", "a": "Only Starter Suite, which the page prices at $25 per user whether billed monthly or annually. Pro Suite, Core, Advanced and Max are billed annually." },
+      { "q": "How much would 10 users cost?", "a": "On Starter Suite, $250 per month. On Pro Suite, $1,000 per month, or $12,000 for the year. On Core, $1,950 per month. These are license prices before add-ons." },
+      { "q": "Does Salesforce include AI?", "a": "The page says AI can be added to Core and above, and to contact a sales representative for detailed pricing. Agentforce for Sales is listed from $125 per user per month." },
+      { "q": "Is there a Salesforce free trial?", "a": "Yes. The page says you can try Sales Cloud free for 30 days, with no credit card and no installations." }
+    ],
+    "unverified": ["Implementation and admin costs (not on the pricing page).", "Monthly pricing for suites above Starter (not offered on the page)."]
+  },
+  "figma": {
+    "title": "Figma Pricing 2026: $16 to $90 per Full seat/month",
+    "description": "Figma Starter is free. A Professional Full seat is $16 a month billed annually ($20 monthly). Organization is $55 and Enterprise $90. Checked Nov 2026.",
+    "h1": "Figma pricing (2026)",
+    "answer": [
+      "Figma Starter is free. On Professional, a Full seat is $16 per month billed annually ($20 monthly), a Dev seat is $12 ($15 monthly) and a Collab seat is $3 ($5 monthly).",
+      "Organization Full seats are $55 and Enterprise Full seats are $90 per month, both billed annually only."
+    ],
+    "cost": {
+      "intro": "Figma prices by seat type, not just by head count. The table assumes every person has a Full seat, the most expensive type on each plan.",
+      "rows": [
+        { "label": "Professional, Full seat", "per_user": true, "monthly": 20, "annual": 16, "users": [1, 3, 10] },
+        { "label": "Organization, Full seat", "per_user": true, "annual": 55, "users": [1, 3, 10] },
+        { "label": "Enterprise, Full seat", "per_user": true, "annual": 90, "users": [1, 3, 10] }
+      ],
+      "extras": [
+        "A mixed team is cheaper: 3 designers on Full seats and 7 developers on Dev seats costs $132 a month on Professional billed annually (3 x $16 + 7 x $12), or $165 billed monthly (3 x $20 + 7 x $15).",
+        "Organization and Enterprise are annual only, so there is no monthly price for those seats.",
+        "The page says that on a paid plan you can let others view and comment on your files without buying extra seats."
+      ]
+    },
+    "hidden": [
+      { "t": "Seat types change the bill", "d": "A Full seat is $16, a Dev seat $12 and a Collab seat $3 on Professional billed annually. Picking the wrong seat type is the easiest way to overspend." },
+      { "t": "AI runs on credits", "d": "Starter gets 150 AI credits per day, up to 500 per month. A Professional Full seat gets 3,000 per month, Organization 3,500 and Enterprise 4,250. Dev and Collab seats get 500." },
+      { "t": "More AI credits cost extra", "d": "Extra AI credits are an add-on, sold pay-as-you-go or by subscription. We could not confirm the price." },
+      { "t": "Monthly billing is only on Professional", "d": "Organization and Enterprise say billed annually. On Professional, monthly billing adds $4 per Full seat." },
+      { "t": "Governance+ is Enterprise-only", "d": "Advanced access, sharing and compliance tools are an Enterprise add-on, contact sales." }
+    ],
+    "verdict": {
+      "worth": "Worth it for product and UI design teams that need shared libraries, prototyping and developer handoff. The free Starter plan is a fair way to learn the tool first.",
+      "skip": [
+        "You mostly make social posts and presentations. Canva has a free plan and Pro at $12 a month billed yearly.",
+        "You want a free open-source design tool. Penpot is open source in our directory, though we have not verified its pricing.",
+        "Everyone on your team needs a Full seat and you must pay monthly. That is $20 per seat."
+      ],
+      "cheaper": "Free options: Figma Starter, or Canva's free plan for simple graphics."
+    },
+    "links": { "compare": ["canva", "penpot"], "related": ["canva", "penpot", "framer"] },
+    "faqs": [
+      { "q": "Is Figma free?", "a": "Yes. Starter is free, with unlimited drafts, UI kits and templates, and 150 AI credits per day up to 500 per month." },
+      { "q": "How much does a Figma seat cost?", "a": "On Professional billed annually: Full $16, Dev $12, Collab $3 per month. Billed monthly: $20, $15 and $5. Organization Full is $55 and Enterprise Full is $90, both annual only." },
+      { "q": "What is the difference between a Full, Dev and Collab seat?", "a": "They are priced differently: Full seats are the most expensive and include the full design toolset, Dev seats are for developers, and Collab seats are for collaborators. The page notes that Figma Motion and Sites betas are on Full seats." },
+      { "q": "Is Figma cheaper if I pay annually?", "a": "Yes on Professional: a Full seat is $16 annually against $20 monthly, a Dev seat $12 against $15 and a Collab seat $3 against $5. Organization and Enterprise are annual only." },
+      { "q": "Does Figma have a free trial?", "a": "We could not find a free trial mentioned on the pricing page. The Starter plan is free." },
+      { "q": "Can I cancel Figma?", "a": "On Professional you can downgrade or cancel from the Admin Dashboard. On Organization or Enterprise you contact Sales to downgrade or cancel." }
+    ],
+    "unverified": ["Free trial terms.", "The price of extra AI credits."]
+  },
+  "canva": {
+    "title": "Canva Pricing 2026: $12 to $20.83 per person/month",
+    "description": "Canva has a free plan. Pro is $144 a year ($12 a month) or $18 monthly; Business is $250 per person a year ($25 monthly). Checked Nov 2026.",
+    "h1": "Canva pricing (2026)",
+    "answer": [
+      "Canva has a free plan. Pro is $144 per year ($12 per month) or $18 if you pay monthly, for one person.",
+      "Business is $250 per person per year ($20.83 per month) or $25 monthly. Enterprise is custom pricing, not public."
+    ],
+    "cost": {
+      "intro": "Pro is for one person. For a team, Business is priced per person, so the 3 and 10 person examples use Business.",
+      "rows": [
+        { "label": "Pro (one person)", "per_user": false, "monthly": 18, "annual": 12, "users": [1] },
+        { "label": "Business (per person)", "per_user": true, "monthly": 25, "annual": 20.83, "users": [1, 3, 10] }
+      ],
+      "extras": [
+        "Pro billed yearly is $144 a year against $216 paying monthly ($18 x 12), a saving of $72. Business is $250 per person a year against $300, a saving of $50.",
+        "Business annual per-month figures are $250 divided by 12, rounded to the cent.",
+        "AI Pass is an add-on to Pro or Business at extra cost. We could not confirm the price."
+      ]
+    },
+    "hidden": [
+      { "t": "Pro is one seat", "d": "Pro is priced 'for one person'. Teams need Business, which is $25 per person monthly or $250 per person a year." },
+      { "t": "AI has an allowance", "d": "Standard, Premium and Ultra AI tools share a monthly allowance that varies by plan: Pro has 10x more than Free and Business 20x more. Heavier AI tools use more of it." },
+      { "t": "Fair use limits apply", "d": "The page notes fair use limits on the premium AI tools included in the paid plans." },
+      { "t": "Brand Kits scale with the plan", "d": "Free gets 1 Brand Kit (max 3 colors), Pro 5, Business 100 and Enterprise 1000." },
+      { "t": "Yearly billing is a year commitment", "d": "The lower per-month figure assumes you pay for the year. Monthly billing costs $6 more on Pro and about $4 more on Business." }
+    ],
+    "verdict": {
+      "worth": "Worth it for non-designers who make social posts, presentations and marketing assets often. The free plan has 1.6M+ templates, so try it before paying.",
+      "skip": [
+        "You design product interfaces or design systems. Figma is built for that, and Starter is free.",
+        "You make a few graphics a month. The free plan may be enough.",
+        "You need many team members on one plan at Pro pricing. Pro is for one person; teams need Business."
+      ],
+      "cheaper": "Free option: Canva Free. For UI design, Figma Starter is also free."
+    },
+    "links": { "compare": ["figma", "penpot"], "related": ["figma", "framer", "penpot"] },
+    "faqs": [
+      { "q": "Is Canva free?", "a": "Yes. The free plan includes 1.6M+ templates, 4.7M+ elements, 1 Brand Kit (maximum of 3 colors) and limited access to Standard and Premium AI tools." },
+      { "q": "How much does Canva Pro cost?", "a": "$144 per year, which is $12 per month, or $18 per month billed monthly. Pro is for one person." },
+      { "q": "How much does Canva Business cost?", "a": "$250 per person per year ($20.83 per month), or $25 per person per month billed monthly." },
+      { "q": "Does Canva have a free trial?", "a": "Yes. The FAQ says you can start a free trial of Canva Pro or Canva Business. The page does not state how long it lasts." },
+      { "q": "Is Canva cheaper if I pay yearly?", "a": "Yes. Pro is $144 a year against $216 paying monthly, a $72 saving. Business is $250 per person a year against $300 monthly, a $50 saving." },
+      { "q": "How much is Canva Enterprise?", "a": "The page says to contact sales. Enterprise is custom pricing and is not public." }
+    ],
+    "unverified": ["Length of the free trial.", "The price of the AI Pass add-on."]
+  },
+  "pipedrive": {
+    "title": "Pipedrive Pricing 2026: $14 to $69 per seat/month",
+    "description": "Pipedrive has no free plan but a 14-day trial. Lite is $14, Growth $24, Premium $49 and Ultimate $69 per seat a month billed annually. Nov 2026.",
+    "h1": "Pipedrive pricing (2026)",
+    "answer": [
+      "Pipedrive has no free plan, but it offers a free 14-day trial with no credit card. Lite is $14 per seat per month billed annually, or $19 billed monthly.",
+      "Growth is $24 ($34 monthly), Premium is $49 ($64 monthly) and Ultimate is $69 ($89 monthly) per seat."
+    ],
+    "cost": {
+      "intro": "Pipedrive charges per seat. Annual billing is a single payment for the year per seat.",
+      "rows": [
+        { "label": "Lite", "per_user": true, "monthly": 19, "annual": 14, "users": [1, 3, 10] },
+        { "label": "Growth", "per_user": true, "monthly": 34, "annual": 24, "users": [1, 3, 10] },
+        { "label": "Premium", "per_user": true, "monthly": 64, "annual": 49, "users": [1, 3, 10] },
+        { "label": "Ultimate", "per_user": true, "monthly": 89, "annual": 69, "users": [1, 3, 10] }
+      ],
+      "extras": [
+        "Annual billing is one payment per seat: $168 (Lite), $288 (Growth), $588 (Premium) or $828 (Ultimate) for the year.",
+        "Paying annually saves $60, $120, $180 and $240 per seat per year across Lite, Growth, Premium and Ultimate.",
+        "The page says you save up to 26% on annual billing."
+      ]
+    },
+    "hidden": [
+      { "t": "No free plan", "d": "There is only a free 14-day trial, no credit card required. After that you pay." },
+      { "t": "Email sync is not on Lite", "d": "Full email sync with tracking, automations and nurturing sequences start on Growth at $24, not on Lite at $14." },
+      { "t": "Lead generation sits on Premium", "d": "Lead generation and routing, custom scoring and contracts with e-signatures start on Premium at $49 per seat." },
+      { "t": "Annual billing is paid upfront", "d": "The annual price is a single payment per seat for the year, for example $168 for Lite." },
+      { "t": "Security and sandbox are Ultimate", "d": "Account security rules, data enrichment and the sandbox testing account are on Ultimate at $69." }
+    ],
+    "verdict": {
+      "worth": "Worth it for small sales teams that want a pipeline-first CRM and are happy to start on Lite or Growth. Try it with the free 14-day trial first.",
+      "skip": [
+        "You want a free plan. HubSpot's free tools cover up to 2 users.",
+        "You need email sync and automations but want to pay Lite pricing. Those start on Growth.",
+        "You want everything in one platform with sales, marketing and service. HubSpot and Salesforce are the broader options."
+      ],
+      "cheaper": "Free option: HubSpot's free tools for up to 2 users. Pipedrive Lite at $14 is the cheapest paid CRM seat we have verified so far."
+    },
+    "links": { "compare": ["hubspot", "salesforce"], "related": ["hubspot", "salesforce", "zoho-crm"] },
+    "faqs": [
+      { "q": "Is there a free Pipedrive plan?", "a": "No. Pipedrive offers a free 14-day trial with no credit card required, but no free plan." },
+      { "q": "How much does Pipedrive cost per user?", "a": "Billed annually: Lite $14, Growth $24, Premium $49 and Ultimate $69 per seat per month. Billed monthly: $19, $34, $64 and $89." },
+      { "q": "Is Pipedrive cheaper if I pay annually?", "a": "Yes. Annual billing saves $60 per seat per year on Lite, $120 on Growth, $180 on Premium and $240 on Ultimate. The page says up to 26%." },
+      { "q": "Which Pipedrive plan has email sync?", "a": "Growth and above. Growth adds full email sync with tracking, automations and nurturing sequences. Lite does not." },
+      { "q": "Is Pipedrive priced per seat?", "a": "Yes. Every price on the page is per seat per month." },
+      { "q": "What do I get on the Ultimate plan?", "a": "Everything in Premium, plus account security rules and alerts, phone and email data enrichment, a sandbox testing account, extended phone support and partner discounts." }
+    ],
+    "unverified": ["Prices from a US connection (see the report)."]
+  },
+  "monday-com": {
+    "title": "monday.com Pricing 2026: $12 to $24 per seat/month",
+    "description": "monday.com is free for 2 seats. At 10 seats paid plans are $9 to $19 per seat a month billed yearly, $12 to $24 monthly. 14-day Pro trial. Nov 2026.",
+    "h1": "monday.com pricing (2026)",
+    "answer": [
+      "monday.com is free for up to 2 seats. At 10 seats, Basic is $9 per seat per month billed yearly ($12 monthly), Standard is $12 yearly ($14 monthly) and Pro is $19 yearly ($24 monthly).",
+      "The Standard and Pro yearly prices on the page carried a limited special offer, and Enterprise is custom pricing, not public."
+    ],
+    "cost": {
+      "intro": "monday.com's page shows prices per seat for a chosen team size, and we recorded the 10-seat view. Prices for 1 or 3 seats are not shown here because we did not verify them.",
+      "rows": [
+        { "label": "Basic", "per_user": true, "monthly": 12, "annual": 9, "users": [10] },
+        { "label": "Standard", "per_user": true, "monthly": 14, "annual": 12, "users": [10] },
+        { "label": "Pro", "per_user": true, "monthly": 24, "annual": 19, "users": [10] }
+      ],
+      "extras": [
+        "At 10 seats, Basic billed yearly shows a total of $90 per month against $120 paying monthly.",
+        "The page says the price is determined by the billing country and excludes tax, and that the final price appears on the purchase page.",
+        "monday CRM, monday dev and the other products have their own pricing and are not covered here."
+      ]
+    },
+    "hidden": [
+      { "t": "The price depends on seat count", "d": "The page asks you to choose a team size and prices per seat accordingly. We verified the 10-seat view only." },
+      { "t": "Special offers are time-limited", "d": "Standard and Pro yearly prices showed a 'special offer' ($20 and $30 off per month at 10 seats). Treat those as promotional." },
+      { "t": "Automation and integration actions are capped", "d": "Standard allows 250 automation and 250 integration actions per month, and Pro 25,000 of each. Count your expected automations before choosing a tier." },
+      { "t": "The free plan is small", "d": "Free covers up to 2 seats, up to 3 boards and up to 3 Docs." },
+      { "t": "AI runs on credits", "d": "Basic includes 1,000 AI credits per month, Standard 2,000 and Pro 3,000. Free does not include AI features." }
+    ],
+    "verdict": {
+      "worth": "Worth it for teams that want visual boards with automations and several views, and that will use Standard or Pro features such as timeline, Gantt and workflows.",
+      "skip": [
+        "You want the cheapest simple kanban. Trello has a free plan and Standard at $5 per user billed annually.",
+        "You have only 1 or 2 people. Free covers 2 seats, though with a 3-board cap.",
+        "You need predictable pricing. The price shifts with seat count and promotions."
+      ],
+      "cheaper": "Cheaper options: Trello (Standard $5 per user billed annually) and Asana Personal (free for 2 users)."
+    },
+    "links": { "compare": ["trello", "asana"], "related": ["asana", "trello", "clickup"] },
+    "faqs": [
+      { "q": "Is monday.com free?", "a": "Yes, for up to 2 seats, with up to 3 boards and up to 3 Docs. The page says the free plan suits freelancers and individual professionals." },
+      { "q": "How much does monday.com cost per seat?", "a": "At 10 seats, Basic is $9 per seat per month billed yearly ($12 monthly), Standard $12 ($14) and Pro $19 ($24). Enterprise is custom pricing." },
+      { "q": "Does monday.com have a free trial?", "a": "Yes. The FAQ says there is a 14-day free trial of the Pro plan for monday work management, monday CRM and monday dev." },
+      { "q": "Is monday.com cheaper if I pay yearly?", "a": "Yes. At 10 seats, Basic is $9 per seat yearly against $12 monthly, Standard $12 against $14 and Pro $19 against $24. Standard and Pro yearly prices carried a special offer." },
+      { "q": "Can I get a refund on a yearly plan?", "a": "The FAQ says that if you paid for a yearly subscription in the last 30 days and cancel, you get a partial refund of the remaining balance." },
+      { "q": "What are the limits on the Standard plan?", "a": "Standard includes 3 workflows, 250 automation actions and 250 integration actions per month, timeline and Gantt views, calendar view, guest access and 1,000 API calls per day." }
+    ],
+    "unverified": ["Per-seat prices at team sizes other than 10.", "The non-promotional yearly price for Standard and Pro."]
+  }
+}

@@ -39,4 +39,6 @@ export const INDEXED_TOOL_SLUGS: readonly string[] = [
   'airtable',
   'linear',
   'pipedrive',
+  // Pricing verified on 2026-11-16 (see pricing-data.md).
+  'semrush',
 ];
