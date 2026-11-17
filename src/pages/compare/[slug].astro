@@ -30,8 +30,8 @@ const tools = [a, b];
 const year = new Date().getFullYear();
 const path = `/compare/${pair.slug}/`;
 
-const title = `${a.name} vs ${b.name} (${year}): Pricing Compared`;
-const description = `${a.name} vs ${b.name}: ${a.name} is ${priceText(a)}, ${b.name} is ${priceText(b)}. Compare ${SHOW_RATINGS ? 'ratings, ' : ''}free plans, AI features, pros and cons side by side.`;
+const title = `${a.name} vs ${b.name} (${year}): Pricing`;
+const description = `${a.name} vs ${b.name}: ${a.name} is ${priceText(a)}, ${b.name} is ${priceText(b)}. Compare ${SHOW_RATINGS ? 'ratings, ' : ''}free plans, AI features, pros and cons.`;
 
 // Quick take: derived only from catalog data.
 const higherRated = a.rating === b.rating ? null : a.rating > b.rating ? a : b;

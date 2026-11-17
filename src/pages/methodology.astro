@@ -44,6 +44,26 @@ const schema = [breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Methodol
     </section>
 
     <section>
+      <h2 class="text-xl font-semibold text-slate-900">Region, promotions and custom pricing</h2>
+      <p class="mt-2">
+        Vendors sometimes show different prices in different countries, so we read each pricing page from a US
+        connection, in US dollars. If a plan is only sold through sales, we write "custom pricing, not public" and
+        show no number. Limited-time or new-customer promotions are mentioned but never used as the headline
+        price, and onboarding or setup fees that the vendor states are listed next to the seat price. Anything we
+        could not confirm appears under "What we could not verify" at the bottom of the tool page.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold text-slate-900">Who runs this site</h2>
+      <p class="mt-2">
+        {SITE_NAME} is an independent project run by one person, with no ties to the vendors it lists. See the
+        <a href="/about/" class="font-medium text-indigo-700 hover:underline">about page</a>, or write to us from the
+        <a href="/contact/" class="font-medium text-indigo-700 hover:underline">contact page</a>.
+      </p>
+    </section>
+
+    <section>
       <h2 class="text-xl font-semibold text-slate-900">How starting price is chosen</h2>
       <p class="mt-2">
         The starting price is the cheapest paid plan on the vendor's page, on annual billing when the vendor states

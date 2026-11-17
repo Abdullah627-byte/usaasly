@@ -3,6 +3,7 @@ import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_NAME, SITE_URL, absoluteUrl, jsonLdString, truncate } from '../lib/seo';
+import { CONTACT_EMAIL } from '../config/site';
 
 interface Props {
   title: string;
@@ -33,12 +34,15 @@ const siteSchema: Record<string, unknown>[] = [
     name: SITE_NAME,
     url: SITE_URL,
     logo: absoluteUrl('/favicon.svg'),
+    description: 'Independent directory that compares SaaS and AI tool pricing, hidden limits and real costs.',
+    contactPoint: { '@type': 'ContactPoint', contactType: 'customer support', email: CONTACT_EMAIL, url: absoluteUrl('/contact/') },
   },
   {
     '@type': 'WebSite',
     '@id': `${SITE_URL}/#website`,
     name: SITE_NAME,
     url: SITE_URL,
+    inLanguage: 'en-US',
     publisher: { '@id': `${SITE_URL}/#organization` },
     potentialAction: {
       '@type': 'SearchAction',

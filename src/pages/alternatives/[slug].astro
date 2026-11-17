@@ -19,7 +19,7 @@ const alts = getAlternatives(tool, 6);
 const year = new Date().getFullYear();
 const path = `/alternatives/${alternativesSlug(tool)}/`;
 
-const title = `Best ${tool.name} Alternatives (${year}): ${alts.length} Top Picks Compared`;
+const title = `Best ${tool.name} Alternatives (${year}): ${alts.length} Top Picks`;
 const description = `Looking for ${tool.name} alternatives? Compare ${alts
   .slice(0, 3)
   .map((t) => t.name)
