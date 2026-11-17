@@ -221,3 +221,94 @@ Second pass on 2026-11-16 closed these: Semrush 7-day trial, Salesforce 30-day t
 6. Cursor: annual pricing not shown; trial terms not shown; the Grok bundling needs a human look (see section 10).
 7. Asana: Enterprise and Enterprise+ prices are not public (contact sales).
 8. Region: re-checked from a US connection on 2026-11-16 (see the Region check note at the top); Pipedrive was corrected, the rest matched.
+
+---
+
+# Added SEO tools (checked 2026-11-16)
+
+- Ahrefs, Moz and SE Ranking were read through a US connection (IP location Warrenton, Virginia, US).
+- Ubersuggest and Mangools were read through the user's VPN in Tokyo. Ubersuggest labels prices "US$". Mangools shows only a "$" sign with no currency code; we record it as USD, but the code itself is not stated on the page (see the unverified list).
+- Ahrefs, Moz and SE Ranking also show "$" (Moz says "USD / mo").
+
+## 11. Ahrefs
+
+- Official URL: https://ahrefs.com/pricing
+- Toggle: monthly / "Pay annually, save up to 17%". Prices exclude tax.
+
+| Plan | Monthly | Annual (per month) | Annual total | Key limits |
+|---|---|---|---|---|
+| Lite | $129 | $107.50 (page rounds to $108) | $1,290 per year | 1 user, 5 non-verified projects, 6 months history, 750 tracked keywords, 150 AI prompt checks, 100,000 crawl credits |
+| Standard | $249 | $207.50 (page shows $208) | $2,490 per year | 1 user, 20 non-verified projects, 2 years history, 2,000 tracked keywords, 300 AI prompt checks, 500,000 crawl credits |
+| Advanced | $449 | $374.17 (page shows $374) | $4,490 per year | 1 user, 50 non-verified projects, 5 years history, 5,000 tracked keywords, 600 AI prompt checks, 1,500,000 crawl credits |
+| Enterprise | custom pricing, not public | custom pricing, not public | | uncapped API, SSO, audit log |
+
+- Extra users: Lite up to 2 more at $40/mo each; Standard up to 5 more at $60/mo each; Advanced up to 10 more at $80/mo each.
+- Free plan / trial: none shown on the pricing page.
+
+## 12. Moz (Moz Pro)
+
+- Official URL: https://moz.com/products/pro/pricing
+- Toggle: Pay monthly / Pay yearly ("save 20%").
+
+| Plan | Monthly | Yearly (per month) | Key limits |
+|---|---|---|---|
+| Starter | $49 | not shown (unverified) | entry-level plan for individuals managing a single website |
+| Standard | $99 | $79 | 1 user, 3 tracked sites, 300 tracked keywords, 400K pages crawled per month, 150 tracked AI prompts |
+| Medium | $179 | $143 | 2 users, 10 tracked sites, 1,500 tracked keywords, 2M pages crawled per month, 300 tracked AI prompts |
+| Large | $299 | $239 | 3 users, 25 tracked sites, 3,000 tracked keywords, 5M pages crawled per month, 600 tracked AI prompts |
+| Enterprise | custom pricing, not public | custom pricing, not public | |
+
+- Extra users: price not listed (unverified).
+- Add-ons: extra AI Visibility dashboards $20 each; extra tracked prompts $50 per 100.
+- Free: a free Moz Community account gives limited access to MozBar, Keyword Explorer and Link Explorer. Free trial available ("Start my free trial"); length not stated (unverified).
+
+## 13. SE Ranking
+
+- Official URL: https://seranking.com/subscription.html
+- Toggle: Monthly / Annually ("save 20%").
+
+| Plan | Monthly | Annual (per month) | Key limits |
+|---|---|---|---|
+| Core | $129 | $103.20 | 10 projects, 1 manager seat, 2,000 keywords tracked daily, 250K pages audited per month, 25K API credits, 25 AI prompts daily |
+| Growth | $279 | $223.20 | 30 projects, 3 manager seats, 5,000 keywords tracked daily, 2M pages audited per month, 100K API credits |
+| Enterprise | custom pricing, not public | custom pricing, not public | custom limits |
+
+- Add-ons: Agency Pack +$69/mo (annual billing only); API add-on from $45/mo on annual billing; AI Visibility from $71/mo.
+- Extra seats: price not listed (unverified).
+- Free plan: none. Trial: free 14-day trial, no credit card required.
+
+## 14. Ubersuggest
+
+- Official URL: https://ubersuggest.com/en/pricing
+- Toggle: Monthly / Yearly / Lifetime. Currency shown as US$.
+
+| Plan | Monthly | Yearly (per month) | Yearly total | Lifetime (one-time) | Key limits |
+|---|---|---|---|---|---|
+| Individual | $12 | $6.67 | $80 | $120 | 1 user, 1 project, 125 tracked keywords per project, 150 searches per day |
+| Business | $20 | $10.42 | $125 | $200 | 2 users, 7 projects, 150 tracked keywords per project, 300 searches per day |
+| Enterprise | $40 | $22.58 | $271 | $400 | 5 users, 15 projects, 300 tracked keywords per project, 900 searches per day |
+| Custom | custom pricing, not public | | | | tailored limits |
+
+- Add-ons: full AI add-on +$29/month.
+- Trial: one-time 7-day free trial for monthly subscriptions. Lifetime purchases are final and non-refundable. Free plan: not shown on the pricing page.
+
+## 15. Mangools
+
+- Official URL: https://mangools.com/plans-and-pricing
+- Toggle: Annually ("save ~35%") / Monthly. Currency shown only as "$".
+
+| Plan | Monthly | Annual (per month) | Annual total | Key limits |
+|---|---|---|---|---|
+| Basic | $30.50 | $18.85 | $226.20 | 100 keyword research and 100 SERP requests per 24h, 200 tracked keywords, weekly rank updates, no extra seats |
+| Premium | $40.50 | $26.35 | $316.20 | 500 requests per 24h, 700 tracked keywords, weekly updates, 3 extra seats available |
+| Agency | $70.50 | $48.85 | $586.20 | 1,200 requests per 24h, 1,500 tracked keywords, daily updates, 5 extra seats available |
+
+- Extra seats: available on Premium (3) and Agency (5); price not listed (unverified).
+- Free: the page offers a free account; its limits are not listed. 48-hour money-back guarantee; cancel any time.
+
+## Unverified items for the added tools
+
+1. Moz Starter yearly price; Moz extra-seat price; Moz trial length.
+2. SE Ranking extra-seat price.
+3. Mangools currency code (only "$" shown), extra-seat price and free-account limits.
+4. Ahrefs and Ubersuggest: no free plan shown on the pricing pages (not claimed either way beyond that).

@@ -49,4 +49,9 @@ export const INDEXED_TOOL_SLUGS: readonly string[] = [
   'pipedrive',
   // Pricing verified on 2026-11-16 (see pricing-data.md).
   'semrush',
+  'ahrefs',
+  'moz',
+  'se-ranking',
+  'ubersuggest',
+  'mangools',
 ];

@@ -1,5 +1,5 @@
 ---
-import { alternativesPath, comparePath, getTopCompetitors, money, type CatalogTool } from '../lib/catalog';
+import { alternativesPath, comparePath, getTopCompetitors, hasAiModel, money, type CatalogTool } from '../lib/catalog';
 
 interface Props {
   tool: CatalogTool;
@@ -65,10 +65,14 @@ const faqs: { q: string; a: string }[] = [
     q: `What are the hidden limits of ${tool.name}?`,
     a: tool.hidden_limits,
   },
-  {
-    q: `Which AI models does ${tool.name} use?`,
-    a: `${tool.name} uses ${tool.ai_model}. Model availability changes by plan, so confirm what your tier includes before you rely on a specific model.`,
-  },
+  ...(hasAiModel(tool)
+    ? [
+        {
+          q: `Which AI models does ${tool.name} use?`,
+          a: `${tool.name} uses ${tool.ai_model}. Model availability changes by plan, so confirm what your tier includes before you rely on a specific model.`,
+        },
+      ]
+    : []),
   {
     q: `What are the main strengths and weaknesses of ${tool.name}?`,
     a: `Strengths: ${list(tool.pros.map((p) => p.charAt(0).toLowerCase() + p.slice(1)))}. Weaknesses: ${list(cons.map((p) => p.charAt(0).toLowerCase() + p.slice(1)))}.`,

@@ -34,9 +34,9 @@
         "You run one small site and do not need 500 keywords tracked daily. $139 a month is a lot for that.",
         "You need several teammates in the account, because each extra user adds to the bill."
       ],
-      "cheaper": "Free option: Google Search Console for your own site's search data. For other tools in our directory, see the Semrush alternatives page."
+      "cheaper": "Cheaper paid options we have verified: Ubersuggest from $12 a month ($6.67 billed annually), Mangools from $30.50 a month ($18.85 annually) and Moz Starter at $49 a month for one website. Free option: Google Search Console for your own site's search data."
     },
-    "links": { "compare": [], "related": ["mailchimp", "buffer"] },
+    "links": { "compare": ["ahrefs", "moz", "se-ranking"], "related": ["ahrefs", "moz", "ubersuggest"] },
     "faqs": [
       { "q": "How much does Semrush cost per month?", "a": "$139 for SEO, $199 for Starter and $299 for Pro+ when billed monthly. Billed annually the monthly equivalents are $117.33, $165.17 and $248.17. Advanced and Enterprise are custom pricing." },
       { "q": "Does Semrush have a free plan?", "a": "Yes. The free plan is $0 per month with 1 demo project and 10 reports per day across all vital tools. No credit card is required." },

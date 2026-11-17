@@ -52,7 +52,8 @@ const alternatives = pp
   ? relatedFromData.slice(0, 3)
   : catalog.filter((t) => t.category === tool.category && t.slug !== tool.slug).slice(0, 3);
 /** Top same-category rivals; each one has a generated `/compare/<a>-vs-<b>/` page. */
-const competitors = getTopCompetitors(tool, 4);
+// Up to 8 so every same-category compare page is linked from both of its tool pages (no orphans).
+const competitors = getTopCompetitors(tool, 8);
 
 const title = pp?.title ?? `${tool.name} Pricing & Hidden Limits (${year})`;
 const description =

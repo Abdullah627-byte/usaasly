@@ -2097,5 +2097,347 @@
       "Setup takes time"
     ],
     "website_url": "https://www.zendesk.com"
+  },
+  {
+    "id": 51,
+    "name": "Ahrefs",
+    "slug": "ahrefs",
+    "logo": "/logos/ahrefs.svg",
+    "category": "Marketing",
+    "best_for_usecase": "SEO research, backlink analysis, rank tracking and AI-search visibility for small businesses, freelancers and in-house teams",
+    "starting_price": 107.5,
+    "price_per_user": false,
+    "hidden_limits": "Every plan includes 1 user. Extra users cost $40 per month each on Lite (up to 2 more), $60 on Standard (up to 5 more) and $80 on Advanced (up to 10 more). Lite keeps 6 months of historical data and tracks 750 keywords. Annual billing saves up to 17%.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 0,
+    "ai_model": "Not listed on the pricing page",
+    "pros": [
+      "API and MCP access on every plan",
+      "Unlimited verified projects on all plans",
+      "Annual billing saves up to 17%"
+    ],
+    "cons": [
+      "Only 1 user included; extra users cost $40 to $80 a month each",
+      "No free plan on the pricing page",
+      "Lite keeps only 6 months of historical data"
+    ],
+    "website_url": "https://ahrefs.com",
+    "pricing_url": "https://ahrefs.com/pricing",
+    "last_verified": "2026-11-16",
+    "plans": [
+      {
+        "name": "Lite",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 129,
+        "yearly": 107.5,
+        "note": "$1,290 per year billed annually (the page rounds this to $108/mo). Add up to 2 users at $40/mo each.",
+        "limits": "5 non-verified projects, 6 months of history, 750 tracked keywords, 150 AI prompt checks, 100,000 crawl credits, 1 user",
+        "best_for": "Small businesses and personal projects"
+      },
+      {
+        "name": "Standard",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 249,
+        "yearly": 207.5,
+        "note": "$2,490 per year billed annually. Add up to 5 users at $60/mo each.",
+        "limits": "20 non-verified projects, 2 years of history, 2,000 tracked keywords, 300 AI prompt checks, 500,000 crawl credits, 1 user",
+        "best_for": "Freelance SEOs and marketing consultants"
+      },
+      {
+        "name": "Advanced",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 449,
+        "yearly": 374.17,
+        "note": "$4,490 per year billed annually (the page rounds this to $374/mo). Add up to 10 users at $80/mo each.",
+        "limits": "50 non-verified projects, 5 years of history, 5,000 tracked keywords, 600 AI prompt checks, 1,500,000 crawl credits, 1 user",
+        "best_for": "Lean in-house marketing teams"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "team",
+        "per_user": false,
+        "custom": true,
+        "limits": "Uncapped API access, custom API endpoints, SSO, access management and audit log",
+        "best_for": "Large organizations"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Moz",
+    "slug": "moz",
+    "logo": "/logos/moz.svg",
+    "category": "Marketing",
+    "best_for_usecase": "SEO research, rank tracking and AI-search visibility for small businesses and growing marketing teams",
+    "starting_price": 49,
+    "price_per_user": false,
+    "hidden_limits": "Users are capped per plan (1, 2 or 3) and the pricing page does not list a price for extra seats. The $49 entry plan covers a single website. Extra AI Visibility dashboards cost $20 each and extra tracked prompts $50 per 100. Paying yearly saves 20%.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 0,
+    "ai_model": "Not listed on the pricing page",
+    "pros": [
+      "Entry-level plan at $49 a month for a single website",
+      "Paying yearly saves 20%",
+      "Free Moz Community account with limited tool access"
+    ],
+    "cons": [
+      "Users capped at 1 to 3 depending on plan",
+      "Extra seat pricing not listed",
+      "AI dashboards and prompts beyond the quota cost extra"
+    ],
+    "website_url": "https://moz.com",
+    "pricing_url": "https://moz.com/products/pro/pricing",
+    "last_verified": "2026-11-16",
+    "plans": [
+      {
+        "name": "Free Moz Community account",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 0,
+        "yearly": 0,
+        "limits": "Limited access to MozBar, Keyword Explorer and Link Explorer",
+        "best_for": "Occasional lookups"
+      },
+      {
+        "name": "Starter",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 49,
+        "note": "Entry-level plan for individuals managing a single website. Yearly price not shown.",
+        "limits": "One website",
+        "best_for": "Individuals with one site"
+      },
+      {
+        "name": "Standard",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 99,
+        "yearly": 79,
+        "limits": "1 user, 3 tracked sites, 300 tracked keywords, 400K pages crawled per month, 150 tracked AI prompts",
+        "best_for": "Small businesses that need the basics"
+      },
+      {
+        "name": "Medium",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 179,
+        "yearly": 143,
+        "limits": "2 users, 10 tracked sites, 1,500 tracked keywords, 2M pages crawled per month, 300 tracked AI prompts",
+        "best_for": "Growing businesses doing SEO and AI search"
+      },
+      {
+        "name": "Large",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 299,
+        "yearly": 239,
+        "limits": "3 users, 25 tracked sites, 3,000 tracked keywords, 5M pages crawled per month, 600 tracked AI prompts",
+        "best_for": "Larger businesses needing data at scale"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "team",
+        "per_user": false,
+        "custom": true,
+        "best_for": "Enterprise businesses and agencies"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "SE Ranking",
+    "slug": "se-ranking",
+    "logo": "/logos/se-ranking.svg",
+    "category": "Marketing",
+    "best_for_usecase": "Rank tracking, site audits and keyword and backlink research for SEO teams and agencies",
+    "starting_price": 103.2,
+    "price_per_user": false,
+    "hidden_limits": "No free plan, only a free 14-day trial with no credit card. Core includes 1 manager seat and 10 projects; Growth includes 3 seats and 30 projects. The Agency Pack is +$69 per month on annual billing only, and the API add-on starts at $45 per month on annual billing.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 0,
+    "ai_model": "Not listed on the pricing page",
+    "pros": [
+      "Free 14-day trial with no credit card",
+      "Unlimited keyword, competitor and backlink research on Core",
+      "Annual billing saves 20%"
+    ],
+    "cons": [
+      "No free plan",
+      "Only 1 manager seat on Core",
+      "White-label Agency Pack is an extra $69 a month"
+    ],
+    "website_url": "https://seranking.com",
+    "pricing_url": "https://seranking.com/subscription.html",
+    "last_verified": "2026-11-16",
+    "plans": [
+      {
+        "name": "Core",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 129,
+        "yearly": 103.2,
+        "limits": "10 projects, 1 manager seat, 2,000 keywords tracked daily, 250K pages audited per month, 25K API credits, 25 AI prompts daily",
+        "best_for": "Teams with focused SEO work"
+      },
+      {
+        "name": "Growth",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 279,
+        "yearly": 223.2,
+        "limits": "30 projects, 3 manager seats, 5,000 keywords tracked daily, 2M pages audited per month, 100K API credits, historical data",
+        "best_for": "Teams scaling SEO delivery and collaboration"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "team",
+        "per_user": false,
+        "custom": true,
+        "limits": "Custom limits, full API and advanced integrations",
+        "best_for": "Large teams and complex projects"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Ubersuggest",
+    "slug": "ubersuggest",
+    "logo": "/logos/ubersuggest.svg",
+    "category": "Marketing",
+    "best_for_usecase": "Low-cost keyword research, site audits and rank tracking for solopreneurs and small businesses",
+    "starting_price": 6.67,
+    "price_per_user": false,
+    "hidden_limits": "Monthly plans come with a one-time 7-day free trial. Yearly billing is paid upfront ($80, $125 or $271). Lifetime plans ($120, $200 or $400) are final and non-refundable. The full AI add-on costs an extra $29 per month.",
+    "has_free_tier": false,
+    "is_open_source": false,
+    "rating": 0,
+    "ai_model": "ChatGPT and Gemini (in keyword research)",
+    "pros": [
+      "Lowest paid price among the SEO tools we have verified",
+      "One-time lifetime option with no monthly fees",
+      "7-day free trial on monthly plans"
+    ],
+    "cons": [
+      "Lifetime purchases are non-refundable",
+      "Individual plan covers 1 project and 1 user",
+      "Full AI add-on costs an extra $29 a month"
+    ],
+    "website_url": "https://ubersuggest.com",
+    "pricing_url": "https://ubersuggest.com/en/pricing",
+    "last_verified": "2026-11-16",
+    "plans": [
+      {
+        "name": "Individual",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 12,
+        "yearly": 6.67,
+        "note": "$80 billed annually, or $120 one-time lifetime.",
+        "limits": "1 user, 1 project, 125 tracked keywords per project, 150 searches per day, 200 monthly credits",
+        "best_for": "Solopreneurs growing one website"
+      },
+      {
+        "name": "Business",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 20,
+        "yearly": 10.42,
+        "note": "$125 billed annually, or $200 one-time lifetime.",
+        "limits": "2 users, 7 projects, 150 tracked keywords per project, 300 searches per day, 500 monthly credits",
+        "best_for": "Small and medium businesses"
+      },
+      {
+        "name": "Enterprise",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 40,
+        "yearly": 22.58,
+        "note": "$271 billed annually, or $400 one-time lifetime.",
+        "limits": "5 users, 15 projects, 300 tracked keywords per project, 900 searches per day, 700 monthly credits",
+        "best_for": "Large businesses and agencies"
+      },
+      {
+        "name": "Custom",
+        "audience": "team",
+        "per_user": false,
+        "custom": true,
+        "best_for": "Agencies and brands with tailored needs"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Mangools",
+    "slug": "mangools",
+    "logo": "/logos/mangools.svg",
+    "category": "Marketing",
+    "best_for_usecase": "Simple keyword research, SERP analysis and rank tracking for solopreneurs, freelancers and small teams",
+    "starting_price": 18.85,
+    "price_per_user": false,
+    "hidden_limits": "Basic has no extra seats; Premium allows 3 extra seats and Agency 5 (the seat price is not listed). Rank updates are weekly on Basic and Premium and daily on Agency. Annual billing is paid upfront. A full refund is offered within 48 hours of payment.",
+    "has_free_tier": true,
+    "is_open_source": false,
+    "rating": 0,
+    "ai_model": "Not listed on the pricing page",
+    "pros": [
+      "Annual billing saves about 35%",
+      "API and MCP included on every plan",
+      "48-hour money-back guarantee"
+    ],
+    "cons": [
+      "No extra seats on Basic",
+      "Weekly rank updates below the Agency plan",
+      "Extra seat price not listed"
+    ],
+    "website_url": "https://mangools.com",
+    "pricing_url": "https://mangools.com/plans-and-pricing",
+    "last_verified": "2026-11-16",
+    "plans": [
+      {
+        "name": "Free account",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 0,
+        "yearly": 0,
+        "note": "The page offers a free account; its limits are not listed there.",
+        "best_for": "Trying the tools"
+      },
+      {
+        "name": "Basic",
+        "audience": "individual",
+        "per_user": false,
+        "monthly": 30.5,
+        "yearly": 18.85,
+        "note": "$226.20 per year billed annually.",
+        "limits": "100 keyword research and 100 SERP requests per 24h, 200 tracked keywords, weekly rank updates, no extra seats",
+        "best_for": "Solopreneurs, freelance SEOs and marketers"
+      },
+      {
+        "name": "Premium",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 40.5,
+        "yearly": 26.35,
+        "note": "$316.20 per year billed annually.",
+        "limits": "500 keyword research and 500 SERP requests per 24h, 700 tracked keywords, weekly rank updates, 3 extra seats available",
+        "best_for": "Marketing teams and specialists"
+      },
+      {
+        "name": "Agency",
+        "audience": "team",
+        "per_user": false,
+        "monthly": 70.5,
+        "yearly": 48.85,
+        "note": "$586.20 per year billed annually.",
+        "limits": "1,200 keyword research and 1,200 SERP requests per 24h, 1,500 tracked keywords, daily rank updates, 5 extra seats available",
+        "best_for": "Professional SEOs and agencies"
+      }
+    ]
   }
 ]

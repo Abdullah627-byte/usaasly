@@ -45,6 +45,16 @@ export function isIndexedAlternatives(t: Pick<CatalogTool, 'slug' | 'category'>)
   return rivals >= MIN_SAME_CATEGORY_RIVALS;
 }
 
+/** False when the vendor's pricing page does not name the AI models (ai_model starts with "Not listed"). */
+export function hasAiModel(t: Pick<CatalogTool, 'ai_model'>): boolean {
+  return Boolean(t.ai_model) && !/^not listed/i.test(t.ai_model);
+}
+
+/** Running-text sentence about a tool's AI models that reads correctly when they are not listed. */
+export function aiModelSentence(t: Pick<CatalogTool, 'name' | 'ai_model'>): string {
+  return hasAiModel(t) ? `${t.name} uses ${t.ai_model}.` : `${t.name}'s pricing page does not name the AI models it uses.`;
+}
+
 export function getCatalogTool(slug: string): CatalogTool | undefined {
   return catalog.find((t) => t.slug === slug);
 }
