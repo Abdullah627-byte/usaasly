@@ -24,7 +24,11 @@ interface Props {
 
 const { title, description, path, schema = [], noindex = false, ogType = 'website', narrow = false, ogImagePath = '/og-default.png', canonicalPath } = Astro.props;
 
-const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+// Append " | Usaasly" only when it keeps the title at or under 60 characters (Google's rough
+// snippet cutoff). A page whose own title already reaches that length is left without the
+// suffix rather than running over — the brand name is secondary to staying within the limit.
+const withSuffix = `${title} | ${SITE_NAME}`;
+const fullTitle = title.includes(SITE_NAME) ? title : withSuffix.length <= 60 ? withSuffix : title;
 const desc = truncate(description);
 const canonical = absoluteUrl(canonicalPath ?? path);
 const ogImage = absoluteUrl(ogImagePath);
