@@ -18,13 +18,15 @@ interface Props {
   narrow?: boolean;
   /** Page-specific social image path (1200x630); defaults to the site-wide image. */
   ogImagePath?: string;
+  /** Point the canonical URL at a different page (used by retired pages that now redirect elsewhere). */
+  canonicalPath?: string;
 }
 
-const { title, description, path, schema = [], noindex = false, ogType = 'website', narrow = false, ogImagePath = '/og-default.png' } = Astro.props;
+const { title, description, path, schema = [], noindex = false, ogType = 'website', narrow = false, ogImagePath = '/og-default.png', canonicalPath } = Astro.props;
 
 const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
 const desc = truncate(description);
-const canonical = absoluteUrl(path);
+const canonical = absoluteUrl(canonicalPath ?? path);
 const ogImage = absoluteUrl(ogImagePath);
 
 const siteSchema: Record<string, unknown>[] = [

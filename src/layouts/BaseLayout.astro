@@ -12,6 +12,7 @@ interface Props {
   schema?: Record<string, unknown>[];
   noindex?: boolean;
   ogType?: 'website' | 'article';
+  canonicalPath?: string;
 }
 
 const { ogType = 'article', ...rest } = Astro.props;

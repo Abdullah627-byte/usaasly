@@ -10,6 +10,14 @@ export const REVIEWS_ENABLED = false;
 export const AFFILIATE_LINKS = false;
 
 /**
+ * "Best X alternatives" pages are only indexed when X has at least this many rivals in its own category;
+ * with fewer, the page is mostly filler from related categories (thin), so it stays live but noindex.
+ */
+export const MIN_SAME_CATEGORY_RIVALS = 3;
+/** Alternatives pages kept indexed even though they are thin, because they already earn Search Console impressions. */
+export const ALTERNATIVES_INDEX_EXEMPT: readonly string[] = ['make'];
+
+/**
  * Tools we are actively targeting for Google. Tool, alternatives and compare pages for every other tool stay live
  * but are noindex (and left out of the sitemap) until their pricing has been verified and they are added here.
  */

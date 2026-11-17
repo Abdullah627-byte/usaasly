@@ -1,6 +1,5 @@
 import type { APIRoute } from 'astro';
-import { alternativesPath, catalog, categoryPairs, isIndexedTool, toolPath, type CatalogTool } from '../lib/catalog';
-import { tools as pseoTools } from '../lib/tools';
+import { alternativesPath, catalog, categoryPairs, isIndexedAlternatives, isIndexedTool, toolPath, type CatalogTool } from '../lib/catalog';
 import { absoluteUrl } from '../lib/seo';
 
 /**
@@ -8,8 +7,8 @@ import { absoluteUrl } from '../lib/seo';
  * so every generated route is listed automatically:
  *   - static pages, /tool/<slug>/
  *   - /compare/<a>-vs-<b>/      (categoryPairs: same-category, one URL per pair)
- *   - /alternatives/best-<slug>-alternatives/
- *   - /review/<slug>/           (only when generated content exists; otherwise the page is noindex)
+ *   - /alternatives/best-<slug>-alternatives/   (only where the tool has enough same-category rivals, see isIndexedAlternatives)
+ *   - /review/<slug>/ is retired: it 301-redirects to the tool page and is not listed.
  *
  * <lastmod> is only written when we have a real date: the pricing "last verified" date of the tool(s) on the page.
  * Pages without one get no <lastmod> rather than a made-up date.
@@ -39,8 +38,7 @@ export const GET: APIRoute = () => {
     ...categoryPairs()
       .filter((p) => isIndexedTool(p.a) && isIndexedTool(p.b))
       .map((p) => ({ path: `/compare/${p.slug}/`, lastmod: verified(p.a, p.b) })),
-    ...indexed.map((t) => ({ path: alternativesPath(t), lastmod: verified(t) })),
-    ...pseoTools.filter((t) => t.content).map((t) => ({ path: `/review/${t.slug}/`, lastmod: latest([t.last_checked?.slice(0, 10)]) })),
+    ...indexed.filter(isIndexedAlternatives).map((t) => ({ path: alternativesPath(t), lastmod: verified(t) })),
   ];
 
   const seen = new Set<string>();
