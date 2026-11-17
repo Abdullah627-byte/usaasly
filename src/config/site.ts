@@ -15,7 +15,7 @@ export const AFFILIATE_LINKS = false;
  */
 export const MIN_SAME_CATEGORY_RIVALS = 3;
 /** Alternatives pages kept indexed even though they are thin, because they already earn Search Console impressions. */
-export const ALTERNATIVES_INDEX_EXEMPT: readonly string[] = ['make'];
+export const ALTERNATIVES_INDEX_EXEMPT: readonly string[] = ['make', 'semrush'];
 
 /**
  * Tools we are actively targeting for Google. Tool, alternatives and compare pages for every other tool stay live
