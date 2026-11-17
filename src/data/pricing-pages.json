@@ -337,33 +337,34 @@
     "unverified": ["Length of the free trial.", "The price of the AI Pass add-on."]
   },
   "pipedrive": {
-    "title": "Pipedrive Pricing 2026: $14 to $69 per seat/month",
-    "description": "Pipedrive has no free plan but a 14-day trial. Lite is $14, Growth $24, Premium $49 and Ultimate $69 per seat a month billed annually. Nov 2026.",
+    "title": "Pipedrive Pricing 2026: $14 to $79 per seat/month",
+    "description": "Pipedrive has no free plan but a 14-day trial. Lite is $14, Growth $39, Premium $59 and Ultimate $79 per seat a month billed annually. Nov 2026.",
     "h1": "Pipedrive pricing (2026)",
     "answer": [
-      "Pipedrive has no free plan, but it offers a free 14-day trial with no credit card. Lite is $14 per seat per month billed annually, or $19 billed monthly.",
-      "Growth is $24 ($34 monthly), Premium is $49 ($64 monthly) and Ultimate is $69 ($89 monthly) per seat."
+      "Pipedrive has no free plan, but it offers a free 14-day trial with no credit card. Lite is $14 per seat per month billed annually, or $24 billed monthly.",
+      "Growth is $39 ($49 monthly), Premium is $59 ($79 monthly) and Ultimate is $79 ($99 monthly) per seat."
     ],
     "cost": {
       "intro": "Pipedrive charges per seat. Annual billing is a single payment for the year per seat.",
       "rows": [
-        { "label": "Lite", "per_user": true, "monthly": 19, "annual": 14, "users": [1, 3, 10] },
-        { "label": "Growth", "per_user": true, "monthly": 34, "annual": 24, "users": [1, 3, 10] },
-        { "label": "Premium", "per_user": true, "monthly": 64, "annual": 49, "users": [1, 3, 10] },
-        { "label": "Ultimate", "per_user": true, "monthly": 89, "annual": 69, "users": [1, 3, 10] }
+        { "label": "Lite", "per_user": true, "monthly": 24, "annual": 14, "users": [1, 3, 10] },
+        { "label": "Growth", "per_user": true, "monthly": 49, "annual": 39, "users": [1, 3, 10] },
+        { "label": "Premium", "per_user": true, "monthly": 79, "annual": 59, "users": [1, 3, 10] },
+        { "label": "Ultimate", "per_user": true, "monthly": 99, "annual": 79, "users": [1, 3, 10] }
       ],
       "extras": [
-        "Annual billing is one payment per seat: $168 (Lite), $288 (Growth), $588 (Premium) or $828 (Ultimate) for the year.",
-        "Paying annually saves $60, $120, $180 and $240 per seat per year across Lite, Growth, Premium and Ultimate.",
-        "The page says you save up to 26% on annual billing."
+        "Annual billing is one payment per seat: $168 (Lite), $468 (Growth), $708 (Premium) or $948 (Ultimate) for the year.",
+        "Paying annually saves $120, $120, $240 and $240 per seat per year across Lite, Growth, Premium and Ultimate.",
+        "The page says you save up to 42% on annual billing."
       ]
     },
     "hidden": [
       { "t": "No free plan", "d": "There is only a free 14-day trial, no credit card required. After that you pay." },
-      { "t": "Email sync is not on Lite", "d": "Full email sync with tracking, automations and nurturing sequences start on Growth at $24, not on Lite at $14." },
-      { "t": "Lead generation sits on Premium", "d": "Lead generation and routing, custom scoring and contracts with e-signatures start on Premium at $49 per seat." },
+      { "t": "Email sync is not on Lite", "d": "Full email sync with tracking, automations and nurturing sequences start on Growth at $39, not on Lite at $14." },
+      { "t": "Lead generation sits on Premium", "d": "Lead generation and routing, custom scoring and contracts with e-signatures start on Premium at $59 per seat." },
       { "t": "Annual billing is paid upfront", "d": "The annual price is a single payment per seat for the year, for example $168 for Lite." },
-      { "t": "Security and sandbox are Ultimate", "d": "Account security rules, data enrichment and the sandbox testing account are on Ultimate at $69." }
+      { "t": "Monthly billing is much dearer", "d": "Lite is $24 per seat billed monthly against $14 billed annually, which is why the page highlights saving up to 42%." },
+      { "t": "Security and sandbox are Ultimate", "d": "Account security rules, data enrichment and the sandbox testing account are on Ultimate at $79." }
     ],
     "verdict": {
       "worth": "Worth it for small sales teams that want a pipeline-first CRM and are happy to start on Lite or Growth. Try it with the free 14-day trial first.",
@@ -372,18 +373,18 @@
         "You need email sync and automations but want to pay Lite pricing. Those start on Growth.",
         "You want everything in one platform with sales, marketing and service. HubSpot and Salesforce are the broader options."
       ],
-      "cheaper": "Free option: HubSpot's free tools for up to 2 users. Pipedrive Lite at $14 is the cheapest paid CRM seat we have verified so far."
+      "cheaper": "Free option: HubSpot's free tools for up to 2 users. Pipedrive Lite at $14 (annual) is the cheapest paid CRM seat we have verified so far."
     },
     "links": { "compare": ["hubspot", "salesforce"], "related": ["hubspot", "salesforce", "zoho-crm"] },
     "faqs": [
       { "q": "Is there a free Pipedrive plan?", "a": "No. Pipedrive offers a free 14-day trial with no credit card required, but no free plan." },
-      { "q": "How much does Pipedrive cost per user?", "a": "Billed annually: Lite $14, Growth $24, Premium $49 and Ultimate $69 per seat per month. Billed monthly: $19, $34, $64 and $89." },
-      { "q": "Is Pipedrive cheaper if I pay annually?", "a": "Yes. Annual billing saves $60 per seat per year on Lite, $120 on Growth, $180 on Premium and $240 on Ultimate. The page says up to 26%." },
+      { "q": "How much does Pipedrive cost per user?", "a": "Billed annually: Lite $14, Growth $39, Premium $59 and Ultimate $79 per seat per month. Billed monthly: $24, $49, $79 and $99." },
+      { "q": "Is Pipedrive cheaper if I pay annually?", "a": "Yes. Annual billing saves $120 per seat per year on Lite and Growth and $240 on Premium and Ultimate. The page says up to 42%." },
       { "q": "Which Pipedrive plan has email sync?", "a": "Growth and above. Growth adds full email sync with tracking, automations and nurturing sequences. Lite does not." },
       { "q": "Is Pipedrive priced per seat?", "a": "Yes. Every price on the page is per seat per month." },
       { "q": "What do I get on the Ultimate plan?", "a": "Everything in Premium, plus account security rules and alerts, phone and email data enrichment, a sandbox testing account, extended phone support and partner discounts." }
     ],
-    "unverified": ["Prices from a US connection (see the report)."]
+    "unverified": []
   },
   "monday-com": {
     "title": "monday.com Pricing 2026: $12 to $24 per seat/month",

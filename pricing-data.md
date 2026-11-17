@@ -2,7 +2,7 @@
 
 - Date checked: 2026-11-16
 - Method: each vendor's official pricing page was opened in Chrome and the monthly/annual toggle was clicked where one exists. Prices are USD, before tax.
-- Region caveat: Chrome ran from a non-US location. Canva showed Pakistani rupees until `?countryCode=us` was added, so Canva's numbers are from the US view. The other vendors showed USD without any switch (Salesforce and HubSpot have a visible USD selector). Please spot-check Asana, Trello, Figma, Pipedrive, monday.com and Semrush from a US connection before publishing.
+- Region check: the first pass ran from Pakistan. On 2026-11-16 every price below was re-read through a US connection (the debug Chrome showed IP location Ashburn, Virginia, US). Result: Semrush, HubSpot, Asana, Trello, Salesforce, Figma, Canva and monday.com were identical to the first pass. **Pipedrive was different**: the Pakistan view showed discounted regional prices (annual 14/24/49/69, monthly 19/34/64/89). The US view, used below, is annual 14/39/59/79 and monthly 24/49/79/99. This matches the 13 Nov manual check already in tools.json.
 - Rule used: if a number was not on the page, it is written as "unverified" or "custom pricing, not public". Nothing here is estimated.
 - "annual" = price per month when billed annually. "monthly" = price when billed month to month.
 
@@ -17,7 +17,7 @@
 | Salesforce | Starter Suite $25 per user (monthly or annual) | Max $550 per user (annual) | Yes (Free Suite) |
 | Figma | Pro Full seat $16 / $20 | Enterprise Full seat $90 (annual) | Yes (Starter) |
 | Canva | Pro $12 / $18 (per person) | Business $20.83 / $25 (per person) | Yes |
-| Pipedrive | Lite $14 / $19 per seat | Ultimate $69 / $89 per seat | No (14-day trial) |
+| Pipedrive | Lite $14 / $24 per seat | Ultimate $79 / $99 per seat | No (14-day trial) |
 | monday.com | Basic $9 / $12 per seat (10 seats) | Pro $19 / $24 per seat (10 seats) | Yes (2 seats) |
 | Cursor | Plus $8 per month | Ultra $200 per month; Teams $30+ per user | Yes (limited) |
 
@@ -157,14 +157,14 @@
 ## 8. Pipedrive
 
 - Official URL: https://www.pipedrive.com/en/pricing
-- Checked: 2026-11-16. Toggle: Billed monthly / Billed annually ("save up to 26%"). Prices are USD per seat per month.
+- Checked: 2026-11-16 from a US connection. Toggle: Billed monthly / Billed annually ("save up to 42%"). Prices are USD per seat per month. (The same page viewed from Pakistan showed lower regional prices and "save up to 26%"; those are not used.)
 
 | Plan | Annual (per seat, per month) | Annual total per seat | Monthly (per seat) |
 |---|---|---|---|
-| Lite | $14 | $168 per year | $19 |
-| Growth | $24 | $288 per year | $34 |
-| Premium | $49 | $588 per year | $64 |
-| Ultimate | $69 | $828 per year | $89 |
+| Lite | $14 | $168 per year | $24 |
+| Growth | $39 | $468 per year | $49 |
+| Premium | $59 | $708 per year | $79 |
+| Ultimate | $79 | $948 per year | $99 |
 
 - Key features by tier: Lite has lead, calendar and pipeline management, AI report creation, meeting intelligence. Growth adds full email sync with tracking, automations and nurturing sequences, subscription and forecast reports. Premium adds lead generation and routing, custom scoring, contracts and e-signatures. Ultimate adds fortified account security with rules and alerts, phone and email data enrichment, a sandbox testing account, extended phone support, and partnership discounts (20% on PandaDoc and CloudTalk, 15% on Surfe).
 - Free plan: none listed. Trial: free 14-day trial, no credit card required.
@@ -220,4 +220,4 @@ Second pass on 2026-11-16 closed these: Semrush 7-day trial, Salesforce 30-day t
 5. monday.com: prices at seat counts other than 10; monday CRM is a separate product.
 6. Cursor: annual pricing not shown; trial terms not shown; the Grok bundling needs a human look (see section 10).
 7. Asana: Enterprise and Enterprise+ prices are not public (contact sales).
-8. All vendors: checked from a non-US location, so please re-check from a US connection before publishing.
+8. Region: re-checked from a US connection on 2026-11-16 (see the Region check note at the top); Pipedrive was corrected, the rest matched.
